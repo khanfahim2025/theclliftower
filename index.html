@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+
+  <link rel="stylesheet" href="assets/desk-css/globals.css" media="screen and (min-width: 768px)" />
+  <link rel="stylesheet" href="assets/desk-css/styleguide.css" media="screen and (min-width: 768px)" />
+  <link rel="stylesheet" href="assets/desk-css/style.css" media="screen and (min-width: 768px)" />
+
+  <link rel="stylesheet" href="assets/mob-css/globals.css" media="screen and (max-width: 767px)" />
+  <link rel="stylesheet" href="assets/mob-css/styleguide.css" media="screen and (max-width: 767px)" />
+  <link rel="stylesheet" href="assets/mob-css/style.css" media="screen and (max-width: 767px)" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <style>
+    /* This small block of CSS is essential for toggling the two main divs. */
+    /* By default, hide the desktop view. */
+    [data-desktop-view] {
+      display: none;
+    }
+
+    /* On screens 768px and wider, show the desktop view and hide the mobile view. */
+    @media (min-width: 768px) {
+      [data-desktop-view] {
+        display: block;
+      }
+
+      [data-mobile-view] {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="mobile-view" data-mobile-view>
+    <div class="div">
+      <div class="overlap">
+        <div class="body">
+          <img class="mask" src="https://c.animaapp.com/VUWnemA4/img/mask-10@2x.png" />
+          <img class="mask" src="https://c.animaapp.com/VUWnemA4/img/mask-10@2x.png" />
+          <img class="mask" src="https://c.animaapp.com/VUWnemA4/img/mask-10@2x.png" />
+          <img class="mask" src="https://c.animaapp.com/VUWnemA4/img/mask-10@2x.png" />
+          <img class="mask" src="https://c.animaapp.com/VUWnemA4/img/mask-10@2x.png" />
+          <img class="mask" src="https://c.animaapp.com/VUWnemA4/img/mask-10@2x.png" />
+          <img class="mask" src="https://c.animaapp.com/VUWnemA4/img/mask-10@2x.png" />
+          <img class="mask" src="https://c.animaapp.com/VUWnemA4/img/mask-10@2x.png" />
+          <img class="mask" src="https://c.animaapp.com/VUWnemA4/img/mask-10@2x.png" />
+          <img class="mask" src="https://c.animaapp.com/VUWnemA4/img/mask-10@2x.png" />
+        </div>
+        <img class="architech-banner" src="https://c.animaapp.com/VUWnemA4/img/architech-banner.png" />
+        <div class="architect">ARCHITECT</div>
+        <img class="project-highlight" src="https://c.animaapp.com/VUWnemA4/img/project-highlight-banner.png" />
+        <div class="banner">
+          <div class="overlap-group">
+            <div class="ever-intro"></div>
+            <div class="mount-mary">MOUNT MARY</div>
+            <img class="rectangle" src="https://c.animaapp.com/VUWnemA4/img/rectangle-2@2x.png" />
+            <img class="frame" src="https://c.animaapp.com/VUWnemA4/img/frame-36171.svg" />
+            <div class="rectangle-2"></div>
+            <img class="cab-button" src="https://c.animaapp.com/VUWnemA4/img/cab-button.svg" />
+            <img class="rustomjeeclifftower" src="https://c.animaapp.com/VUWnemA4/img/rustomjeeclifftower-1.svg" />
+            <div class="frame-2">
+              <div class="frame-3">
+                <div class="text-wrapper">Live</div>
+                <div class="text-wrapper-2">Here</div>
+              </div>
+              <div class="frame-4">
+                <img class="line" src="https://c.animaapp.com/VUWnemA4/img/line-10.svg" />
+                <p class="p">
+                  Rustomjee Cliff Tower at Pali Hill, Bandra, offers serene luxury living with lush greenery, sea
+                  views, world-class amenities, and a perfect blend of elegance and comfort.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="simple-shapes-future">SIMPLE SHAPES, FUTURE-READY FINISHES</div>
+        <img class="img" src="https://c.animaapp.com/VUWnemA4/img/line-10.svg" />
+        <img class="yellow-sephere" src="https://c.animaapp.com/VUWnemA4/img/yellow-sephere-3@2x.png" />
+        <div class="architect-details">
+          <img class="line-2" src="https://c.animaapp.com/VUWnemA4/img/line-10.svg" />
+          <div class="overlap-2">
+            <img class="rectangle-3" src="https://c.animaapp.com/VUWnemA4/img/rectangle-3409@2x.png" />
+            <img class="yellow-sephere-2" src="https://c.animaapp.com/VUWnemA4/img/yellow-sephere-2@2x.png" />
+            <div class="union-wrapper">
+              <img class="img-2" src="https://c.animaapp.com/VUWnemA4/img/union-1.svg" />
+            </div>
+          </div>
+          <p class="text-wrapper-3">
+            Rustomjee towers feature sleek façades, refined masonry, French balconies, and open terraces—each distinct
+            yet unified under a bold design language redefining modern living.
+          </p>
+          <div class="img-wrapper"><img class="union" src="https://c.animaapp.com/VUWnemA4/img/union.svg" /></div>
+        </div>
+        <div class="rectangle-4"></div>
+        <div class="project-highlight-2">
+          <img class="rectangle-5" src="https://c.animaapp.com/VUWnemA4/img/rectangle-10@2x.png" />
+          <div class="overlap-3">
+            <p class="luxury-redefined">
+              LUXURY REDEFINED THROUGH COMFORT, CRAFTED DESIGN, AND TIMELESS ARCHITECTURAL GRACE.
+            </p>
+            <img class="view-futuristic"
+              src="https://c.animaapp.com/VUWnemA4/img/view-futuristic-lighting-lamp-design--2--3@2x.png" />
+          </div>
+          <p class="RARE-BY-DESIGN-ONLY">RARE BY DESIGN:<br />ONLY TWO PRIVILEGED HOMES ON EVERY LEVEL</p>
+          <div class="frame-5">
+            <img class="frame-6" src="https://c.animaapp.com/VUWnemA4/img/frame-36120-3.svg" />
+            <div class="text-wrapper-4">1</div>
+          </div>
+        </div>
+        <div class="floor-plan">
+          <div class="overlap-4">
+            <div class="frame-7">
+              <div class="text-wrapper-5">Floor</div>
+              <div class="plan">PLAN</div>
+            </div>
+            <div class="frame-8"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
+            <div class="frame-9"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
+            <div class="frame-10"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
+            <div class="frame-11"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
+            <div class="frame-12"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
+            <div class="frame-13"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
+            <div class="frame-14"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
+            <div class="frame-15"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
+            <div class="frame-16"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
+            <div class="frame-17"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
+            <div class="frame-18"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
+            <div class="frame-19"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
+            <div class="frame-20"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
+            <div class="frame-21"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
+            <div class="frame-22"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
+            <div class="frame-23"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
+            <div class="frame-24"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
+            <div class="frame-25"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
+            <div class="frame-26"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
+          </div>
+        </div>
+      </div>
+      <img class="gallery-banner" src="https://c.animaapp.com/VUWnemA4/img/gallery-banner.png" />
+      <div class="floor-plan-details">
+        <div class="overlap-5">
+          <div class="rectangle-6"></div>
+          <div class="frame-27">
+            <img class="frame-6" src="https://c.animaapp.com/VUWnemA4/img/frame-36120-3.svg" />
+            <div class="text-wrapper-4">1</div>
+          </div>
+          <img class="unit-plan" src="https://c.animaapp.com/VUWnemA4/img/unit-plan-1@2x.png" />
+          <img class="compass" src="https://c.animaapp.com/VUWnemA4/img/compass-1.svg" />
+          <div class="frame-wrapper">
+            <div class="frame-28">
+              <img class="img-2" src="https://c.animaapp.com/VUWnemA4/img/project-details-overview.svg" />
+              <div class="frame-3">
+                <div class="text-wrapper-6">4BHK</div>
+                <div class="text-wrapper-7">Configurations</div>
+              </div>
+            </div>
+          </div>
+          <div class="div-wrapper">
+            <div class="frame-28">
+              <img class="img-2" src="https://c.animaapp.com/VUWnemA4/img/house-1.svg" />
+              <div class="frame-3">
+                <div class="text-wrapper-6">258.34</div>
+                <div class="text-wrapper-7">Deck (SQ.FT)</div>
+              </div>
+            </div>
+          </div>
+          <div class="frame-29">
+            <div class="frame-28">
+              <img class="img-2" src="https://c.animaapp.com/VUWnemA4/img/project-details-overview-1.svg" />
+              <div class="frame-3">
+                <div class="text-wrapper-6">2464.96</div>
+                <div class="text-wrapper-7">Carpet Area (SQ.FT)</div>
+              </div>
+            </div>
+          </div>
+          <div class="frame-30">
+            <div class="frame-28">
+              <img class="img-2" src="https://c.animaapp.com/VUWnemA4/img/note-1.svg" />
+              <div class="frame-3">
+                <div class="text-wrapper-8">Ask Details</div>
+                <div class="text-wrapper-9">Price</div>
+              </div>
+            </div>
+          </div>
+          <div class="frame-31">
+            <img class="image" src="https://c.animaapp.com/VUWnemA4/img/image-1@2x.png" />
+            <div class="button-version">
+              <div class="request-a-call-back-wrapper">
+                <div class="request-a-call-back">Ask For Price Details</div>
+              </div>
+              <img class="frame-32" src="https://c.animaapp.com/VUWnemA4/img/frame-36115.svg" />
+            </div>
+          </div>
+          <div class="group">
+            <div class="overlap-group-2">
+              <img class="element" src="https://c.animaapp.com/VUWnemA4/img/1726674932-56430171-1@2x.png" />
+              <img class="frame-33" src="https://c.animaapp.com/VUWnemA4/img/frame-36115-1.svg" />
+              <p class="text-wrapper-10">
+                Discover bespoke Rustomjee floor plans and avail exclusive project offers, delivered directly from the
+                developer for a seamless, premium home-buying experience.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-section">
+        <div class="overlap-6">
+          <p class="architectural">ARCHITECTURAL GRANDEUR BALANCED WITH EVERYDAY COMFORT</p>
+          <img class="deco-xxxl" src="https://c.animaapp.com/VUWnemA4/img/deco-2-xxxl--1-@2x.png" />
+          <img class="rectangle-7" src="https://c.animaapp.com/VUWnemA4/img/rectangle-14.png" />
+          <img class="deco-xxxl-2" src="https://c.animaapp.com/VUWnemA4/img/deco-1-xxxl--2-@2x.png" />
+          <div class="frame-34">
+            <img class="frame-6" src="https://c.animaapp.com/VUWnemA4/img/frame-36120-3.svg" />
+            <div class="text-wrapper-4">1</div>
+          </div>
+        </div>
+        <img class="frame-35" src="https://c.animaapp.com/VUWnemA4/img/frame-36124.svg" />
+        <p class="text-wrapper-11">
+          Rustomjee creates a bold dialogue between architecture and nature, where modern design rises against a
+          backdrop of timeless beauty. With Mount Mary Church as a cultural landmark and the Arabian Sea ever in
+          sight, the residences embody exclusivity, sophistication, and an elevated lifestyle.
+        </p>
+      </div>
+      <div class="overlap-7">
+        <img class="maunt-mary-banner" src="https://c.animaapp.com/VUWnemA4/img/maunt-mary-banner.png" />
+        <div class="mount-mary-2">
+          <div class="location">LOCATION</div>
+          <p class="distinctive">DISTINCTIVE RESIDENCES SHAPED BY MODERNITY, SEA, AND TIMELESS NATURAL BEAUTY.</p>
+          <div class="overlap-8">
+            <img class="rectangle-8" src="https://c.animaapp.com/VUWnemA4/img/rectangle-10-1@2x.png" />
+            <img class="cupid-angel-isolated"
+              src="https://c.animaapp.com/VUWnemA4/img/cupid-angel-isolated-white-background@2x.png" />
+            <img class="close-up-angel" src="https://c.animaapp.com/VUWnemA4/img/close-up-angel-statue@2x.png" />
+            <div class="frame-36"><img class="union-3" src="https://c.animaapp.com/VUWnemA4/img/union-21.svg" /></div>
+          </div>
+          <img class="little-fairy-statue" src="https://c.animaapp.com/VUWnemA4/img/little-fairy-statue@2x.png" />
+          <p class="text-wrapper-12">
+            Perched atop a natural cliff with sweeping views of the Arabian Sea, Mount Mary is Mumbai’s most elevated
+            enclave—rare land availability, heritage safeguards, and low-density development create an exclusive
+            address offering privacy, pedigree, and a truly elevated lifestyle.
+          </p>
+        </div>
+      </div>
+      <div class="overlap-9">
+        <img class="location-s-map" src="https://c.animaapp.com/VUWnemA4/img/location-s-map.png" />
+        <div class="location-highlights">
+          <div class="overlap-10">
+            <div class="rectangle-9"></div>
+            <div class="domestic-airport">DOMESTIC AIRPORT</div>
+            <img class="union-4" src="https://c.animaapp.com/VUWnemA4/img/union-22.svg" />
+            <div class="text-wrapper-13">8.7</div>
+            <div class="km">KM</div>
+            <img class="frame-37" src="https://c.animaapp.com/VUWnemA4/img/frame-36120-3.svg" />
+          </div>
+        </div>
+      </div>
+      <div class="one-address">
+        <div class="text-wrapper-14">Legacy. Location. Stature</div>
+        <img class="frame-38" src="https://c.animaapp.com/VUWnemA4/img/frame-36202.svg" />
+        <div class="one-address-2">ONE ADDRESS</div>
+        <img class="frame-39" src="https://c.animaapp.com/VUWnemA4/img/frame-36201.svg" />
+        <p class="what-makes-rustomjee">WHAT MAKES RUSTOMJEE CLIFF TOWER ONE OF A KIND</p>
+        <p class="text-wrapper-15">
+          Rustomjee Cliff Tower is one-of-a-kind, blending bold architecture, refined finishes, panoramic sea views,
+          and world-class amenities. Every detail is designed to offer residents an exclusive lifestyle defined by
+          sophistication, comfort, and modern elegance.
+        </p>
+      </div>
+      <div class="group-2">
+        <div class="frame-40">
+          <img class="mob-logo" src="https://c.animaapp.com/VUWnemA4/img/mob-logo-3.svg" />
+          <div class="frame-41">
+            <div class="frame-28">
+              <div class="text-wrapper-16">Privacy Policy</div>
+              <img class="line-3" src="https://c.animaapp.com/VUWnemA4/img/line-7.svg" />
+              <div class="text-wrapper-16">Terms &amp; Conditions</div>
+            </div>
+            <p class="text-wrapper-17">
+              Disclaimer :The content is for information purposes only and does not constitute an offer to avail of
+              any service. Prices mentioned are subject to change without notice and properties mentioned are subject
+              to availability. Images for representation purpose only. This is not the official website. Website
+              maintained by our online marketing agency pact partners. We may share data with rera registered
+              brokers/companies for further processing. We may also send updates to the mobile number/email id
+              registered with us. You may unsubscribe anytime by writing to us at unsubscribe@homesfy.in All Rights
+              Reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+      <img class="bottom-navigation" src="https://c.animaapp.com/VUWnemA4/img/bottom-navigation@2x.png" />
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+  <div class="version" data-desktop-view>
+    <div class="overlap-wrapper">
+      <div class="overlap">
+        <div class="body">
+          <img class="mask" src="https://c.animaapp.com/cxEW9Bi2/img/mask-8.png" />
+          <img class="mask" src="https://c.animaapp.com/cxEW9Bi2/img/mask-8.png" />
+          <img class="mask" src="https://c.animaapp.com/cxEW9Bi2/img/mask-8.png" />
+          <img class="mask" src="https://c.animaapp.com/cxEW9Bi2/img/mask-8.png" />
+          <img class="mask" src="https://c.animaapp.com/cxEW9Bi2/img/mask-8.png" />
+          <img class="mask" src="https://c.animaapp.com/cxEW9Bi2/img/mask-8.png" />
+          <img class="mask" src="https://c.animaapp.com/cxEW9Bi2/img/mask-8.png" />
+          <img class="mask" src="https://c.animaapp.com/cxEW9Bi2/img/mask-8.png" />
+          <img class="img" src="https://c.animaapp.com/cxEW9Bi2/img/mask-9.png" />
+          <img class="mask-2" src="https://c.animaapp.com/cxEW9Bi2/img/mask-10.png" />
+        </div>
+        <div class="location">
+          <div class="frame">
+            <p class="text-wrapper">Distinctive residences shaped by modernity, sea, and timeless natural beauty.</p>
+            <img class="frame-2" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36124.svg" />
+            <p class="div">
+              Perched atop a natural cliff with sweeping views of the Arabian Sea, Mount Mary is Mumbai’s most elevated
+              enclave—rare land availability, heritage safeguards, and low-density development create an exclusive
+              address offering privacy, pedigree, and a truly elevated lifestyle.
+            </p>
+          </div>
+          <div class="overlap-group">
+            <div class="location-2">LOCATION</div>
+            <img class="rectangle" src="https://c.animaapp.com/cxEW9Bi2/img/rectangle-10.png" />
+            <img class="close-up-angel" src="https://c.animaapp.com/cxEW9Bi2/img/close-up-angel-statue@2x.png" />
+            <img class="cupid-angel-isolated"
+              src="https://c.animaapp.com/cxEW9Bi2/img/cupid-angel-isolated-white-background@2x.png" />
+            <img class="little-fairy-statue" src="https://c.animaapp.com/cxEW9Bi2/img/little-fairy-statue@2x.png" />
+          </div>
+        </div>
+        <div class="gallery">
+          <div class="overlap-2">
+            <img class="rectangle-2" src="https://c.animaapp.com/cxEW9Bi2/img/rectangle-14.png" />
+            <div class="projects-highlights">
+              <p class="p">Architectural Grandeur Balanced With Everyday Comfort</p>
+              <img class="frame-3" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36124-1.svg" />
+              <p class="text-wrapper-2">
+                Rustomjee creates a bold dialogue between architecture and nature, where modern design rises against a
+                backdrop of timeless beauty. With Mount Mary Church as a cultural landmark and the Arabian Sea ever in
+                sight, the residences embody exclusivity, sophistication, and an elevated lifestyle.
+              </p>
+              <div class="overlap-group-2">
+                <div class="gallery-2">GALLERY</div>
+                <div class="text-wrapper-3">Project</div>
+              </div>
+            </div>
+            <img class="deco-xxxl" src="https://c.animaapp.com/cxEW9Bi2/img/deco-1-xxxl--2-@2x.png" />
+            <img class="deco-xxxl-2" src="https://c.animaapp.com/cxEW9Bi2/img/deco-2-xxxl--1-@2x.png" />
+            <div class="frame-4">
+              <img class="frame-5" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36120-4.svg" />
+              <div class="text-wrapper-4">1</div>
+            </div>
+          </div>
+          <img class="projects-highlights-2" src="https://c.animaapp.com/cxEW9Bi2/img/projects-highlights.png" />
+        </div>
+        <img class="projects-highlights-3" src="https://c.animaapp.com/cxEW9Bi2/img/projects-highlights-1.png" />
+        <div class="floor-plan">
+          <div class="overlap-3">
+            <div class="union-wrapper">
+              <img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" />
+            </div>
+            <div class="img-wrapper">
+              <img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" />
+            </div>
+            <div class="frame-6"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" /></div>
+            <div class="frame-7"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" /></div>
+            <div class="frame-8"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" /></div>
+            <div class="frame-9"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" /></div>
+            <div class="frame-10"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" /></div>
+            <div class="frame-11"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" /></div>
+            <div class="frame-12"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" /></div>
+            <div class="frame-13"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" /></div>
+            <div class="frame-14"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" /></div>
+            <div class="frame-15"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" /></div>
+            <div class="frame-16"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" /></div>
+            <div class="frame-17"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" /></div>
+            <div class="frame-18"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" /></div>
+            <div class="frame-19"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" /></div>
+            <div class="frame-20"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" /></div>
+            <div class="frame-21"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" /></div>
+            <div class="frame-22"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" /></div>
+            <div class="overlap-4">
+              <div class="text-wrapper-5">Floor</div>
+              <div class="plan">PLAN</div>
+            </div>
+          </div>
+          <div class="group">
+            <div class="overlap-group-3">
+              <img class="frame-23" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36115.svg" />
+              <p class="text-wrapper-6">
+                Discover bespoke Rustomjee floor plans and avail exclusive project offers, delivered directly from the
+                developer for a seamless, premium home-buying experience.
+              </p>
+            </div>
+          </div>
+          <div class="overlap-5">
+            <div class="rectangle-3"></div>
+            <div class="frame-24">
+              <img class="frame-5" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36120-4.svg" />
+              <div class="text-wrapper-4">1</div>
+            </div>
+            <div class="frame-25">
+              <img class="image" src="https://c.animaapp.com/cxEW9Bi2/img/image-1@2x.png" />
+              <div class="button-version">
+                <div class="div-wrapper">
+                  <div class="text-wrapper-7">Ask For Price Details</div>
+                </div>
+                <img class="frame-26" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36115-1.svg" />
+              </div>
+            </div>
+            <img class="unit-plan" src="https://c.animaapp.com/cxEW9Bi2/img/unit-plan-1@2x.png" />
+            <img class="compass" src="https://c.animaapp.com/cxEW9Bi2/img/compass-1.svg" />
+            <div class="group-2">
+              <div class="frame-wrapper">
+                <div class="frame-27">
+                  <img class="img-2" src="https://c.animaapp.com/cxEW9Bi2/img/project-details-overview.svg" />
+                  <div class="frame-28">
+                    <div class="text-wrapper-8">4BHK</div>
+                    <div class="div-2">Configurations</div>
+                  </div>
+                </div>
+              </div>
+              <div class="overlap-6">
+                <div class="frame-27">
+                  <img class="img-2" src="https://c.animaapp.com/cxEW9Bi2/img/house-1.svg" />
+                  <div class="frame-28">
+                    <div class="text-wrapper-8">258.34</div>
+                    <p class="div-2"><span class="span">Deck </span> <span class="text-wrapper-9">(SQ.FT)</span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="overlap-7">
+                <div class="frame-29">
+                  <img class="img-2" src="https://c.animaapp.com/cxEW9Bi2/img/project-details-overview-1.svg" />
+                  <div class="frame-28">
+                    <div class="text-wrapper-8">2464.96</div>
+                    <p class="div-2">
+                      <span class="span">Carpet Area </span> <span class="text-wrapper-9">(SQ.FT)</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="overlap-8">
+                <div class="frame-30">
+                  <img class="img-2" src="https://c.animaapp.com/cxEW9Bi2/img/note-1.svg" />
+                  <div class="frame-28">
+                    <div class="text-wrapper-10">Ask Details</div>
+                    <div class="text-wrapper-11">Price</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="projects-highlights-4">
+          <div class="overlap-9">
+            <div class="projects-sliders">
+              <div class="overlap-10">
+                <p class="text-wrapper-12">
+                  Luxury redefined through comfort, crafted design, and timeless architectural grace.
+                </p>
+                <img class="frame-31" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36124-2.svg" />
+                <div class="overlap-group-4">
+                  <p class="text-wrapper-13">
+                    Rustomjee introduces majestic entrance areas across two levels, with lofty ceilings, elegant
+                    stairwells, and luxury lounges. Together, they shape an environment of exclusivity, refinement,
+                    and comfort, setting a new standard for contemporary urban living
+                  </p>
+                  <div class="highlights">HIGHLIGHTS</div>
+                  <div class="text-wrapper-14">Projects</div>
+                  <img class="view-futuristic"
+                    src="https://c.animaapp.com/cxEW9Bi2/img/view-futuristic-lighting-lamp-design--2--2-1.png" />
+                  <div class="rectangle-4"></div>
+                  <p class="RARE-BY-DESIGN-ONLY">RARE BY DESIGN:<br />ONLY TWO PRIVILEGED HOMES ON EVERY LEVEL</p>
+                  <div class="frame-32">
+                    <img class="frame-5" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36120-4.svg" />
+                    <div class="text-wrapper-4">1</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <img class="rectangle-5" src="https://c.animaapp.com/cxEW9Bi2/img/rectangle-10-1.png" />
+          </div>
+          <div class="overlap-group-wrapper">
+            <div class="overlap-11">
+              <p class="text-wrapper-12">
+                Luxury redefined through comfort, crafted design, and timeless architectural grace.
+              </p>
+              <img class="frame-31" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36124-3.svg" />
+              <div class="overlap-12">
+                <p class="text-wrapper-13">
+                  Rustomjee introduces majestic entrance areas across two levels, with lofty ceilings, elegant
+                  stairwells, and luxury lounges. Together, they shape an environment of exclusivity, refinement, and
+                  comfort, setting a new standard for contemporary urban living
+                </p>
+                <img class="rectangle-6" src="https://c.animaapp.com/cxEW9Bi2/img/rectangle-6@2x.png" />
+                <img class="rectangle-7" src="https://c.animaapp.com/cxEW9Bi2/img/rectangle-7@2x.png" />
+                <img class="rectangle-8" src="https://c.animaapp.com/cxEW9Bi2/img/rectangle-8@2x.png" />
+                <div class="highlights">HIGHLIGHTS</div>
+                <div class="text-wrapper-14">Projects</div>
+                <img class="view-futuristic"
+                  src="https://c.animaapp.com/cxEW9Bi2/img/view-futuristic-lighting-lamp-design--2--2-1.png" />
+                <div class="frame-33">
+                  <img class="union-2" src="https://c.animaapp.com/cxEW9Bi2/img/union-25.svg" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="text-wrapper-15">What Makes Rustomjee Cliff Tower One of a Kind</p>
+        <img class="frame-34" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36124-4.svg" />
+        <p class="text-wrapper-16">
+          Rustomjee Cliff Tower is one-of-a-kind, blending bold architecture, refined finishes, panoramic sea views,
+          and world-class amenities. Every detail is designed to offer residents an exclusive lifestyle defined by
+          sophistication, comfort, and modern elegance.
+        </p>
+        <div class="one-address">ONE ADDRESS</div>
+        <div class="text-wrapper-17">Legacy. Location. Stature</div>
+        <img class="projects-highlights-5" src="https://c.animaapp.com/cxEW9Bi2/img/projects-highlights-banner.png" />
+        <div class="architech-slider">
+          <div class="overlap-13">
+            <div class="rectangle-9"></div>
+            <img class="rectangle-10" src="https://c.animaapp.com/cxEW9Bi2/img/rectangle-5.png" />
+            <div class="frame-35">
+              <img class="frame-5" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36120-4.svg" />
+              <div class="text-wrapper-4">1</div>
+            </div>
+            <div class="group-3">
+              <div class="overlap-group-5">
+                <img class="quotation-mark" src="https://c.animaapp.com/cxEW9Bi2/img/quotation-mark-1.svg" />
+                <p class="sanjay-puri-is-one">
+                  SANJAY PURI IS ONE OF INDIA’S MOST INTERNATIONALLY AWARDED ARCHITECTS, WITH OVER 360 ACCOLADES
+                  ACROSS GLOBAL PLATFORMS INCLUDING THE WORLD ARCHITECTURE FESTIVAL, LEAF (UK), AND ARCHITIZER A+
+                  AWARDS. RENOWNED FOR BOLD GEOMETRIES AND CLIMATIC RESPONSIVENESS, HIS WORK SEAMLESSLY BLENDS
+                  SCULPTURAL FORM WITH GROUNDED FUNCTIONALITY.
+                </p>
+              </div>
+            </div>
+            <img class="frame-36" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36122.svg" />
+            <img class="frame-37" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36123.svg" />
+            <img class="world-architecture"
+              src="https://c.animaapp.com/cxEW9Bi2/img/world-architecture-festival-idrfoc2hie-1-1@2x.png" />
+          </div>
+          <div class="simple-shapes-future">SIMPLE SHAPES, FUTURE-READY FINISHES</div>
+          <div class="frame-38"><img class="union-3" src="https://c.animaapp.com/cxEW9Bi2/img/union-21.svg" /></div>
+          <p class="text-wrapper-18">
+            Rustomjee towers feature sleek façades, refined masonry, French balconies, and open terraces—each distinct
+            yet unified under a bold design language redefining modern living.
+          </p>
+          <img class="yellow-sephere" src="https://c.animaapp.com/cxEW9Bi2/img/yellow-sephere-1@2x.png" />
+        </div>
+        <div class="architech-details">
+          <div class="overlap-14">
+            <div class="overlap-15">
+              <div class="overlap-16">
+                <img class="rectangle-11" src="https://c.animaapp.com/cxEW9Bi2/img/rectangle-3.png" />
+                <div class="frame-39">
+                  <img class="union-2" src="https://c.animaapp.com/cxEW9Bi2/img/union-25.svg" />
+                </div>
+                <div class="architect">ARCHITECT</div>
+                <img class="yellow-sephere-2" src="https://c.animaapp.com/cxEW9Bi2/img/yellow-sephere-1@2x.png" />
+                <img class="yellow-sephere-3" src="https://c.animaapp.com/cxEW9Bi2/img/yellow-sephere-2@2x.png" />
+              </div>
+              <div class="simple-shapes-future-2">SIMPLE SHAPES, FUTURE-READY FINISHES</div>
+              <img class="ellipse" src="https://c.animaapp.com/cxEW9Bi2/img/ellipse-1@2x.png" />
+              <p class="text-wrapper-19">
+                Rustomjee towers feature sleek façades, refined masonry, French balconies, and open terraces—each
+                distinct yet unified under a bold design language redefining modern living.
+              </p>
+            </div>
+            <div class="frame-40"><img class="union-3" src="https://c.animaapp.com/cxEW9Bi2/img/union-21.svg" /></div>
+          </div>
+        </div>
+        <img class="architech-banner" src="https://c.animaapp.com/cxEW9Bi2/img/architech-banner.png" />
+        <div class="banner">
+          <div class="overlap-17">
+            <div class="banner-container">
+              <div class="banner-version">
+                <p class="text-wrapper-20">
+                  Rustomjee Cliff Tower at Pali Hill, Bandra, offers serene luxury living with lush greenery, sea views,
+                  world-class amenities, and a perfect blend of elegance and comfort.
+                </p>
+                <img class="left-image" src="https://c.animaapp.com/cxEW9Bi2/img/left.png" alt="Left image" />
+              </div>
+
+              <div class="banner-version-2">
+                <img class="subtract-img" src="assets/images/banner/subtract.svg" alt="">
+                <img class="frame-41" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36115-2.svg" />
+                <div class="text-wrapper-21">LIVE HERE</div>
+              </div>
+            </div>
+            <div class="mount-mary">MOUNT MARY</div>
+          </div>
+          <img class="line" src="https://c.animaapp.com/cxEW9Bi2/img/line-1.svg" />
+        </div>
+      
+        <header class="header">
+          <img class="line-2" src="https://c.animaapp.com/cxEW9Bi2/img/line-1.svg" />
+          <div class="content">
+            <img class="cab-button" src="https://c.animaapp.com/cxEW9Bi2/img/cab-button.svg" />
+            <img class="rustomjeeclifftower" src="https://c.animaapp.com/cxEW9Bi2/img/rustomjeeclifftower-1.svg" />
+            <div class="frame-42">
+              <div class="button-version">
+                <div class="div-wrapper">
+                  <div class="text-wrapper-7">Request a call-back</div>
+                </div>
+                <img class="frame-26" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36115-3.svg" />
+              </div>
+              <div class="cab-button-2">
+                <img class="union-4" src="https://c.animaapp.com/cxEW9Bi2/img/union-23.svg" />
+              </div>
+            </div>
+          </div>
+        </header>
+        <div class="location-highlishgt">
+          <div class="overlap-18">
+            <div class="rectangle-12"></div>
+            <div class="location-3">LOCATION</div>
+            <div class="text-wrapper-22">Highlights</div>
+            <img class="rectangle-13" src="https://c.animaapp.com/cxEW9Bi2/img/rectangle-11.png" />
+            <div class="rectangle-14"></div>
+            <img class="union-5" src="https://c.animaapp.com/cxEW9Bi2/img/union-24.svg" />
+            <div class="text-wrapper-22">Highlights</div>
+            <img class="frame-43" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36120-4.svg" />
+            <div class="text-wrapper-23">8.7</div>
+            <div class="km">KM</div>
+            <div class="domestic-airport">DOMESTIC AIRPORT</div>
+          </div>
+        </div>
+        <img class="ellipse-2" src="https://c.animaapp.com/cxEW9Bi2/img/ellipse-2.png" />
+        <div class="frame-44"><img class="union-2" src="https://c.animaapp.com/cxEW9Bi2/img/union-25.svg" /></div>
+        <div class="group-4">
+          <div class="frame-45">
+            <div class="frame-46">
+              <div class="text-wrapper-24">Privacy Policy</div>
+              <img class="line-3" src="https://c.animaapp.com/cxEW9Bi2/img/line-7.svg" />
+              <div class="text-wrapper-24">Terms &amp; Conditions</div>
+            </div>
+            <p class="text-wrapper-25">
+              Disclaimer :The content is for information purposes only and does not constitute an offer to avail of
+              any service. Prices mentioned are subject to change without notice and properties mentioned are subject
+              to availability. Images for representation purpose only. This is not the official website. Website
+              maintained by our online marketing agency pact partners. We may share data with rera registered
+              brokers/companies for further processing. We may also send updates to the mobile number/email id
+              registered with us. You may unsubscribe anytime by writing to us at unsubscribe@homesfy.in All Rights
+              Reserved.
+            </p>
+          </div>
+          <img class="mob-logo" src="https://c.animaapp.com/cxEW9Bi2/img/mob-logo-3.svg" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    
+  </script>
+</body>
+
+</html>

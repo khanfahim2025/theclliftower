@@ -1,0 +1,2191 @@
+.version {
+  background-color: #06162e;
+  display: grid;
+  justify-items: center;
+  align-items: start;
+  width: 100vw;
+  /* Removed fixed width and replaced with 100vw to ensure it takes the full viewport width */
+}
+
+.version .overlap-wrapper {
+  background-color: #06162e;
+  overflow: hidden;
+  width: 100%;
+  height: auto; /* Change this from a fixed pixel value to 'auto' */
+}
+.version .overlap {
+  position: relative;
+  width: 100%;
+  /* Change the height from 14450px to a value that accommodates all content. */
+  /* Based on the top value of .group-4, 11600px is a good guess. */
+  height: 11600px;
+  left: 0;
+}
+
+.version .body {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0; /* Removed the fixed left position */
+  width: 100%;
+}
+
+.version .mask {
+  position: relative;
+  width: 100%; /* Changed to 100% to make it responsive */
+  height: 1445px;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.version .img {
+  height: 38px;
+  position: relative;
+  width: 100%; /* Changed to 100% */
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.version .mask-2 {
+  height: 1445px;
+  margin-bottom: -2911.00px;
+  margin-right: -4484.00px;
+  position: relative;
+  width: 100%; /* Changed to 100% */
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.version .location {
+  position: absolute;
+  width: 90%; /* Changed to a percentage for fluid width */
+  height: 716px;
+  top: 9048px;
+  left: 5%; /* Used a percentage-based left position for centering */
+}
+
+.version .frame {
+  display: flex;
+  flex-direction: column;
+  width: 453px; /* Kept fixed, consider using percentage if needed */
+  align-items: flex-start;
+  gap: 56px;
+  position: absolute;
+  top: 137px;
+  left: 0;
+}
+
+.version .text-wrapper {
+  position: relative;
+  align-self: stretch;
+  margin-top: -1.00px;
+  opacity: 0.64;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: var(--variable-collection-neutral-white);
+  font-size: 32px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.version .frame-2 {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.version .div {
+  position: relative;
+  align-self: stretch;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: var(--variable-collection-neutral-white);
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.version .overlap-group {
+  position: absolute;
+  width: 849px; /* Kept fixed, consider using percentage if needed */
+  height: 716px;
+  top: 0;
+  left: 485px; /* Kept fixed, consider using percentage if needed */
+}
+
+.version .location-2 {
+  top: 269px;
+  left: 456px;
+  position: absolute;
+  height: 124px;
+  transform: rotate(-90.00deg);
+  text-shadow: 0px 4px 4px #00000040;
+  font-family: "ITC Avant Garde Gothic-Medium", Helvetica;
+  font-weight: 500;
+  color: var(--variable-collection-neutral-white);
+  font-size: 100px;
+  letter-spacing: 24.00px;
+  line-height: normal;
+}
+
+.version .rectangle {
+  position: absolute;
+  width: 605px;
+  height: 659px;
+  top: 2px;
+  left: 44px;
+}
+
+.version .close-up-angel {
+  position: absolute;
+  width: 161px;
+  height: 320px;
+  top: 362px;
+  left: 528px;
+  aspect-ratio: 0.5;
+  object-fit: cover;
+}
+
+.version .cupid-angel-isolated {
+  position: absolute;
+  width: 176px;
+  height: 250px;
+  top: 108px;
+  left: 0;
+  aspect-ratio: 0.7;
+  object-fit: cover;
+}
+
+.version .little-fairy-statue {
+  position: absolute;
+  width: 163px;
+  height: 261px;
+  top: 455px;
+  left: 29px;
+  aspect-ratio: 0.63;
+  object-fit: cover;
+}
+
+.version .gallery {
+  position: absolute;
+  width: 90%; /* Changed to a percentage for fluid width */
+  height: 1398px;
+  top: 6767px;
+  left: 5%; /* Used a percentage-based left position for centering */
+}
+
+.version .overlap-2 {
+  position: absolute;
+  width: 100%; /* Changed to 100% to fill the parent container */
+  height: 586px;
+  top: 812px;
+  left: 0; /* Removed the fixed left position */
+}
+
+.version .rectangle-2 {
+  position: absolute;
+  width: 756px;
+  height: 520px;
+  top: 7px;
+  left: 100px;
+  object-fit: cover;
+}
+
+.version .projects-highlights {
+  position: absolute;
+  width: 583px;
+  height: 555px;
+  top: 0;
+  left: 786px;
+}
+
+.version .p {
+  position: absolute;
+  width: 449px;
+  height: 117px;
+  top: 0;
+  left: 126px;
+  opacity: 0.64;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: var(--variable-collection-neutral-white);
+  font-size: 32px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.version .frame-3 {
+  position: absolute;
+  width: 428px;
+  height: 64px;
+  top: 149px;
+  left: 126px;
+}
+
+.version .text-wrapper-2 {
+  position: absolute;
+  width: 340px;
+  height: 133px;
+  top: 213px;
+  left: 126px;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: var(--variable-collection-neutral-white);
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.version .overlap-group-2 {
+  position: absolute;
+  width: 557px;
+  height: 167px;
+  top: 388px;
+  left: 0;
+}
+
+.version .gallery-2 {
+  position: absolute;
+  height: 124px;
+  top: 43px;
+  left: 0;
+  text-shadow: 0px 4px 4px #00000040;
+  font-family: "ITC Avant Garde Gothic-Medium", Helvetica;
+  font-weight: 500;
+  color: var(--variable-collection-neutral-white);
+  font-size: 100px;
+  letter-spacing: 24.00px;
+  line-height: normal;
+}
+
+.version .text-wrapper-3 {
+  position: absolute;
+  height: 58px;
+  top: 0;
+  left: 325px;
+  text-shadow: 0px 4px 4px #00000040;
+  opacity: 0.64;
+  font-family: "Inter", Helvetica;
+  font-weight: 500;
+  color: var(--variable-collection-neutral-white);
+  font-size: 48px;
+  text-align: right;
+  letter-spacing: 11.52px;
+  line-height: normal;
+}
+
+.version .deco-xxxl {
+  position: absolute;
+  width: 181px;
+  height: 200px;
+  top: 85px;
+  left: 0;
+  aspect-ratio: 1.03;
+  object-fit: cover;
+}
+
+.version .deco-xxxl-2 {
+  position: absolute;
+  width: 154px;
+  height: 167px;
+  top: 284px;
+  left: 794px;
+  aspect-ratio: 0.9;
+  object-fit: cover;
+}
+
+.version .frame-4 {
+  display: inline-flex;
+  align-items: center;
+  gap: 88px;
+  padding: 0px 0px 0px 32px;
+  position: absolute;
+  top: 382px;
+  left: 100px;
+}
+
+.version .frame-5 {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.version .text-wrapper-4 {
+  position: relative;
+  width: 90px;
+  height: 204px;
+  margin-top: -1.00px;
+  font-family: "ITC Avant Garde Gothic-CEDemi", Helvetica;
+  font-weight: 400;
+  color: var(--variable-collection-rustomjee-bodycolor);
+  font-size: 160px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.version .projects-highlights-2 {
+  width: 100%; /* Changed to 100% to take full width */
+  height: 720px;
+  left: 0; /* Removed fixed left */
+  position: absolute;
+  top: 0;
+}
+
+.version .projects-highlights-3 {
+  position: absolute;
+  width: 100%; /* Changed to 100% to take full width */
+  height: 720px;
+  top: 8255px;
+  left: 0; /* Removed fixed left */
+}
+
+.version .floor-plan {
+  position: absolute;
+  width: 90%; /* Changed to a percentage for fluid width */
+  height: 1591px;
+  top: 5147px;
+  left: 5%; /* Used a percentage-based left position for centering */
+}
+
+.version .overlap-3 {
+  position: absolute;
+  width: 100%; /* Changed to 100% to fill the parent container */
+  height: 720px;
+  top: 0;
+  left: 0;
+  background-image: url(https://c.animaapp.com/cxEW9Bi2/img/projects-highlights-2.png);
+  background-size: 100% 100%;
+}
+
+.version .union-wrapper {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 3px;
+  position: absolute;
+  top: 56px;
+  left: 844px;
+  border-radius: 50px;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(153, 107, 85, 1) 3%,
+    rgba(229, 171, 142, 1) 35%,
+    rgba(229, 171, 142, 1) 48%,
+    rgba(153, 107, 85, 1) 93%
+  );
+}
+
+.version .union {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  aspect-ratio: 1;
+}
+
+.version .img-wrapper {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 3px;
+  position: absolute;
+  top: 68px;
+  left: 888px;
+  border-radius: 50px;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(153, 107, 85, 1) 3%,
+    rgba(229, 171, 142, 1) 35%,
+    rgba(229, 171, 142, 1) 48%,
+    rgba(153, 107, 85, 1) 93%
+  );
+}
+
+.version .frame-6 {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 3px;
+  position: absolute;
+  top: 68px;
+  left: 810px;
+  border-radius: 50px;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(153, 107, 85, 1) 3%,
+    rgba(229, 171, 142, 1) 35%,
+    rgba(229, 171, 142, 1) 48%,
+    rgba(153, 107, 85, 1) 93%
+  );
+}
+
+.version .frame-7 {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 3px;
+  position: absolute;
+  top: 108px;
+  left: 804px;
+  border-radius: 50px;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(153, 107, 85, 1) 3%,
+    rgba(229, 171, 142, 1) 35%,
+    rgba(229, 171, 142, 1) 48%,
+    rgba(153, 107, 85, 1) 93%
+  );
+}
+
+.version .frame-8 {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 3px;
+  position: absolute;
+  top: 112px;
+  left: 749px;
+  border-radius: 50px;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(153, 107, 85, 1) 3%,
+    rgba(229, 171, 142, 1) 35%,
+    rgba(229, 171, 142, 1) 48%,
+    rgba(153, 107, 85, 1) 93%
+  );
+}
+
+.version .frame-9 {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 3px;
+  position: absolute;
+  top: 237px;
+  left: 925px;
+  border-radius: 50px;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(153, 107, 85, 1) 3%,
+    rgba(229, 171, 142, 1) 35%,
+    rgba(229, 171, 142, 1) 48%,
+    rgba(153, 107, 85, 1) 93%
+  );
+}
+
+.version .frame-10 {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 3px;
+  position: absolute;
+  top: 309px;
+  left: 1032px;
+  border-radius: 50px;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(153, 107, 85, 1) 3%,
+    rgba(229, 171, 142, 1) 35%,
+    rgba(229, 171, 142, 1) 48%,
+    rgba(153, 107, 85, 1) 93%
+  );
+}
+
+.version .frame-11 {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 3px;
+  position: absolute;
+  top: 309px;
+  left: 659px;
+  border-radius: 50px;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(153, 107, 85, 1) 3%,
+    rgba(229, 171, 142, 1) 35%,
+    rgba(229, 171, 142, 1) 48%,
+    rgba(153, 107, 85, 1) 93%
+  );
+}
+
+.version .frame-12 {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 3px;
+  position: absolute;
+  top: 362px;
+  left: 1000px;
+  border-radius: 50px;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(153, 107, 85, 1) 3%,
+    rgba(229, 171, 142, 1) 35%,
+    rgba(229, 171, 142, 1) 48%,
+    rgba(153, 107, 85, 1) 93%
+  );
+}
+
+.version .frame-13 {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 3px;
+  position: absolute;
+  top: 388px;
+  left: 963px;
+  border-radius: 50px;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(153, 107, 85, 1) 3%,
+    rgba(229, 171, 142, 1) 35%,
+    rgba(229, 171, 142, 1) 48%,
+    rgba(153, 107, 85, 1) 93%
+  );
+}
+
+.version .frame-14 {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 3px;
+  position: absolute;
+  top: 410px;
+  left: 869px;
+  border-radius: 50px;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(153, 107, 85, 1) 3%,
+    rgba(229, 171, 142, 1) 35%,
+    rgba(229, 171, 142, 1) 48%,
+    rgba(153, 107, 85, 1) 93%
+  );
+}
+
+.version .frame-15 {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 3px;
+  position: absolute;
+  top: 457px;
+  left: 907px;
+  border-radius: 50px;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(153, 107, 85, 1) 3%,
+    rgba(229, 171, 142, 1) 35%,
+    rgba(229, 171, 142, 1) 48%,
+    rgba(153, 107, 85, 1) 93%
+  );
+}
+
+.version .frame-16 {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 3px;
+  position: absolute;
+  top: 609px;
+  left: 821px;
+  border-radius: 50px;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(153, 107, 85, 1) 3%,
+    rgba(229, 171, 142, 1) 35%,
+    rgba(229, 171, 142, 1) 48%,
+    rgba(153, 107, 85, 1) 93%
+  );
+}
+
+.version .frame-17 {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 3px;
+  position: absolute;
+  top: 637px;
+  left: 995px;
+  border-radius: 50px;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(153, 107, 85, 1) 3%,
+    rgba(229, 171, 142, 1) 35%,
+    rgba(229, 171, 142, 1) 48%,
+    rgba(153, 107, 85, 1) 93%
+  );
+}
+
+.version .frame-18 {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 3px;
+  position: absolute;
+  top: 596px;
+  left: 717px;
+  border-radius: 50px;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(153, 107, 85, 1) 3%,
+    rgba(229, 171, 142, 1) 35%,
+    rgba(229, 171, 142, 1) 48%,
+    rgba(153, 107, 85, 1) 93%
+  );
+}
+
+.version .frame-19 {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 3px;
+  position: absolute;
+  top: 544px;
+  left: 687px;
+  border-radius: 50px;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(153, 107, 85, 1) 3%,
+    rgba(229, 171, 142, 1) 35%,
+    rgba(229, 171, 142, 1) 48%,
+    rgba(153, 107, 85, 1) 93%
+  );
+}
+
+.version .frame-20 {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 3px;
+  position: absolute;
+  top: 520px;
+  left: 523px;
+  border-radius: 50px;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(153, 107, 85, 1) 3%,
+    rgba(229, 171, 142, 1) 35%,
+    rgba(229, 171, 142, 1) 48%,
+    rgba(153, 107, 85, 1) 93%
+  );
+}
+
+.version .frame-21 {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 3px;
+  position: absolute;
+  top: 590px;
+  left: 439px;
+  border-radius: 50px;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(153, 107, 85, 1) 3%,
+    rgba(229, 171, 142, 1) 35%,
+    rgba(229, 171, 142, 1) 48%,
+    rgba(153, 107, 85, 1) 93%
+  );
+}
+
+.version .frame-22 {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 3px;
+  position: absolute;
+  top: 306px;
+  left: 594px;
+  border-radius: 50px;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(153, 107, 85, 1) 3%,
+    rgba(229, 171, 142, 1) 35%,
+    rgba(229, 171, 142, 1) 48%,
+    rgba(153, 107, 85, 1) 93%
+  );
+}
+
+.version .overlap-4 {
+  position: absolute;
+  width: 317px;
+  height: 166px;
+  top: 75px;
+  left: 96px;
+}
+
+.version .text-wrapper-5 {
+  position: absolute;
+  width: 315px;
+  height: 58px;
+  top: 0;
+  left: 2px;
+  text-shadow: 0px 4px 4px #00000040;
+  opacity: 0.64;
+  font-family: "Inter", Helvetica;
+  font-weight: 500;
+  color: var(--variable-collection-rustomjee-bodycolor);
+  font-size: 48px;
+  letter-spacing: 11.52px;
+  line-height: normal;
+}
+
+.version .plan {
+  position: absolute;
+  width: 315px;
+  height: 124px;
+  top: 42px;
+  left: 0;
+  text-shadow: 0px 4px 4px #00000040;
+  font-family: "ITC Avant Garde Gothic-Medium", Helvetica;
+  font-weight: 500;
+  color: #06162e;
+  font-size: 100px;
+  letter-spacing: 24.00px;
+  line-height: normal;
+}
+
+.version .group {
+  position: absolute;
+  width: 407px;
+  height: 720px;
+  top: 810px;
+  left: 935px;
+}
+
+.version .overlap-group-3 {
+  position: relative;
+  width: 405px;
+  height: 720px;
+  background-image: url(https://c.animaapp.com/cxEW9Bi2/img/1726674932-56430171-1.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.version .frame-23 {
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  top: 443px;
+  left: 301px;
+  aspect-ratio: 1;
+}
+
+.version .text-wrapper-6 {
+  position: absolute;
+  width: 341px;
+  height: 192px;
+  top: 219px;
+  left: 32px;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: 32px;
+}
+
+.version .overlap-5 {
+  position: absolute;
+  width: 835px;
+  height: 781px;
+  top: 810px;
+  left: 100px;
+}
+
+.version .rectangle-3 {
+  position: absolute;
+  width: 835px;
+  height: 720px;
+  top: 0;
+  left: 0;
+  background-color: #faeee8;
+}
+
+.version .frame-24 {
+  display: flex;
+  width: 357px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 0px 0px 32px;
+  position: absolute;
+  top: 577px;
+  left: 0;
+}
+
+.version .frame-25 {
+  display: flex;
+  flex-direction: column;
+  width: 374px;
+  align-items: center;
+  gap: 32px;
+  position: absolute;
+  top: 174px;
+  left: 428px;
+}
+
+.version .image {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  aspect-ratio: 1.25;
+  object-fit: cover;
+}
+
+.version .button-version {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.version .div-wrapper {
+  display: inline-flex;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px 48px;
+  position: relative;
+  flex: 0 0 auto;
+  border-radius: 50px;
+  background: linear-gradient(
+    90deg,
+    rgba(153, 107, 85, 1) 3%,
+    rgba(229, 171, 142, 1) 35%,
+    rgba(229, 171, 142, 1) 48%,
+    rgba(153, 107, 85, 1) 93%
+  );
+}
+
+.version .text-wrapper-7 {
+  position: relative;
+  width: fit-content;
+  font-family: "Inter", Helvetica;
+  font-weight: 500;
+  color: var(--variable-collection-rustomjee-bodycolor);
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.version .frame-26 {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin-left: -40px;
+}
+
+.version .unit-plan {
+  position: absolute;
+  width: 129px;
+  height: 120px;
+  top: 35px;
+  left: 32px;
+  aspect-ratio: 1.08;
+  object-fit: cover;
+}
+
+.version .compass {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 35px;
+  left: 177px;
+  aspect-ratio: 1;
+}
+
+.version .group-2 {
+  position: absolute;
+  width: 374px;
+  height: 144px;
+  top: 238px;
+  left: 32px;
+}
+
+.version .frame-wrapper {
+  position: absolute;
+  width: 170px;
+  height: 72px;
+  top: 0;
+  left: 0;
+  background-color: #faeee8;
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-color: var(--variable-collection-rustomjee-bodycolor);
+}
+
+.version .frame-27 {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  top: 11px;
+  left: 1px;
+}
+
+.version .img-2 {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  aspect-ratio: 1;
+}
+
+.version .frame-28 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.version .text-wrapper-8 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Inter", Helvetica;
+  font-weight: 600;
+  color: var(--variable-collection-netural-black);
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.version .div-2 {
+  position: relative;
+  width: fit-content;
+  margin-top: -2px;
+  opacity: 0.56;
+  font-family: "Inter", Helvetica;
+  font-weight: 300;
+  color: var(--variable-collection-netural-black);
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.version .overlap-6 {
+  position: absolute;
+  width: 170px;
+  height: 72px;
+  top: 72px;
+  left: 0;
+  background-color: #faeee8;
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-color: var(--variable-collection-rustomjee-bodycolor);
+}
+
+.version .span {
+  font-family: "Inter", Helvetica;
+  font-weight: 300;
+  color: #151e2d;
+  font-size: 14px;
+  letter-spacing: 0;
+}
+
+.version .text-wrapper-9 {
+  font-size: 10px;
+}
+
+.version .overlap-7 {
+  position: absolute;
+  width: 204px;
+  height: 72px;
+  top: 0;
+  left: 170px;
+  background-color: #faeee8;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-color: #000000;
+}
+
+.version .frame-29 {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  top: 11px;
+  left: 15px;
+}
+
+.version .overlap-8 {
+  position: absolute;
+  width: 204px;
+  height: 72px;
+  top: 72px;
+  left: 170px;
+  background-color: #faeee8;
+}
+
+.version .frame-30 {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  top: 12px;
+  left: 16px;
+}
+
+.version .text-wrapper-10 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Inter", Helvetica;
+  font-weight: 600;
+  color: var(--variable-collection-rustomjee-rose-gold);
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  text-decoration: underline;
+  white-space: nowrap;
+}
+
+.version .text-wrapper-11 {
+  position: relative;
+  width: fit-content;
+  opacity: 0.56;
+  font-family: "Inter", Helvetica;
+  font-weight: 300;
+  color: var(--variable-collection-netural-black);
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.version .projects-highlights-4 {
+  position: absolute;
+  width: 90%; /* Changed to a percentage for fluid width */
+  height: 1261px;
+  top: 3797px;
+  left: 5%; /* Used a percentage-based left position for centering */
+}
+
+.version .overlap-9 {
+  position: absolute;
+  width: 100%; /* Changed to 100% to fill the parent container */
+  height: 616px;
+  top: 645px;
+  left: 0;
+}
+
+.version .projects-sliders {
+  width: 100%; /* Changed to 100% to fill the parent container */
+  height: 616px;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.version .overlap-10 {
+  position: relative;
+  width: 100%; /* Changed to 100% to fill the parent container */
+  height: 616px;
+}
+
+.version .text-wrapper-12 {
+  position: absolute;
+  width: 449px;
+  height: 117px;
+  top: 0;
+  left: 4px;
+  opacity: 0.64;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: var(--variable-collection-neutral-white);
+  font-size: 32px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.version .frame-31 {
+  position: absolute;
+  width: 428px;
+  height: 64px;
+  top: 149px;
+  left: 4px;
+}
+
+.version .overlap-group-4 {
+  position: absolute;
+  width: 100%; /* Changed to 100% to fill the parent container */
+  height: 616px;
+  top: 0;
+  left: 0;
+}
+
+.version .text-wrapper-13 {
+  position: absolute;
+  width: 340px;
+  height: 133px;
+  top: 213px;
+  left: 4px;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: var(--variable-collection-neutral-white);
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.version .highlights {
+  position: absolute;
+  height: 124px;
+  top: 431px;
+  left: 0;
+  text-shadow: 0px 4px 4px #00000040;
+  font-family: "ITC Avant Garde Gothic-Medium", Helvetica;
+  font-weight: 500;
+  color: var(--variable-collection-neutral-white);
+  font-size: 100px;
+  letter-spacing: 24.00px;
+  line-height: normal;
+}
+
+.version .text-wrapper-14 {
+  position: absolute;
+  height: 58px;
+  top: 388px;
+  left: 4px;
+  text-shadow: 0px 4px 4px #00000040;
+  opacity: 0.64;
+  font-family: "Inter", Helvetica;
+  font-weight: 500;
+  color: var(--variable-collection-neutral-white);
+  font-size: 48px;
+  letter-spacing: 11.52px;
+  line-height: normal;
+}
+
+.version .view-futuristic {
+  position: absolute;
+  width: 784px;
+  height: 220px;
+  top: 266px;
+  left: 195px;
+  aspect-ratio: 3.56;
+  object-fit: cover;
+}
+
+.version .rectangle-4 {
+  position: absolute;
+  width: 757px;
+  height: 555px;
+  top: 0;
+  left: 487px;
+  background-color: #a2735b;
+}
+
+.version .RARE-BY-DESIGN-ONLY {
+  position: absolute;
+  width: 295px;
+  height: 160px;
+  top: 153px;
+  left: 526px;
+  font-family: "Inter", Helvetica;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 27px;
+  letter-spacing: 1.62px;
+  line-height: 40px;
+}
+
+.version .frame-32 {
+  top: 412px;
+  left: 487px;
+  display: flex;
+  width: 357px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 0px 0px 32px;
+  position: absolute;
+}
+
+.version .rectangle-5 {
+  position: absolute;
+  width: 393px;
+  height: 559px;
+  top: 0;
+  left: 851px;
+  object-fit: cover;
+}
+
+.version .overlap-group-wrapper {
+  position: absolute;
+  width: 100%; /* Changed to 100% to fill the parent container */
+  height: 555px;
+  top: 0;
+  left: 0;
+}
+
+.version .overlap-11 {
+  position: relative;
+  width: 100%; /* Changed to 100% to fill the parent container */
+  height: 555px;
+}
+
+.version .overlap-12 {
+  position: absolute;
+  width: 100%; /* Changed to 100% to fill the parent container */
+  height: 555px;
+  top: 0;
+  left: 0;
+}
+
+.version .rectangle-6 {
+  position: absolute;
+  width: 393px;
+  height: 280px;
+  top: 0;
+  left: 533px;
+  object-fit: cover;
+}
+
+.version .rectangle-7 {
+  position: absolute;
+  width: 393px;
+  height: 280px;
+  top: 109px;
+  left: 700px;
+  object-fit: cover;
+}
+
+.version .rectangle-8 {
+  position: absolute;
+  width: 393px;
+  height: 280px;
+  top: 247px;
+  left: 851px;
+  object-fit: cover;
+}
+
+.version .frame-33 {
+  top: 85px;
+  left: 599px;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 3px;
+  position: absolute;
+  border-radius: 50px;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(153, 107, 85, 1) 3%,
+    rgba(229, 171, 142, 1) 35%,
+    rgba(229, 171, 142, 1) 48%,
+    rgba(153, 107, 85, 1) 93%
+  );
+}
+
+.version .union-2 {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  aspect-ratio: 1;
+}
+
+.version .text-wrapper-15 {
+  position: absolute;
+  width: 449px;
+  height: 78px;
+  top: 10682px;
+  left: 125px;
+  opacity: 0.64;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: var(--variable-collection-neutral-white);
+  font-size: 32px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.version .frame-34 {
+  position: absolute;
+  width: 428px;
+  height: 64px;
+  top: 10813px;
+  left: 125px;
+}
+
+.version .text-wrapper-16 {
+  position: absolute;
+  width: 340px;
+  height: 133px;
+  top: 10876px;
+  left: 125px;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: var(--variable-collection-neutral-white);
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.version .one-address {
+  position: absolute;
+  height: 124px;
+  top: 11094px;
+  left: 121px;
+  text-shadow: 0px 4px 4px #00000040;
+  font-family: "ITC Avant Garde Gothic-Medium", Helvetica;
+  font-weight: 500;
+  color: var(--variable-collection-neutral-white);
+  font-size: 100px;
+  letter-spacing: 16.00px;
+  line-height: normal;
+}
+
+.version .text-wrapper-17 {
+  position: absolute;
+  height: 39px;
+  top: 11061px;
+  left: 125px;
+  text-shadow: 0px 4px 4px #00000040;
+  opacity: 0.64;
+  font-family: "Inter", Helvetica;
+  font-weight: 500;
+  color: var(--variable-collection-neutral-white);
+  font-size: 32px;
+  letter-spacing: 7.68px;
+  line-height: normal;
+}
+
+.version .projects-highlights-5 {
+  position: absolute;
+  width: 100%; /* Changed to 100% to take full width */
+  height: 720px;
+  top: 2987px;
+  left: 0; /* Removed fixed left */
+}
+
+.version .architech-slider {
+  position: absolute;
+  width: 90%; /* Changed to a percentage for fluid width */
+  height: 776px;
+  top: 2211px;
+  left: 5%; /* Used a percentage-based left position for centering */
+}
+
+.version .overlap-13 {
+  position: absolute;
+  width: 860px;
+  height: 776px;
+  top: 0;
+  left: 0;
+}
+
+.version .rectangle-9 {
+  position: absolute;
+  width: 860px;
+  height: 718px;
+  top: 0;
+  left: 0;
+  background-color: var(--variable-collection-rustomjee-rose-gold);
+}
+
+.version .rectangle-10 {
+  position: absolute;
+  width: 357px;
+  height: 532px;
+  top: 0;
+  left: 1px;
+  object-fit: cover;
+}
+
+.version .frame-35 {
+  top: 572px;
+  left: 33px;
+  display: flex;
+  width: 357px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 0px 0px 32px;
+  position: absolute;
+}
+
+.version .group-3 {
+  position: absolute;
+  width: 409px;
+  height: 264px;
+  top: 87px;
+  left: 398px;
+}
+
+.version .overlap-group-5 {
+  position: relative;
+  width: 407px;
+  height: 264px;
+}
+
+.version .quotation-mark {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  top: 0;
+  left: 0;
+  aspect-ratio: 1;
+}
+
+.version .sanjay-puri-is-one {
+  position: absolute;
+  width: 407px;
+  height: 240px;
+  top: 24px;
+  left: 0;
+  font-family: "Inter", Helvetica;
+  font-weight: 600;
+  color: var(--variable-collection-rustomjee-bodycolor);
+  font-size: 16px;
+  letter-spacing: 0.96px;
+  line-height: 24px;
+}
+
+.version .frame-36 {
+  position: absolute;
+  width: 212px;
+  height: 80px;
+  top: 375px;
+  left: 398px;
+}
+
+.version .frame-37 {
+  position: absolute;
+  width: 211px;
+  height: 80px;
+  top: 375px;
+  left: 618px;
+}
+
+.version .world-architecture {
+  position: absolute;
+  width: 320px;
+  height: 32px;
+  top: 463px;
+  left: 398px;
+  aspect-ratio: 10;
+  object-fit: cover;
+}
+
+.version .simple-shapes-future {
+  position: absolute;
+  width: 401px;
+  height: 174px;
+  top: 75px;
+  left: 901px;
+  font-family: "Inter", Helvetica;
+  font-weight: 600;
+  color: var(--variable-collection-rustomjee-rose-gold);
+  font-size: 48px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.version .frame-38 {
+  display: flex;
+  width: 72px;
+  height: 72px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 3px;
+  position: absolute;
+  top: 479px;
+  left: 1229px;
+  border-radius: 50px;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(153, 107, 85, 1) 3%,
+    rgba(229, 171, 142, 1) 35%,
+    rgba(229, 171, 142, 1) 48%,
+    rgba(153, 107, 85, 1) 93%
+  );
+}
+
+.version .union-3 {
+  position: relative;
+  width: 34.5px;
+  height: 34.5px;
+}
+
+.version .text-wrapper-18 {
+  position: absolute;
+  width: 340px;
+  height: 120px;
+  top: 598px;
+  left: 901px;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+}
+
+.version .yellow-sephere {
+  width: 258px;
+  height: 260px;
+  top: 274px;
+  left: 889px;
+  position: absolute;
+  aspect-ratio: 0.99;
+  object-fit: cover;
+}
+
+.version .architech-details {
+  position: absolute;
+  width: 90%; /* Changed to a percentage for fluid width */
+  height: 718px;
+  top: 1440px;
+  left: 5%; /* Used a percentage-based left position for centering */
+}
+
+.version .overlap-14 {
+  position: relative;
+  width: 100%; /* Changed to 100% to fill the parent container */
+  height: 718px;
+}
+
+.version .overlap-15 {
+  position: absolute;
+  width: 100%; /* Changed to 100% to fill the parent container */
+  height: 718px;
+  top: 0;
+  left: 0;
+}
+
+.version .overlap-16 {
+  position: absolute;
+  width: 1145px; /* Kept fixed, consider using percentage if needed */
+  height: 718px;
+  top: 0;
+  left: 1px;
+}
+
+.version .rectangle-11 {
+  position: absolute;
+  width: 480px;
+  height: 718px;
+  top: 0;
+  left: 379px;
+}
+
+.version .frame-39 {
+  top: 157px;
+  left: 619px;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 3px;
+  position: absolute;
+  border-radius: 50px;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(153, 107, 85, 1) 3%,
+    rgba(229, 171, 142, 1) 35%,
+    rgba(229, 171, 142, 1) 48%,
+    rgba(153, 107, 85, 1) 93%
+  );
+}
+
+.version .architect {
+  position: absolute;
+  height: 173px;
+  top: 439px;
+  left: 0;
+  text-shadow: 0px 4px 4px #00000040;
+  font-family: "ITC Avant Garde Gothic-Medium", Helvetica;
+  font-weight: 500;
+  color: var(--variable-collection-neutral-white);
+  font-size: 140px;
+  letter-spacing: 33.60px;
+  line-height: normal;
+}
+
+.version .yellow-sephere-2 {
+  width: 258px;
+  height: 260px;
+  top: 242px;
+  left: 887px;
+  position: absolute;
+  aspect-ratio: 0.99;
+  object-fit: cover;
+}
+
+.version .yellow-sephere-3 {
+  width: 170px;
+  height: 171px;
+  top: 531px;
+  left: 244px;
+  position: absolute;
+  aspect-ratio: 0.99;
+  object-fit: cover;
+}
+
+.version .simple-shapes-future-2 {
+  position: absolute;
+  width: 401px;
+  height: 174px;
+  top: 43px;
+  left: 900px;
+  font-family: "Inter", Helvetica;
+  font-weight: 600;
+  color: var(--variable-collection-rustomjee-rose-gold);
+  font-size: 48px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.version .ellipse {
+  position: absolute;
+  width: 340px;
+  height: 271px;
+  top: 40px;
+  left: 0;
+}
+
+.version .text-wrapper-19 {
+  position: absolute;
+  width: 400px;
+  height: 96px;
+  top: 622px;
+  left: 900px;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 24px;
+}
+
+.version .frame-40 {
+  display: flex;
+  width: 72px;
+  height: 72px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 3px;
+  position: absolute;
+  top: 474px;
+  left: 1236px;
+  border-radius: 50px;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(153, 107, 85, 1) 3%,
+    rgba(229, 171, 142, 1) 35%,
+    rgba(229, 171, 142, 1) 48%,
+    rgba(153, 107, 85, 1) 93%
+  );
+}
+
+.version .architech-banner {
+  position: absolute;
+  width: 100%; /* Changed to 100% to take full width */
+  height: 720px;
+  top: 721px;
+  left: 0; /* Removed fixed left */
+}
+
+.version .banner {
+  position: absolute;
+  width: 100%; /* Changed to 100% to take full width */
+  height: 721px;
+  top: 0;
+  left: 0; /* Removed fixed left */
+}
+
+.version .overlap-17 {
+  position: absolute;
+  width: 100%; /* Changed to 100% to fill the parent container */
+  height: 720px;
+  top: 0;
+  left: 0;
+}
+
+.version .banner-version {
+  left: 0;
+  background-image: url(https://c.animaapp.com/cxEW9Bi2/img/left.png);
+  background-size: cover;
+  background-position: 50% 50%;
+  position: absolute;
+  width: 50%; /* Changed to 50% for responsive sizing */
+  height: 720px;
+  top: 0;
+}
+
+.version .text-wrapper-20 {
+  position: absolute;
+  width: 640px;
+  height: 84px;
+  top: 596px;
+  left: 40px;
+  text-shadow: 0px 4px 4px #0000007a;
+  font-family: "Inter", Helvetica;
+  font-weight: 600;
+  color: var(--variable-collection-neutral-white);
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: 28px;
+}
+
+.version .banner-version-2 {
+  left: 50%;
+   /* Changed to 50% to align correctly */
+  background-image: url('/assets/images/banner/banner2.png');
+  background-size: 100% 100%;
+  position: absolute;
+  width: auto; 
+  /* Changed to 50% for responsive sizing */
+  height: 720px;
+  top: 0;
+}
+/* .subtract-img:hover{
+    display: none;
+} */
+.version .frame-41 {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 626px;
+  left: 40px;
+}
+
+.version .text-wrapper-21 {
+  position: absolute;
+  width: 282px;
+  height: 68px;
+  top: 611px;
+  left: 398px;
+  font-family: "Inter", Helvetica;
+  font-weight: 600;
+  color: var(--variable-collection-neutral-white);
+  font-size: 56px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.version .mount-mary {
+  position: absolute;
+  height: 191px;
+  top: 264px;
+  left: 86px;
+  text-shadow: 0px 4px 4px #00000040;
+  font-family: "ITC Avant Garde Gothic-CEDemi", Helvetica;
+  font-weight: 400;
+  color: var(--variable-collection-neutral-white);
+  font-size: 150px;
+  letter-spacing: 30.00px;
+  line-height: normal;
+}
+
+.version .line {
+  position: absolute;
+  width: 100%; /* Changed to 100% to take full width */
+  height: 1px;
+  top: 720px;
+  left: 0;
+  object-fit: cover;
+}
+
+.version .header {
+  position: absolute;
+  width: 100%; /* Changed to 100% to take full width */
+  height: 90px;
+  top: 10px;
+  left: 0; /* Removed fixed left */
+  background-color: transparent;
+}
+
+.version .line-2 {
+  position: absolute;
+  width: 100%; /* Changed to 100% to take full width */
+  height: 1px;
+  top: 89px;
+  left: 0;
+  object-fit: cover;
+}
+
+.version .content {
+  position: absolute;
+  width: 90%; /* Changed to a percentage for fluid width */
+  height: 80px;
+  top: 0;
+  left: 5%; /* Used a percentage-based left position for centering */
+}
+
+.version .cab-button {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 20px;
+  left: 0;
+}
+
+.version .rustomjeeclifftower {
+  position: absolute;
+  width: 221px;
+  height: 82px;
+  top: 0;
+  left: 50%; /* Using 50% with transform to center */
+  transform: translateX(-50%);
+  aspect-ratio: 2.76;
+}
+
+.version .frame-42 {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  position: absolute;
+  top: 20px;
+  left: auto; /* Removed fixed left */
+  right: 0; /* Aligned to the right */
+}
+
+.version .cab-button-2 {
+  display: flex;
+  flex-direction: column;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 4px;
+  position: relative;
+  border-radius: 20px;
+  background: linear-gradient(
+    90deg,
+    rgba(153, 107, 85, 1) 3%,
+    rgba(229, 171, 142, 1) 35%,
+    rgba(229, 171, 142, 1) 48%,
+    rgba(153, 107, 85, 1) 93%
+  );
+}
+
+.version .union-4 {
+  position: relative;
+  width: 32px;
+  height: 12.8px;
+  aspect-ratio: 2.5;
+}
+
+.version .location-highlishgt {
+  position: absolute;
+  width: 100%; /* Changed to 100% to take full width */
+  height: 737px;
+  top: 9837px;
+  left: 0; /* Removed fixed left */
+}
+
+.version .overlap-18 {
+  position: relative;
+  width: 100%; /* Changed to 100% to take full width */
+  height: 737px;
+}
+
+.version .rectangle-12 {
+  position: absolute;
+  width: 100%; /* Changed to 100% to take full width */
+  height: 720px;
+  top: 0;
+  left: 0;
+  background-color: #121b2a;
+}
+
+.version .location-3 {
+  top: 298px;
+  left: 1041px;
+  position: absolute;
+  height: 124px;
+  transform: rotate(-90.00deg);
+  text-shadow: 0px 4px 4px #00000040;
+  font-family: "ITC Avant Garde Gothic-Medium", Helvetica;
+  font-weight: 500;
+  color: var(--variable-collection-neutral-white);
+  font-size: 100px;
+  letter-spacing: 24.00px;
+  line-height: normal;
+}
+
+.version .text-wrapper-22 {
+  position: absolute;
+  height: 58px;
+  top: 119px;
+  left: 132px;
+  text-shadow: 0px 4px 4px #00000040;
+  opacity: 0.64;
+  font-family: "Inter", Helvetica;
+  font-weight: 500;
+  color: var(--variable-collection-neutral-white);
+  font-size: 48px;
+  letter-spacing: 11.52px;
+  line-height: normal;
+}
+
+.version .rectangle-13 {
+  position: absolute;
+  width: 80%; /* Changed to a percentage for fluid width */
+  height: 659px;
+  top: 31px;
+  left: 10%; /* Used a percentage-based left position for centering */
+}
+
+.version .rectangle-14 {
+  position: absolute;
+  width: 605px;
+  height: 421px;
+  top: 258px;
+  left: 100px;
+  background: linear-gradient(
+    90deg,
+    rgba(153, 107, 85, 1) 3%,
+    rgba(229, 171, 142, 1) 35%,
+    rgba(229, 171, 142, 1) 48%,
+    rgba(153, 107, 85, 1) 93%
+  );
+}
+
+.version .union-5 {
+  position: absolute;
+  width: 250px;
+  height: 247px;
+  top: 207px;
+  left: 278px;
+  aspect-ratio: 1.01;
+}
+
+.version .frame-43 {
+  position: absolute;
+  width: 96px;
+  height: 40px;
+  top: 607px;
+  left: 577px;
+}
+
+.version .text-wrapper-23 {
+  position: absolute;
+  height: 204px;
+  top: 533px;
+  left: 132px;
+  font-family: "ITC Avant Garde Gothic-CEDemi", Helvetica;
+  font-weight: 400;
+  color: var(--variable-collection-rustomjee-bodycolor);
+  font-size: 160px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.version .km {
+  position: absolute;
+  height: 41px;
+  top: 650px;
+  left: 319px;
+  font-family: "ITC Avant Garde Gothic-CEDemi", Helvetica;
+  font-weight: 400;
+  color: var(--variable-collection-rustomjee-bodycolor);
+  font-size: 32px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.version .domestic-airport {
+  position: absolute;
+  height: 41px;
+  top: 289px;
+  left: 132px;
+  font-family: "ITC Avant Garde Gothic-CEDemi", Helvetica;
+  font-weight: 400;
+  color: var(--variable-collection-rustomjee-bodycolor);
+  font-size: 32px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.version .ellipse-2 {
+  position: absolute;
+  width: 764px;
+  height: 393px;
+  top: 10682px;
+  left: 601px;
+  object-fit: cover;
+}
+
+.version .frame-44 {
+  top: 10855px;
+  left: 959px;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 3px;
+  position: absolute;
+  border-radius: 50px;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(153, 107, 85, 1) 3%,
+    rgba(229, 171, 142, 1) 35%,
+    rgba(229, 171, 142, 1) 48%,
+    rgba(153, 107, 85, 1) 93%
+  );
+}
+
+.version .group-4 {
+  position: absolute;
+  width: 90%; /* Changed to a percentage for fluid width */
+  height: 166px;
+  top: 11395px;
+  left: 5%; /* Used a percentage-based left position for centering */
+}
+
+.version .frame-45 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  top: 91px;
+  left: 0;
+}
+
+.version .frame-46 {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.version .text-wrapper-24 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Inter", Helvetica;
+  font-weight: 600;
+  color: var(--variable-collection-rustomjee-rose-gold);
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+  text-decoration: underline;
+}
+
+.version .line-3 {
+  position: relative;
+  width: 1px;
+  height: 17px;
+  object-fit: cover;
+}
+
+.version .text-wrapper-25 {
+  position: relative;
+  width: 100%; /* Changed to 100% to fill parent container */
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: var(--variable-collection-neutral-white);
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.version .mob-logo {
+  position: absolute;
+  width: 220px;
+  height: 59px;
+  top: 0;
+  left: 50%; /* Using 50% with transform to center */
+  transform: translateX(-50%);
+}

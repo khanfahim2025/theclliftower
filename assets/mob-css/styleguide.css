@@ -1,0 +1,12 @@
+:root {
+  --primary-500: rgba(195, 156, 72, 1);
+  --primarygodrej: rgba(33, 37, 41, 1);
+  --card: 4px 4px 12px 0px rgba(0, 0, 0, 0.12);
+  --variable-collection-neutral-black: rgba(21, 30, 45, 1);
+  --variable-collection-neutral-white: rgba(255, 255, 255, 1);
+  --variable-collection-rustomjee-content: rgba(45, 45, 45, 1);
+  --variable-collection-rustomjee-primary: rgba(185, 142, 51, 1);
+  --variable-collection-rustomjee-rose-gold: rgba(229, 171, 142, 1);
+  --variable-collection-rustomjee-bodycolor: rgba(6, 22, 46, 1);
+  --variable-collection-netural-black: rgba(21, 30, 45, 1);
+}
