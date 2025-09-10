@@ -22,3 +22,7 @@ a {
   src: url("https://anima-uploads.s3.amazonaws.com/projects/6571a91080abe6b84bdfecfd/fonts/itc-avant-garde-gothic-ce-demi.otf")
     format("opentype");
 }
+/* @font-face {
+  font-family: "Poppins",serif;
+  src: url("/assets/font/Poppins-Regular.ttf") format("truetype");
+} */

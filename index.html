@@ -2,273 +2,1185 @@
 <html>
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta charset="utf-8" />
 
-  <link rel="stylesheet" href="assets/desk-css/globals.css" media="screen and (min-width: 768px)" />
-  <link rel="stylesheet" href="assets/desk-css/styleguide.css" media="screen and (min-width: 768px)" />
-  <link rel="stylesheet" href="assets/desk-css/style.css" media="screen and (min-width: 768px)" />
+  <link rel="stylesheet" href="assets/desk-css/globals.css" media="screen and (min-width: 1100px)" />
+  <link rel="stylesheet" href="assets/desk-css/styleguide.css" media="screen and (min-width: 1100px)" />
+  <link rel="stylesheet" href="assets/desk-css/style.css" media="screen and (min-width: 1100px)" />
 
-  <link rel="stylesheet" href="assets/mob-css/globals.css" media="screen and (max-width: 767px)" />
-  <link rel="stylesheet" href="assets/mob-css/styleguide.css" media="screen and (max-width: 767px)" />
-  <link rel="stylesheet" href="assets/mob-css/style.css" media="screen and (max-width: 767px)" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <link rel="stylesheet" href="assets/mob-css/globals.css" media="screen and (max-width: 1099px)" />
+  <link rel="stylesheet" href="assets/mob-css/styleguide.css" media="screen and (max-width: 1099px)" />
+  <link rel="stylesheet" href="assets/mob-css/style.css" media="screen and (max-width: 1099px)" />
+
+
+  <link rel="stylesheet" href="assets/common.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
   <style>
-    /* This small block of CSS is essential for toggling the two main divs. */
-    /* By default, hide the desktop view. */
-    [data-desktop-view] {
+    
+    .version {
       display: none;
     }
 
-    /* On screens 768px and wider, show the desktop view and hide the mobile view. */
-    @media (min-width: 768px) {
-      [data-desktop-view] {
+    .mobile-view {
+      display: block;
+    }
+
+    @media (min-width:1100px) {
+      .version {
         display: block;
       }
 
-      [data-mobile-view] {
+      .mobile-view {
         display: none;
       }
     }
   </style>
+  <style>
+    /* --- CSS for Mobile Rectangle-5 Carousel (Preserve Original Design) --- */
+    .mobile-highlights-carousel-viewport {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .mobile-highlights-carousel-track {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      position: relative;
+      will-change: transform;
+      transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+    }
+
+    .mobile-highlights-slide-item {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      width: 100%;
+      flex-shrink: 0;
+      /* height: 100%; */
+      position: relative;
+      transform: translateZ(0);
+      backface-visibility: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background: #e5ab8e;
+    }
+
+    /* Hidden navigation */
+    .mobile-highlights-carousel-nav {
+      position: absolute;
+      top: -9999px;
+      opacity: 0;
+      pointer-events: none;
+    }
+  </style>
+  <style>
+    /* --- Add this NEW CSS to your mobile stylesheet or in a <style> tag --- */
+    .mobile-rect5-carousel-nav {
+      display: flex;
+      width: 90%;
+      margin: 0 auto;
+      align-items: center;
+      /* justify-content: space-between; */
+      justify-content: center;
+      gap: 40%;
+      position: relative;
+      padding: 10px 0;
+    }
+
+    .mobile-rect5-carousel-nav .carousel-arrow {
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .mobile-rect5-carousel-nav .carousel-arrow:active {
+      transform: scale(0.9);
+    }
+
+    .mobile-rect5-carousel-nav .text-wrapper-4 {
+      /* The existing styles for .text-wrapper-4 are already correct */
+    }
+  </style>
+
+
 </head>
 
-<body>
+<body style="margin: 0;">
   <div class="mobile-view" data-mobile-view>
-    <div class="div">
-      <div class="overlap">
-        <div class="body">
-          <img class="mask" src="https://c.animaapp.com/VUWnemA4/img/mask-10@2x.png" />
-          <img class="mask" src="https://c.animaapp.com/VUWnemA4/img/mask-10@2x.png" />
-          <img class="mask" src="https://c.animaapp.com/VUWnemA4/img/mask-10@2x.png" />
-          <img class="mask" src="https://c.animaapp.com/VUWnemA4/img/mask-10@2x.png" />
-          <img class="mask" src="https://c.animaapp.com/VUWnemA4/img/mask-10@2x.png" />
-          <img class="mask" src="https://c.animaapp.com/VUWnemA4/img/mask-10@2x.png" />
-          <img class="mask" src="https://c.animaapp.com/VUWnemA4/img/mask-10@2x.png" />
-          <img class="mask" src="https://c.animaapp.com/VUWnemA4/img/mask-10@2x.png" />
-          <img class="mask" src="https://c.animaapp.com/VUWnemA4/img/mask-10@2x.png" />
-          <img class="mask" src="https://c.animaapp.com/VUWnemA4/img/mask-10@2x.png" />
-        </div>
-        <img class="architech-banner" src="https://c.animaapp.com/VUWnemA4/img/architech-banner.png" />
-        <div class="architect">ARCHITECT</div>
-        <img class="project-highlight" src="https://c.animaapp.com/VUWnemA4/img/project-highlight-banner.png" />
-        <div class="banner">
-          <div class="overlap-group">
-            <div class="ever-intro"></div>
-            <div class="mount-mary">MOUNT MARY</div>
-            <img class="rectangle" src="https://c.animaapp.com/VUWnemA4/img/rectangle-2@2x.png" />
+    <main>
+      <div class="body">
+        <img class="mask" src="https://c.animaapp.com/VUWnemA4/img/mask-10@2x.png" />
+        <img class="mask" src="https://c.animaapp.com/VUWnemA4/img/mask-10@2x.png" />
+        <img class="mask" src="https://c.animaapp.com/VUWnemA4/img/mask-10@2x.png" />
+        <img class="mask" src="https://c.animaapp.com/VUWnemA4/img/mask-10@2x.png" />
+        <img class="mask" src="https://c.animaapp.com/VUWnemA4/img/mask-10@2x.png" />
+        <img class="mask" src="https://c.animaapp.com/VUWnemA4/img/mask-10@2x.png" />
+        <img class="mask" src="https://c.animaapp.com/VUWnemA4/img/mask-10@2x.png" />
+        <img class="mask" src="https://c.animaapp.com/VUWnemA4/img/mask-10@2x.png" />
+        <img class="mask" src="https://c.animaapp.com/VUWnemA4/img/mask-10@2x.png" />
+        <img class="mask" src="https://c.animaapp.com/VUWnemA4/img/mask-10@2x.png" />
+      </div>
+
+      <div class="banner" id="home">
+        <div class="overlap-group">
+          <div class="banner-videoContainer">
+            <div class="ever-intro">
+              <video class="bg-video" autoplay muted loop playsinline>
+                <source src="assets/images/banner/banner2_mob.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class="mount-mary">CLIFF TOWER</div>
+            <img class="rectangle" src="/assets/images/banner/banner.webp" />
             <img class="frame" src="https://c.animaapp.com/VUWnemA4/img/frame-36171.svg" />
             <div class="rectangle-2"></div>
-            <img class="cab-button" src="https://c.animaapp.com/VUWnemA4/img/cab-button.svg" />
+            <!-- <img class="cab-button" src="https://c.animaapp.com/VUWnemA4/img/cab-button.svg" /> -->
+            <button class="burger-menu cab-button" id="burgerMenu">
+        <img src="https://c.animaapp.com/VUWnemA4/img/cab-button.svg" alt="" class="changeMenuIcon">
+    </button>
             <img class="rustomjeeclifftower" src="https://c.animaapp.com/VUWnemA4/img/rustomjeeclifftower-1.svg" />
-            <div class="frame-2">
-              <div class="frame-3">
-                <div class="text-wrapper">Live</div>
-                <div class="text-wrapper-2">Here</div>
-              </div>
-              <div class="frame-4">
-                <img class="line" src="https://c.animaapp.com/VUWnemA4/img/line-10.svg" />
-                <p class="p">
-                  Rustomjee Cliff Tower at Pali Hill, Bandra, offers serene luxury living with lush greenery, sea
-                  views, world-class amenities, and a perfect blend of elegance and comfort.
-                </p>
-              </div>
-            </div>
           </div>
+          <div class="nav-modal" id="navModal">
+        <div class="nav-content">
+            <div class="nav-links">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#architect">Architect</a></li>
+                    <li><a href="#highlight" >Project Highlights</a></li>
+                    <li><a href="#floor">Floor Plan</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#location">Location Highlights</a></li>
+                </ul>
+            </div>
+            <a href="#" class="request-callback-btn firstpopuptrigger">
+                <img src="/assets/images/icons/ButtonVersion3.png" alt="" width="100%" height="auto">
+            </a>
         </div>
-        <div class="simple-shapes-future">SIMPLE SHAPES, FUTURE-READY FINISHES</div>
-        <img class="img" src="https://c.animaapp.com/VUWnemA4/img/line-10.svg" />
-        <img class="yellow-sephere" src="https://c.animaapp.com/VUWnemA4/img/yellow-sephere-3@2x.png" />
-        <div class="architect-details">
-          <img class="line-2" src="https://c.animaapp.com/VUWnemA4/img/line-10.svg" />
-          <div class="overlap-2">
-            <img class="rectangle-3" src="https://c.animaapp.com/VUWnemA4/img/rectangle-3409@2x.png" />
-            <img class="yellow-sephere-2" src="https://c.animaapp.com/VUWnemA4/img/yellow-sephere-2@2x.png" />
-            <div class="union-wrapper">
-              <img class="img-2" src="https://c.animaapp.com/VUWnemA4/img/union-1.svg" />
+    </div>
+
+          <div class="frame-2">
+            <div class="frame-3">
+              <div class="text-wrapper">Live</div>
+              <div class="text-wrapper-2">Here</div>
             </div>
-          </div>
-          <p class="text-wrapper-3">
-            Rustomjee towers feature sleek façades, refined masonry, French balconies, and open terraces—each distinct
-            yet unified under a bold design language redefining modern living.
-          </p>
-          <div class="img-wrapper"><img class="union" src="https://c.animaapp.com/VUWnemA4/img/union.svg" /></div>
-        </div>
-        <div class="rectangle-4"></div>
-        <div class="project-highlight-2">
-          <img class="rectangle-5" src="https://c.animaapp.com/VUWnemA4/img/rectangle-10@2x.png" />
-          <div class="overlap-3">
-            <p class="luxury-redefined">
-              LUXURY REDEFINED THROUGH COMFORT, CRAFTED DESIGN, AND TIMELESS ARCHITECTURAL GRACE.
-            </p>
-            <img class="view-futuristic"
-              src="https://c.animaapp.com/VUWnemA4/img/view-futuristic-lighting-lamp-design--2--3@2x.png" />
-          </div>
-          <p class="RARE-BY-DESIGN-ONLY">RARE BY DESIGN:<br />ONLY TWO PRIVILEGED HOMES ON EVERY LEVEL</p>
-          <div class="frame-5">
-            <img class="frame-6" src="https://c.animaapp.com/VUWnemA4/img/frame-36120-3.svg" />
-            <div class="text-wrapper-4">1</div>
-          </div>
-        </div>
-        <div class="floor-plan">
-          <div class="overlap-4">
-            <div class="frame-7">
-              <div class="text-wrapper-5">Floor</div>
-              <div class="plan">PLAN</div>
-            </div>
-            <div class="frame-8"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
-            <div class="frame-9"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
-            <div class="frame-10"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
-            <div class="frame-11"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
-            <div class="frame-12"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
-            <div class="frame-13"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
-            <div class="frame-14"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
-            <div class="frame-15"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
-            <div class="frame-16"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
-            <div class="frame-17"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
-            <div class="frame-18"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
-            <div class="frame-19"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
-            <div class="frame-20"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
-            <div class="frame-21"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
-            <div class="frame-22"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
-            <div class="frame-23"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
-            <div class="frame-24"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
-            <div class="frame-25"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
-            <div class="frame-26"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div>
-          </div>
-        </div>
-      </div>
-      <img class="gallery-banner" src="https://c.animaapp.com/VUWnemA4/img/gallery-banner.png" />
-      <div class="floor-plan-details">
-        <div class="overlap-5">
-          <div class="rectangle-6"></div>
-          <div class="frame-27">
-            <img class="frame-6" src="https://c.animaapp.com/VUWnemA4/img/frame-36120-3.svg" />
-            <div class="text-wrapper-4">1</div>
-          </div>
-          <img class="unit-plan" src="https://c.animaapp.com/VUWnemA4/img/unit-plan-1@2x.png" />
-          <img class="compass" src="https://c.animaapp.com/VUWnemA4/img/compass-1.svg" />
-          <div class="frame-wrapper">
-            <div class="frame-28">
-              <img class="img-2" src="https://c.animaapp.com/VUWnemA4/img/project-details-overview.svg" />
-              <div class="frame-3">
-                <div class="text-wrapper-6">4BHK</div>
-                <div class="text-wrapper-7">Configurations</div>
-              </div>
-            </div>
-          </div>
-          <div class="div-wrapper">
-            <div class="frame-28">
-              <img class="img-2" src="https://c.animaapp.com/VUWnemA4/img/house-1.svg" />
-              <div class="frame-3">
-                <div class="text-wrapper-6">258.34</div>
-                <div class="text-wrapper-7">Deck (SQ.FT)</div>
-              </div>
-            </div>
-          </div>
-          <div class="frame-29">
-            <div class="frame-28">
-              <img class="img-2" src="https://c.animaapp.com/VUWnemA4/img/project-details-overview-1.svg" />
-              <div class="frame-3">
-                <div class="text-wrapper-6">2464.96</div>
-                <div class="text-wrapper-7">Carpet Area (SQ.FT)</div>
-              </div>
-            </div>
-          </div>
-          <div class="frame-30">
-            <div class="frame-28">
-              <img class="img-2" src="https://c.animaapp.com/VUWnemA4/img/note-1.svg" />
-              <div class="frame-3">
-                <div class="text-wrapper-8">Ask Details</div>
-                <div class="text-wrapper-9">Price</div>
-              </div>
-            </div>
-          </div>
-          <div class="frame-31">
-            <img class="image" src="https://c.animaapp.com/VUWnemA4/img/image-1@2x.png" />
-            <div class="button-version">
-              <div class="request-a-call-back-wrapper">
-                <div class="request-a-call-back">Ask For Price Details</div>
-              </div>
-              <img class="frame-32" src="https://c.animaapp.com/VUWnemA4/img/frame-36115.svg" />
-            </div>
-          </div>
-          <div class="group">
-            <div class="overlap-group-2">
-              <img class="element" src="https://c.animaapp.com/VUWnemA4/img/1726674932-56430171-1@2x.png" />
-              <img class="frame-33" src="https://c.animaapp.com/VUWnemA4/img/frame-36115-1.svg" />
-              <p class="text-wrapper-10">
-                Discover bespoke Rustomjee floor plans and avail exclusive project offers, delivered directly from the
-                developer for a seamless, premium home-buying experience.
+            <div class="frame-4">
+              <img class="line" src="https://c.animaapp.com/VUWnemA4/img/line-10.svg" />
+              <p class="p">
+                Rustomjee Cliff Tower at Mount Mary provides luxurious sea-view residences along with premium amenities and a perfect blend of comfort and luxury living.
               </p>
             </div>
           </div>
         </div>
       </div>
-      <div class="gallery-section">
-        <div class="overlap-6">
-          <p class="architectural">ARCHITECTURAL GRANDEUR BALANCED WITH EVERYDAY COMFORT</p>
-          <img class="deco-xxxl" src="https://c.animaapp.com/VUWnemA4/img/deco-2-xxxl--1-@2x.png" />
-          <img class="rectangle-7" src="https://c.animaapp.com/VUWnemA4/img/rectangle-14.png" />
-          <img class="deco-xxxl-2" src="https://c.animaapp.com/VUWnemA4/img/deco-1-xxxl--2-@2x.png" />
-          <div class="frame-34">
-            <img class="frame-6" src="https://c.animaapp.com/VUWnemA4/img/frame-36120-3.svg" />
-            <div class="text-wrapper-4">1</div>
+
+      <script>
+        const frameElement = document.querySelector('.frame');
+      const bgVideo = document.querySelector('.bg-video');
+      const rectangleImage = document.querySelector('.rectangle');
+      let isToggled = false;
+
+      if (frameElement && bgVideo && rectangleImage) {
+        frameElement.addEventListener('click', function() {
+          if (!isToggled) {
+            // First click: Move video to rectangle position, image to bg-video position
+            const videoParent = bgVideo.parentElement;
+            const imageParent = rectangleImage.parentElement;
+
+            // Store references to maintain position
+            const videoNextSibling = bgVideo.nextElementSibling;
+            const imagePrevSibling = rectangleImage.previousElementSibling;
+
+            // Move elements
+            imageParent.insertBefore(bgVideo, rectangleImage);
+            videoParent.insertBefore(rectangleImage, videoNextSibling);
+
+            // Update classes for proper styling
+            bgVideo.classList.remove('bg-video');
+            bgVideo.classList.add('rectangle');
+            rectangleImage.classList.remove('rectangle');
+            rectangleImage.classList.add('bg-video');
+
+            isToggled = true;
+          } else {
+            // Second click: Move back to original positions
+            const videoParent = bgVideo.parentElement;
+            const imageParent = rectangleImage.parentElement;
+
+            // Store references
+            const videoNextSibling = bgVideo.nextElementSibling;
+            const imageNextSibling = rectangleImage.nextElementSibling;
+
+            // Move elements back
+            imageParent.insertBefore(bgVideo, imageNextSibling);
+            videoParent.insertBefore(rectangleImage, videoNextSibling);
+
+            // Restore original classes
+            bgVideo.classList.remove('rectangle');
+            bgVideo.classList.add('bg-video');
+            rectangleImage.classList.remove('bg-video');
+            rectangleImage.classList.add('rectangle');
+
+            isToggled = false;
+          }
+
+          // Ensure video continues playing
+          if (bgVideo.paused) {
+            bgVideo.play();
+          }
+
+          // Add visual feedback with GSAP
+          gsap.to(frameElement, {
+            scale: 0.95,
+            duration: 0.1,
+            yoyo: true,
+            repeat: 1,
+            ease: "power2.inOut"
+          });
+        });
+
+        // Add cursor pointer to frame to indicate it's clickable
+        frameElement.style.cursor = 'pointer';
+      }
+      </script>
+
+    </main>
+
+    <section class="architech-bannerContainer" id="architect">
+      <img class="architech-banner" src="https://c.animaapp.com/VUWnemA4/img/architech-banner.png" />
+      <div class="architect">ARCHITECT</div>
+      <img class="yellow-sephere" src="https://c.animaapp.com/VUWnemA4/img/yellow-sephere-3@2x.png" />
+      <div class="simple-future-container">
+        <div class="simple-shapes-future">Where design meets nature in perfect harmony, crafted with intention and thoughtful simplicity.</div>
+        <img class="img" src="https://c.animaapp.com/VUWnemA4/img/line-10.svg" />
+      </div>
+
+    </section>
+
+    <section class="architect-detailsContainer">
+      <div class="architect-details">
+        <div class="overlap-2">
+          <img class="rectangle-3" src="https://c.animaapp.com/VUWnemA4/img/rectangle-3409@2x.png" />
+          <img class="yellow-sephere-2" src="https://c.animaapp.com/VUWnemA4/img/yellow-sephere-2@2x.png" />
+          <div class="union-wrapper openModalBtn">
+            <img class="img-2" src="https://c.animaapp.com/VUWnemA4/img/union-1.svg" />
           </div>
         </div>
-        <img class="frame-35" src="https://c.animaapp.com/VUWnemA4/img/frame-36124.svg" />
-        <p class="text-wrapper-11">
-          Rustomjee creates a bold dialogue between architecture and nature, where modern design rises against a
-          backdrop of timeless beauty. With Mount Mary Church as a cultural landmark and the Arabian Sea ever in
-          sight, the residences embody exclusivity, sophistication, and an elevated lifestyle.
+        <img class="line-2" src="https://c.animaapp.com/VUWnemA4/img/line-10.svg" />
+        <p class="text-wrapper-3">
+          Rustomjee Cliff Tower features refined craftsmanship, French balconies, and spacious open terraces, all combining to create a bold expression of modern sophistication.
         </p>
+        <div class="img-wrapper firstpopuptrigger"><img class="union" src="https://c.animaapp.com/VUWnemA4/img/union.svg" /></div>
       </div>
+      <img class="project-highlight" id="highlight" src="https://c.animaapp.com/VUWnemA4/img/project-highlight-banner.png" />
+    </section>
+
+    <div class="architect-popupoverlay">
+        <div class="modal-container">
+            <button class="closeArchitectButton">&times;</button>
+            
+            <div class="carousel-inner">
+                <div class="carousel-slide">
+                    <div class="image-section">
+                        <img src="/assets/images/highlight/h1.webp" alt="Sanjay Puri" class="profile-image">
+                    </div>
+                    <div class="details-section">
+                        <div class="quote-mark">“</div>
+                        <p class="profile-text">
+                            <strong>Sanjay Puri</strong> is one of India's most celebrated architects on the international stage, with an engagement of more than 360 awards from global platforms such as the World Architecture Festival, LEAF (UK), and Architizer A+ Awards. 
+Sanjay Puri Architects experiment with bold geometries and climate sensitivity, juxtaposing sculptural form with practical solutions.
+
+                        </p>
+                        <div class="logos-container">
+                             <img src="/assets/images/icons/A+AWARDS_nobg.png" alt="Architizer Logo">
+                             <img src="/assets/images/icons/ABBLEAF_nobg.png" alt="ABB Logo">
+                             <img src="/assets/images/icons/AD100_nobg.png" alt="World Architecture Festival Logo">
+                        </div>
+                        <div class="navigation-footer">
+                            <div class="arrow-buttons">
+                                <button class="arrow prev-arrow">&larr;</button>
+                                <button class="arrow next-arrow">&rarr;</button>
+                            </div>
+                            <div class="slide-number">1</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-slide">
+                    <div class="image-section">
+                        <img src="/assets/images/highlight/h1.webp" alt="Patty Mak" class="profile-image">
+                    </div>
+                    <div class="details-section">
+                        <div class="quote-mark">“</div>
+                        <p class="profile-text">
+                            <strong>Patty Mak</strong>, a Singapore-based architect, is known for her emotionally evocative and timelessly sophisticated designs. Celebrated in over 20 cities worldwide, her portfolio reflects modern elegance and intentionality.
+                        </p>
+                        <div class="logos-container">
+                             </div>
+                        <div class="navigation-footer">
+                            <div class="arrow-buttons">
+                                <button class="arrow prev-arrow">&larr;</button>
+                                <button class="arrow next-arrow">&rarr;</button>
+                            </div>
+                            <div class="slide-number">2</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-slide">
+                    <div class="image-section">
+                         <img src="/assets/images/highlight/h1.webp" alt="Kunal Maniar" class="profile-image">
+                    </div>
+                    <div class="details-section">
+                        <div class="quote-mark">“</div>
+                        <p class="profile-text">
+                           <strong>Kunal Maniar</strong> is a leading landscape architect in India, celebrated for his work on high-end residential developments. He enhances luxury villas, skillfully blending design and nature.
+                        </p>
+                        <div class="logos-container">
+                             <img src="/assets/images/icons/AD100_nobg.png" alt="AD 100 Logo">
+                             <img src="/assets/images/icons/INDIADESIGN_nobg.png" alt="India Design Logo" >
+                             <img src="/assets/images/icons/SUMMIT_nobg.png" alt="Summit Logo">
+                        </div>
+                        <div class="navigation-footer">
+                            <div class="arrow-buttons">
+                                <button class="arrow prev-arrow">&larr;</button>
+                                <button class="arrow next-arrow">&rarr;</button>
+                            </div>
+                            <div class="slide-number">3</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="project-hightlightsContainer">
+      <div class="project-highlight-2">
+        <div class="overlap-3">
+          <p class="luxury-redefined">
+            Redefined luxury through well-crafted design and world-class, timeless architectural grace
+          </p>
+          <img class="view-futuristic"
+            src="https://c.animaapp.com/VUWnemA4/img/view-futuristic-lighting-lamp-design--2--3@2x.png" />
+        </div>
+
+        <div class="rectangle-5-carousel">
+          <div class="mobile-highlights-carousel-viewport">
+            <div class="mobile-highlights-carousel-track">
+              <div class="mobile-highlights-slide-item">
+                <img class="rectangle-5" src="/assets/images/amenities/laounge.webp" />
+                <div class="highlight-CarouselContainer">
+                  <p class="RARE-BY-DESIGN-ONLY">27 FLOORS FEATURING A UNIQUE AND RARE SETTING WITH TWO WELL-CRAFTED HOMES ON EACH LEVEL.</p>
+
+                  <div class="mobile-rect5-carousel-nav">
+                    <div class="floorplan-navigation-arrows">
+                    <img class="carousel-arrow mobile-rect5-prev-btn" src="assets/images/icons/frame-35-left-arrow.png"
+                      alt="Previous">
+
+                    <img class="carousel-arrow mobile-rect5-next-btn" src="assets/images/icons/frame-35-right-arrow.png"
+                      alt="Next">
+                    </div>
+                    <div class="text-wrapper-4">1</div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // --- UPDATED SCRIPT for the .rectangle-5-carousel ---
+      document.addEventListener("DOMContentLoaded", function () {
+        // This script block targets ONLY the first mobile carousel
+        const mobileCarouselSection = document.querySelector(".rectangle-5-carousel");
+        if (!mobileCarouselSection || window.innerWidth > 1099) return; // Only run on mobile
+
+        const track = mobileCarouselSection.querySelector(".mobile-highlights-carousel-track");
+        const originalSlide = track.querySelector(".mobile-highlights-slide-item");
+
+        const additionalSlides = [{
+          image: "/assets/images/amenities/sealine.webp",
+          title: "EACH HOME OFFERS STUNNING VIEWS FROM BANDRA'S HIGHEST POINT,",
+          subtitle: "SHOWCASING A PANORAMIC 270° VISTA OF THE SEA AND THE SKYLINE.",
+          slideNumber: "2"
+        }, {
+          image: "/assets/images/amenities/welcome.webp",
+          title: "A WELCOME AT RUSTOMJEE CLIFF TOWER",
+          subtitle: "THAT FEELS LIKE A SERENE REVELATION.",
+          slideNumber: "3"
+        }];
+
+        let currentSlideIndex = 0;
+        let slideInterval;
+        let totalSlides = 1 + additionalSlides.length;
+
+        function addAdditionalSlides() {
+          if (!track || !originalSlide) return;
+
+          additionalSlides.forEach(slide => {
+            const slideElement = originalSlide.cloneNode(true);
+            const imgElement = slideElement.querySelector('.rectangle-5');
+            const textElement = slideElement.querySelector('.RARE-BY-DESIGN-ONLY');
+            const numberElement = slideElement.querySelector('.text-wrapper-4');
+
+            if (imgElement) imgElement.src = slide.image;
+            if (textElement) textElement.innerHTML = `${slide.title}<br />${slide.subtitle}`;
+            if (numberElement) numberElement.textContent = slide.slideNumber;
+
+            track.appendChild(slideElement);
+          });
+        }
+
+        function goToSlide(slideIndex) {
+          if (!track) return;
+          track.style.transform = `translate3d(${-slideIndex * 100}%, 0, 0)`;
+          currentSlideIndex = slideIndex;
+        }
+
+        function showNextSlide() {
+          const nextIndex = (currentSlideIndex + 1) % totalSlides;
+          goToSlide(nextIndex);
+        }
+
+        function showPrevSlide() {
+          const prevIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
+          goToSlide(prevIndex);
+        }
+
+        function startTimer() {
+          clearInterval(slideInterval);
+          slideInterval = setInterval(showNextSlide, 4000);
+        }
+
+        // NEW: Function to initialize arrow button clicks
+        function initializeArrowButtons() {
+          const allNextButtons = track.querySelectorAll('.mobile-rect5-next-btn');
+          const allPrevButtons = track.querySelectorAll('.mobile-rect5-prev-btn');
+
+          allNextButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+              e.stopPropagation(); // Prevent any other clicks
+              showNextSlide();
+              startTimer(); // Reset autoplay timer on click
+            });
+          });
+
+          allPrevButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              showPrevSlide();
+              startTimer(); // Reset autoplay timer on click
+            });
+          });
+        }
+
+        // REMOVED: The old click-zone navigation function is no longer needed
+
+        // --- Initialize Carousel ---
+        addAdditionalSlides();
+        initializeArrowButtons(); // Call the new function to activate arrows
+        startTimer();
+
+        // --- Touch/Swipe functionality (Unchanged) ---
+        let startX = 0;
+        track.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive: true });
+        track.addEventListener('touchend', (e) => {
+          let endX = e.changedTouches[0].clientX;
+          const diff = startX - endX;
+          if (Math.abs(diff) > 40) { // Swipe threshold
+            if (diff > 0) showNextSlide();
+            else showPrevSlide();
+            startTimer();
+          }
+        }, { passive: true });
+      });
+    </script>
+
+    <section class="floor-planContainer" id="floor">
+      <div class="floor-plan">
+        <div class="overlap-4">
+          <div class="frame-7">
+            <div class="text-wrapper-5">Floor</div>
+            <div class="plan">PLAN</div>
+          </div>
+          <!-- <div class="frame-8"><img class="union-2" src="https://c.animaapp.com/VUWnemA4/img/union-20.svg" /></div> -->
+           <video autoplay muted loop class="floor_video_mobile secondFloorTrigger">
+            <source src="/assets/images/floorplan/floor_plan_mob.webm" type="video/webm">
+           </video>
+        </div>
+      </div>
+
+      <div class="floor-plan-details">
+        <div class="floorplan-carousel-wrapper">
+          <div class="floorplan-carousel-slide">
+            <div class="overlap-5">
+              <img class="unit-plan" src="https://c.animaapp.com/VUWnemA4/img/unit-plan-1@2x.png" />
+              <img class="compass" src="https://c.animaapp.com/VUWnemA4/img/compass-1.svg" />
+              <div class="floorplan-detailsContainer">
+                <div class="frame-wrapper">
+                  <div class="frame-28">
+                    <img class="img-2" src="https://c.animaapp.com/VUWnemA4/img/project-details-overview.svg" />
+                    <div class="frame-3">
+                      <div class="text-wrapper-6">4 BHK</div>
+                      <div class="text-wrapper-7">Configurations</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="div-wrapper">
+                  <div class="frame-28">
+                    <img class="img-2" src="https://c.animaapp.com/VUWnemA4/img/house-1.svg" />
+                    <div class="frame-3">
+                      <div class="text-wrapper-6">258.34</div>
+                      <div class="text-wrapper-7">Deck (SQ.FT)</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="frame-29">
+                  <div class="frame-28">
+                    <img class="img-2" src="https://c.animaapp.com/VUWnemA4/img/project-details-overview-1.svg" />
+                    <div class="frame-3">
+                      <div class="text-wrapper-6">2464.96</div>
+                      <div class="text-wrapper-7">Carpet Area (SQ.FT)</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="frame-30">
+                  <div class="frame-28">
+                    <img class="img-2" src="https://c.animaapp.com/VUWnemA4/img/note-1.svg" />
+                    <div class="frame-3">
+                      <div class="text-wrapper-8 secondFloorTrigger">Ask For Details</div>
+                      <div class="text-wrapper-9">Price</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="frame-31">
+                <img class="image" src="https://c.animaapp.com/VUWnemA4/img/image-1@2x.png" />
+                <div class="button-version secondFloorTrigger">
+                  <div class="request-a-call-back-wrapper ">
+                    <div class="request-a-call-back">Ask For Price Details</div>
+                  </div>
+                  <img class="frame-32" src="https://c.animaapp.com/VUWnemA4/img/frame-36115.svg" />
+                </div>
+                <div class="frame-27">
+                  <div class="floorplan-navigation-arrows">
+                    <img class="frame-6 floorplan-arrow-prev" src="assets/images/icons/frame-35-left-arrow.png"
+                      alt="Previous" />
+                    <img class="frame-6 floorplan-arrow-next" src="assets/images/icons/frame-35-right-arrow.png"
+                      alt="Next" />
+                  </div>
+                  <div class="text-wrapper-4">1</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="floorplan-carousel-slide">
+            <div class="overlap-5">
+              <img class="unit-plan" src="https://c.animaapp.com/VUWnemA4/img/unit-plan-1@2x.png" />
+              <img class="compass" src="https://c.animaapp.com/VUWnemA4/img/compass-1.svg" />
+              <div class="floorplan-detailsContainer">
+                <div class="frame-wrapper">
+                  <div class="frame-28">
+                    <img class="img-2" src="https://c.animaapp.com/VUWnemA4/img/project-details-overview.svg" />
+                    <div class="frame-3">
+                      <div class="text-wrapper-6">5 BHK</div>
+                      <div class="text-wrapper-7">Configurations</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="div-wrapper">
+                  <div class="frame-28">
+                    <img class="img-2" src="https://c.animaapp.com/VUWnemA4/img/house-1.svg" />
+                    <div class="frame-3">
+                      <div class="text-wrapper-6">484.38</div>
+                      <div class="text-wrapper-7">Deck (SQ.FT)</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="frame-29">
+                  <div class="frame-28">
+                    <img class="img-2" src="https://c.animaapp.com/VUWnemA4/img/project-details-overview-1.svg" />
+                    <div class="frame-3">
+                      <div class="text-wrapper-6">3870.84 -  3966.53</div>
+                      <div class="text-wrapper-7">Carpet Area (SQ.FT)</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="frame-30">
+                  <div class="frame-28">
+                    <img class="img-2" src="https://c.animaapp.com/VUWnemA4/img/note-1.svg" />
+                    <div class="frame-3">
+                      <div class="text-wrapper-8 secondFloorTrigger">Ask For Details</div>
+                      <div class="text-wrapper-9">Price</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="frame-31">
+                <img class="image" src="https://c.animaapp.com/VUWnemA4/img/image-1@2x.png" />
+                <div class="button-version secondFloorTrigger">
+                  <div class="request-a-call-back-wrapper ">
+                    <div class="request-a-call-back">Ask For Price Details</div>
+                  </div>
+                  <img class="frame-32" src="https://c.animaapp.com/VUWnemA4/img/frame-36115.svg" />
+                </div>
+                <div class="frame-27">
+                  <div class="floorplan-navigation-arrows">
+                    <img class="frame-6 floorplan-arrow-prev" src="assets/images/icons/frame-35-left-arrow.png"
+                      alt="Previous" />
+                    <img class="frame-6 floorplan-arrow-next" src="assets/images/icons/frame-35-right-arrow.png"
+                      alt="Next" />
+                  </div>
+                  <div class="text-wrapper-4">2</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="floorplan-carousel-dots" style="display: none;"></div>
+      </div>
+      <style>
+        /* CSS for the new Floor Plan Carousel */
+        .floor-plan-details {
+          position: relative;
+          overflow: hidden;
+        }
+
+        .floorplan-carousel-wrapper {
+          display: flex;
+          transition: transform 0.6s ease-in-out;
+        }
+
+        .floorplan-carousel-slide {
+          width: 100%;
+          flex-shrink: 0;
+        }
+
+        .floorplan-navigation-arrows {
+          display: flex;
+          gap: 16px;
+        }
+
+        .floorplan-arrow-prev,
+        .floorplan-arrow-next {
+          cursor: pointer;
+        }
+
+        .floorplan-carousel-dots {
+          position: absolute;
+          bottom: 15px;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+          gap: 8px;
+        }
+
+        .floorplan-carousel-dot {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: rgba(0, 0, 0, 0.2);
+          cursor: pointer;
+        }
+
+        .floorplan-carousel-dot.active {
+          background-color: #06162e;
+        }
+      </style>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          // This script block targets ONLY the floor plan carousel
+          const carouselContainer = document.querySelector(".floor-plan-details");
+          if (!carouselContainer || window.innerWidth > 1099) return; // Only run on mobile
+
+          const wrapper = carouselContainer.querySelector(".floorplan-carousel-wrapper");
+          const slides = carouselContainer.querySelectorAll(".floorplan-carousel-slide");
+          const dotsContainer = carouselContainer.querySelector(".floorplan-carousel-dots");
+
+          let currentIndex = 0;
+          let slideInterval;
+          const totalSlides = slides.length;
+
+          // Create dots
+          slides.forEach((_, i) => {
+            const dot = document.createElement('div');
+            dot.classList.add('floorplan-carousel-dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+              goToSlide(i);
+              startTimer(); // Reset timer on dot click
+            });
+            dotsContainer.appendChild(dot);
+          });
+          const dots = dotsContainer.querySelectorAll('.floorplan-carousel-dot');
+
+          function updateDots() {
+            dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
+          }
+
+          function goToSlide(index) {
+            currentIndex = index;
+            wrapper.style.transform = `translateX(-${index * 100}%)`;
+            updateDots();
+          }
+
+          function showNextSlide() {
+            const nextIndex = (currentIndex + 1) % totalSlides;
+            goToSlide(nextIndex);
+          }
+
+          function showPrevSlide() {
+            const prevIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            goToSlide(prevIndex);
+          }
+
+          function startTimer() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(showNextSlide, 5000); // Change slide every 5 seconds
+          }
+
+          // Add event listeners to all arrows on all slides
+          const allNextArrows = carouselContainer.querySelectorAll('.floorplan-arrow-next');
+          const allPrevArrows = carouselContainer.querySelectorAll('.floorplan-arrow-prev');
+
+          allNextArrows.forEach(arrow => arrow.addEventListener('click', () => {
+            showNextSlide();
+            startTimer();
+          }));
+
+          allPrevArrows.forEach(arrow => arrow.addEventListener('click', () => {
+            showPrevSlide();
+            startTimer();
+          }));
+
+          // Initializations
+          startTimer();
+        });
+      </script>
+    </section>
+    <section>
+      <div class="group">
+        <div class="overlap-group-2">
+          <p class="text-wrapper-10">
+            Explore the floor plans for Rustomjee Cliff Tower and enjoy exclusive project offers delivered directly from the developer, ensuring a seamless and premium home-buying experience.
+          </p>
+          <img class="element" src="https://c.animaapp.com/VUWnemA4/img/1726674932-56430171-1@2x.png" />
+          <img class="frame-33 secondFloorTrigger" src="https://c.animaapp.com/VUWnemA4/img/frame-36115-1.svg" />
+
+
+        </div>
+      </div>
+    </section>
+
+
+    <section class="gallery-sectionContainer" id="gallery">
+      <img class="gallery-banner" src="https://c.animaapp.com/VUWnemA4/img/gallery-banner.png" />
+      <div class="gallery-section">
+          <div class="overlap-6">
+              <p class="architectural">An architectural masterpiece that balances elegance with everyday comfort.</p>
+              <img class="deco-xxxl" src="https://c.animaapp.com/VUWnemA4/img/deco-2-xxxl--1-@2x.png" />
+              <img class="deco-xxxl-2" src="https://c.animaapp.com/VUWnemA4/img/deco-1-xxxl--2-@2x.png" />
+  
+              <div class="gallery-carousel-container-mob">
+                  <div class="gallery-mob-carousel-wrapper">
+                      <div class="gallery-mob-carousel-slide">
+                          <img class="rectangle-7" src="/assets/images/gallery/g1.webp" />
+                          <div class="frame-34 gallery-carousel-nav-overlay">
+                            <div class="floorplan-navigation-arrows">
+                              <img class="frame-6 gallery-mob-arrow-prev" src="assets/images/icons/frame-35-left-arrow.png" alt="Previous" />
+                           
+                              <img class="frame-6 gallery-mob-arrow-next" src="assets/images/icons/frame-35-right-arrow.png" alt="Next" />
+                              </div>
+                              <div class="text-wrapper-4">1</div>
+                          </div>
+                      </div>
+                      </div>
+              </div>
+              </div>
+          <p class="text-wrapper-11">
+              Rustomjee Cliff Tower establishes a striking conversation between architecture and nature, with modern design set against a backdrop of enduring beauty. Overlooking the Arabian Sea and in proximity to the cultural landmark of Mount Mary Church, the residences represent exclusivity, sophistication, and an elevated lifestyle.
+          </p>
+          <img class="frame-35 firstpopuptrigger" src="https://c.animaapp.com/VUWnemA4/img/frame-36124.svg" />
+      </div>
+  
+      <style>
+          /* CSS for the new Gallery Carousel (Mobile Only) */
+          .gallery-carousel-container-mob {
+              position: relative; /* This is the viewport */
+              overflow: hidden;
+              height: 600px; /* Set a height to ensure wrapper is contained */
+              width: 100%;
+          }
+          .gallery-mob-carousel-wrapper {
+              display: flex;
+              transition: transform 0.6s ease-in-out;
+              height: 100%; /* Make wrapper take full height of container */
+          }
+          .gallery-mob-carousel-slide {
+              width: 100%;
+              flex-shrink: 0;
+              position: relative; /* Needed for positioning nav inside */
+              height: 100%; /* Make slide take full height */
+          }
+          /* Ensure original styles are maintained inside the slide */
+          .gallery-mob-carousel-slide .rectangle-7 {
+              position: absolute; /* Changed to absolute to fill slide */
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%; /* Fill the slide */
+              object-fit: cover;
+          }
+  
+          /* NEW / UPDATED STYLES FOR NAVIGATION OVERLAY */
+          .gallery-carousel-nav-overlay {
+              position: absolute; /* Position relative to .gallery-mob-carousel-slide */
+              bottom: 10%; /* Adjust as needed: 20px from the bottom of the image */
+              left: 50%; /* Center horizontally */
+              transform: translateX(-50%) !important; /* Center horizontally precisely */
+              display: flex;
+              align-items: center;
+              /* justify-content: space-between;  */
+              justify-content: center;
+              gap: 40%;
+              width: 90%; /* Adjust width for arrows */
+              /* max-width: 300px;  */
+              z-index: 10; /* Ensure it's above the image */
+              padding: 0 10px; /* Add some padding on sides */
+              box-sizing: border-box; /* Include padding in width */
+              /* gap: 20px;  */
+          }
+  
+          .gallery-mob-arrow-prev,
+          .gallery-mob-arrow-next {
+              cursor: pointer;
+              width: 40px; /* Make arrows a bit larger if needed */
+              height: 40px;
+              flex-shrink: 0; /* Prevent arrows from shrinking */
+          }
+          
+          .gallery-carousel-nav-overlay .text-wrapper-4 {
+              /* Your existing styles for text-wrapper-4 should apply */
+              /* Ensure font-size, color, etc., are appropriate */
+              color: #001e4a; /* Example: make text white for visibility on image */
+              font-size: 120px; /* Example: adjust font size */
+              font-weight: 400;
+              /* flex-grow: 1;  */
+              text-align: center; /* Center the number */
+          }
+  
+      </style>
+  
+      <script>
+          document.addEventListener("DOMContentLoaded", function() {
+              // This script targets ONLY the gallery carousel on mobile
+              const carouselContainer = document.querySelector(".gallery-carousel-container-mob");
+              if (!carouselContainer || window.innerWidth > 1099) return;
+  
+              const wrapper = carouselContainer.querySelector(".gallery-mob-carousel-wrapper");
+              const originalSlide = carouselContainer.querySelector(".gallery-mob-carousel-slide");
+  
+              const gallerySlideData = [
+                  { image: "/assets/images/gallery/g1.webp", number: "1" },
+                  { image: "/assets/images/gallery/g2.webp", number: "2" },
+                  { image: "/assets/images/gallery/g3.webp", number: "3" },
+                  { image: "/assets/images/gallery/g4.webp", number: "4" },
+                  { image: "/assets/images/gallery/g5.webp", number: "5" },
+                  { image: "/assets/images/gallery/g6.webp", number: "6" },
+                  { image: "/assets/images/gallery/g7.webp", number: "7" },
+                  { image: "/assets/images/gallery/g8.webp", number: "8" },
+                  { image: "/assets/images/gallery/g9.webp", number: "9" },
+                  { image: "/assets/images/gallery/g10.webp", number: "10" },
+                  { image: "/assets/images/gallery/g11.webp", number: "11" },
+                  { image: "/assets/images/gallery/g12.webp", number: "12" },
+                  { image: "/assets/images/gallery/g13.webp", number: "13" },
+                  { image: "/assets/images/gallery/g14.webp", number: "14" }
+              ];
+  
+              let currentIndex = 0;
+              let slideInterval;
+              const totalSlides = gallerySlideData.length;
+  
+              function createSlides() {
+                  // Clear existing slides except the template
+                  wrapper.innerHTML = '';
+                  gallerySlideData.forEach(data => {
+                      const newSlide = originalSlide.cloneNode(true);
+                      newSlide.querySelector('.rectangle-7').src = data.image;
+                      newSlide.querySelector('.text-wrapper-4').textContent = data.number;
+                      wrapper.appendChild(newSlide);
+                  });
+              }
+  
+              function goToSlide(index) {
+                  currentIndex = index;
+                  wrapper.style.transform = `translateX(-${index * 100}%)`;
+              }
+  
+              function showNextSlide() {
+                  goToSlide((currentIndex + 1) % totalSlides);
+              }
+  
+              function showPrevSlide() {
+                  goToSlide((currentIndex - 1 + totalSlides) % totalSlides);
+              }
+              
+              function startTimer() {
+                  clearInterval(slideInterval);
+                  slideInterval = setInterval(showNextSlide, 5000);
+              }
+  
+              function initializeNav() {
+                  // Select arrows from all slides (since they are cloned)
+                  const allNext = wrapper.querySelectorAll('.gallery-mob-arrow-next');
+                  const allPrev = wrapper.querySelectorAll('.gallery-mob-arrow-prev');
+                  
+                  allNext.forEach(btn => btn.addEventListener('click', (e) => {
+                      e.stopPropagation(); // Prevent clicks from interfering with other elements
+                      showNextSlide();
+                      startTimer();
+                  }));
+                  
+                  allPrev.forEach(btn => btn.addEventListener('click', (e) => {
+                      e.stopPropagation(); // Prevent clicks from interfering with other elements
+                      showPrevSlide();
+                      startTimer();
+                  }));
+              }
+  
+              // --- Initialize ---
+              createSlides();
+              initializeNav();
+              startTimer();
+          });
+      </script>
+  </section>
+
+    <section class="location-container" id="location">
       <div class="overlap-7">
         <img class="maunt-mary-banner" src="https://c.animaapp.com/VUWnemA4/img/maunt-mary-banner.png" />
         <div class="mount-mary-2">
           <div class="location">LOCATION</div>
-          <p class="distinctive">DISTINCTIVE RESIDENCES SHAPED BY MODERNITY, SEA, AND TIMELESS NATURAL BEAUTY.</p>
+          <img class="little-fairy-statue" src="https://c.animaapp.com/VUWnemA4/img/little-fairy-statue@2x.png" />
+          <p class="distinctive">RESIDENCES DEFINED BY MODERNITY, STUNNING SEA VIEWS, AND TIMELESS NATURAL BEAUTY.</p>
           <div class="overlap-8">
             <img class="rectangle-8" src="https://c.animaapp.com/VUWnemA4/img/rectangle-10-1@2x.png" />
             <img class="cupid-angel-isolated"
               src="https://c.animaapp.com/VUWnemA4/img/cupid-angel-isolated-white-background@2x.png" />
             <img class="close-up-angel" src="https://c.animaapp.com/VUWnemA4/img/close-up-angel-statue@2x.png" />
-            <div class="frame-36"><img class="union-3" src="https://c.animaapp.com/VUWnemA4/img/union-21.svg" /></div>
+            <div class="frame-36 firstpopuptrigger"><img class="union-3" src="https://c.animaapp.com/VUWnemA4/img/union-21.svg" /></div>
           </div>
-          <img class="little-fairy-statue" src="https://c.animaapp.com/VUWnemA4/img/little-fairy-statue@2x.png" />
+
           <p class="text-wrapper-12">
-            Perched atop a natural cliff with sweeping views of the Arabian Sea, Mount Mary is Mumbai’s most elevated
-            enclave—rare land availability, heritage safeguards, and low-density development create an exclusive
-            address offering privacy, pedigree, and a truly elevated lifestyle.
+            Rustomjee Cliff Tower creates a remarkable link between modern architecture and nature. Overlooking the Arabian Sea and with Mount Mary Church as a cultural landmark, the residences offer exclusivity, sophistication, and an elevated lifestyle.
           </p>
         </div>
       </div>
+    </section>
+
+    <section class="map-container">
       <div class="overlap-9">
-        <img class="location-s-map" src="https://c.animaapp.com/VUWnemA4/img/location-s-map.png" />
-        <div class="location-highlights">
-          <div class="overlap-10">
-            <div class="rectangle-9"></div>
-            <div class="domestic-airport">DOMESTIC AIRPORT</div>
-            <img class="union-4" src="https://c.animaapp.com/VUWnemA4/img/union-22.svg" />
-            <div class="text-wrapper-13">8.7</div>
-            <div class="km">KM</div>
-            <img class="frame-37" src="https://c.animaapp.com/VUWnemA4/img/frame-36120-3.svg" />
+          <img class="location-s-map" src="/assets/images/location-s-map.PNG" />
+          
+          <div class="location-highlights">
+              <div class="location-carousel-viewport">
+                  <div class="location-carousel-track">
+                      </div>
+              </div>
+              <div class="location-carousel-nav">
+                  <img class="location-arrow-prev" src="assets/images/icons/frame-35-left-arrow.png" alt="Previous">
+                  <img class="location-arrow-next" src="assets/images/icons/frame-35-right-arrow.png" alt="Next">
+              </div>
           </div>
-        </div>
-      </div>
+          </div>
+  
+      <style>
+          /* CSS for the new Location Carousel (Mobile-Only) */
+          .location-highlights {
+              /* This is now the main carousel container */
+              position: relative;
+              width: 100%;
+              height: 440px; 
+          }
+          .location-carousel-viewport {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              overflow: hidden;
+          }
+          .location-carousel-track {
+              display: flex;
+              height: 100%;
+              transition: transform 0.7s ease-in-out;
+          }
+          .location-carousel-slide {
+              width: 100%;
+              height: 100%;
+              flex-shrink: 0;
+              position: relative; /* Crucial for positioning elements inside */
+          }
+          
+          /* Navigation Buttons */
+          .location-carousel-nav {
+              position: absolute;
+              width: 96px;
+              height: 40px;
+              top: 359px;
+              right: 1rem;
+              z-index: 10;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+          }
+          .location-arrow-prev,
+          .location-arrow-next {
+              width: 40px;
+              height: 40px;
+              cursor: pointer;
+          }
+      </style>
+  
+      <script>
+          document.addEventListener("DOMContentLoaded", function () {
+              // This script targets ONLY the location carousel on mobile
+              const container = document.querySelector(".location-highlights");
+              if (!container || window.innerWidth > 1099) return;
+  
+              const track = container.querySelector(".location-carousel-track");
+              const nextBtn = container.querySelector(".location-arrow-next");
+              const prevBtn = container.querySelector(".location-arrow-prev");
+  
+              const slideData = [
+                  {
+                      location: "DOMESTIC AIRPORT",
+                      distance: "8.7",
+                      bgColor: "linear-gradient(90deg, rgba(153, 107, 85, 1) 3%, rgba(229, 171, 142, 1) 48%, rgba(153, 107, 85, 1) 93%)"
+                  },
+                  {
+                      location: "INTERNATIONAL AIRPORT",
+                      distance: "10.5",
+                      bgColor: "linear-gradient(90deg, rgba(85, 153, 133, 1) 3%, rgba(142, 229, 199, 1) 48%, rgba(85, 153, 133, 1) 93%)"
+                  },
+                  {
+                      location: "DHIRUBHAI AMBANI INTERNATIONAL SCHOOL",
+                      distance: "8.2",
+                      bgColor: "linear-gradient(90deg, rgba(153, 85, 99, 1) 3%, rgba(229, 142, 163, 1) 48%, rgba(153, 85, 99, 1) 93%)"
+                  },
+                  {
+                      location: "BANDRA-WORLI SEA LINK",
+                      distance: "2.9",
+                      bgColor: "linear-gradient(90deg, rgba(153, 107, 85, 1) 3%, rgba(229, 171, 142, 1) 48%, rgba(153, 107, 85, 1) 93%)"
+                  },
+                  {
+                      location: "MOUNT MARY CHURCH",
+                      distance: "0.15",
+                      bgColor: "linear-gradient(90deg, rgba(85, 153, 133, 1) 3%, rgba(142, 229, 199, 1) 48%, rgba(85, 153, 133, 1) 93%)"
+                  },
+                  {
+                      location: "LILAVATI HOSPITAL",
+                      distance: "3.5",
+                      bgColor: "linear-gradient(90deg, rgba(153, 85, 99, 1) 3%, rgba(229, 142, 163, 1) 48%, rgba(153, 85, 99, 1) 93%)"
+                  },
+                  {
+                      location: "BANDRA RAILWAY STATION",
+                      distance: "3.1",
+                      bgColor: "linear-gradient(90deg, rgba(153, 107, 85, 1) 3%, rgba(229, 171, 142, 1) 48%, rgba(153, 107, 85, 1) 93%)"
+                  }
+              ];
+  
+              let currentIndex = 0;
+              let slideInterval;
+  
+              function createSlides() {
+                  track.innerHTML = '';
+                  slideData.forEach(data => {
+                      const slideEl = document.createElement('div');
+                      slideEl.className = 'location-carousel-slide';
+                      // Recreate the original design dynamically
+                      slideEl.innerHTML = `
+                          <div class="rectangle-9" style="background: ${data.bgColor};"></div>
+                          <div class="domestic-airport">${data.location}</div>
+                          <img class="union-4" src="https://c.animaapp.com/VUWnemA4/img/union-22.svg" />
+                          <div class="text-wrapper-13">${data.distance}<div class="km">KM</div></div>
+                          
+                      `;
+                      track.appendChild(slideEl);
+                  });
+              }
+  
+              function goToSlide(index) {
+                  currentIndex = index;
+                  track.style.transform = `translateX(-${index * 100}%)`;
+              }
+  
+              function showNextSlide() {
+                  goToSlide((currentIndex + 1) % slideData.length);
+              }
+  
+              function showPrevSlide() {
+                  goToSlide((currentIndex - 1 + slideData.length) % slideData.length);
+              }
+  
+              function startTimer() {
+                  clearInterval(slideInterval);
+                  slideInterval = setInterval(showNextSlide, 4000);
+              }
+  
+              // --- Initialize ---
+              createSlides();
+              startTimer();
+  
+              nextBtn.addEventListener('click', () => {
+                  showNextSlide();
+                  startTimer();
+              });
+              prevBtn.addEventListener('click', () => {
+                  showPrevSlide();
+                  startTimer();
+              });
+          });
+      </script>
+  </section>
+
+    <section class="one-address-container">
       <div class="one-address">
         <div class="text-wrapper-14">Legacy. Location. Stature</div>
-        <img class="frame-38" src="https://c.animaapp.com/VUWnemA4/img/frame-36202.svg" />
+
         <div class="one-address-2">ONE ADDRESS</div>
-        <img class="frame-39" src="https://c.animaapp.com/VUWnemA4/img/frame-36201.svg" />
-        <p class="what-makes-rustomjee">WHAT MAKES RUSTOMJEE CLIFF TOWER ONE OF A KIND</p>
-        <p class="text-wrapper-15">
-          Rustomjee Cliff Tower is one-of-a-kind, blending bold architecture, refined finishes, panoramic sea views,
-          and world-class amenities. Every detail is designed to offer residents an exclusive lifestyle defined by
-          sophistication, comfort, and modern elegance.
-        </p>
+        <img class="frame-39 floorpopupTrigger" src="https://c.animaapp.com/VUWnemA4/img/frame-36201.svg" />
+        <p class="what-makes-rustomjee">What makes Rustomjee Cliff Tower unique?</p>
+        <img class="frame-38 floorpopupTrigger" src="https://c.animaapp.com/VUWnemA4/img/frame-36202.svg" />
+        <div class="text-wrapper-15">
+          Rustomjee Cliff Tower establishes a remarkable connection between modern architecture and nature. With views of the Arabian Sea and Mount Mary Church as a cultural landmark, the residences provide exclusivity, sophistication, and an elevated lifestyle.
+          <ul class="location-points">
+            <li>A unique community featuring 37 exclusive residences.</li>
+            <li>The height from one floor to the next is 10’3 inches.</li>
+            <li>The entrance lobby features an impressive double height of 18'</li>
+            <li>Each residence features a nearly private floor lobby, ensuring complete privacy for residents.</li>
+            <li>4 lifts and a dedicated fire elevator serve only 2 apartments per floor to ensure maximum accessibility.</li>
+            <li>An expansive sundeck that is 8.5 feet deep, offering some of the city's most sought-after views.</li>
+          </ul>
+        </div>
       </div>
+    </section>
+
+    <section class="footer-container">
       <div class="group-2">
         <div class="frame-40">
           <img class="mob-logo" src="https://c.animaapp.com/VUWnemA4/img/mob-logo-3.svg" />
@@ -290,358 +1202,1521 @@
           </div>
         </div>
       </div>
-      <img class="bottom-navigation" src="https://c.animaapp.com/VUWnemA4/img/bottom-navigation@2x.png" />
-    </div>
+
+      <div class="bottom-navigation">
+        <a href="#" class="phone_url IVR_Phone_No_Url" style="width: 20%; height: auto;"> 
+        <img src="/assets/images/icons/call.png" alt="" width="100%" height="auto"></a>
+        <img src="/assets/images/icons/sitevisit.png" alt="" width="50%" height="auto" class="firstpopuptrigger" style="cursor: pointer;">
+        <a href="#" class=whatsapp_url style="width: 20%;height: auto;">
+        <img src="/assets/images/icons/whatsapp.png" alt="" width="100%" height="auto" class="whatsapp_url"></a>
+      </div>
+      <!-- <img class="bottom-navigation" src="https://c.animaapp.com/VUWnemA4/img/bottom-navigation@2x.png" /> -->
+    </section>
   </div>
 
+  <div class="version" data-desktop-view="">
+    <div class="body">
+      <img class="mask" src="https://c.animaapp.com/cxEW9Bi2/img/mask-8.png">
+      <img class="mask-2" src="https://c.animaapp.com/cxEW9Bi2/img/mask-10.png">
+      <img class="mask" src="https://c.animaapp.com/cxEW9Bi2/img/mask-8.png">
+      <img class="mask" src="https://c.animaapp.com/cxEW9Bi2/img/mask-8.png">
+      <img class="mask-2" src="https://c.animaapp.com/cxEW9Bi2/img/mask-10.png">
+      <img class="mask" src="https://c.animaapp.com/cxEW9Bi2/img/mask-8.png">
+      <img class="mask" src="https://c.animaapp.com/cxEW9Bi2/img/mask-8.png">
+      <img class="mask" src="https://c.animaapp.com/cxEW9Bi2/img/mask-8.png">
+      <img class="mask" src="https://c.animaapp.com/cxEW9Bi2/img/mask-8.png">
+      <img class="mask-2" src="https://c.animaapp.com/cxEW9Bi2/img/mask-10.png">
+      <img class="mask" src="https://c.animaapp.com/cxEW9Bi2/img/mask-8.png">
+      <img class="mask-2" src="https://c.animaapp.com/cxEW9Bi2/img/mask-10.png">
+      <img class="mask" src="https://c.animaapp.com/cxEW9Bi2/img/mask-8.png">
+      <img class="mask" src="https://c.animaapp.com/cxEW9Bi2/img/mask-8.png">
+      <img class="mask" src="https://c.animaapp.com/cxEW9Bi2/img/mask-8.png">
+      <img class="img" src="https://c.animaapp.com/cxEW9Bi2/img/mask-9.png">
 
+    </div>
 
-
-
-
-
-
-  <div class="version" data-desktop-view>
-    <div class="overlap-wrapper">
-      <div class="overlap">
-        <div class="body">
-          <img class="mask" src="https://c.animaapp.com/cxEW9Bi2/img/mask-8.png" />
-          <img class="mask" src="https://c.animaapp.com/cxEW9Bi2/img/mask-8.png" />
-          <img class="mask" src="https://c.animaapp.com/cxEW9Bi2/img/mask-8.png" />
-          <img class="mask" src="https://c.animaapp.com/cxEW9Bi2/img/mask-8.png" />
-          <img class="mask" src="https://c.animaapp.com/cxEW9Bi2/img/mask-8.png" />
-          <img class="mask" src="https://c.animaapp.com/cxEW9Bi2/img/mask-8.png" />
-          <img class="mask" src="https://c.animaapp.com/cxEW9Bi2/img/mask-8.png" />
-          <img class="mask" src="https://c.animaapp.com/cxEW9Bi2/img/mask-8.png" />
-          <img class="img" src="https://c.animaapp.com/cxEW9Bi2/img/mask-9.png" />
-          <img class="mask-2" src="https://c.animaapp.com/cxEW9Bi2/img/mask-10.png" />
+    <section class="header-section" style="height: 100vh;">
+      <header class="header" id="header">
+        <img class="line-2" src="https://c.animaapp.com/cxEW9Bi2/img/line-1.svg">
+        <div class="content">
+          <button class="burger-menu cab-button" id="burgerMenu">
+        <img src="https://c.animaapp.com/VUWnemA4/img/cab-button.svg" alt="" class="changeMenuIcon">
+    </button>
+          <!-- <img class="cab-button" src="https://c.animaapp.com/cxEW9Bi2/img/cab-button.svg"> -->
+          <img class="rustomjeeclifftower" src="https://c.animaapp.com/cxEW9Bi2/img/rustomjeeclifftower-1.svg">
+          <div class="frame-42">
+            <div class="button-version firstpopuptrigger">
+              <div class="div-wrapper">
+                <div class="text-wrapper-7">Request a call-back</div>
+              </div>
+              <img class="frame-26" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36115-3.svg">
+            </div>
+            <div class="cab-button-2">
+              <img class="union-4" src="https://c.animaapp.com/cxEW9Bi2/img/union-23.svg">
+            </div>
+          </div>
         </div>
-        <div class="location">
-          <div class="frame">
-            <p class="text-wrapper">Distinctive residences shaped by modernity, sea, and timeless natural beauty.</p>
-            <img class="frame-2" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36124.svg" />
-            <p class="div">
-              Perched atop a natural cliff with sweeping views of the Arabian Sea, Mount Mary is Mumbai’s most elevated
-              enclave—rare land availability, heritage safeguards, and low-density development create an exclusive
-              address offering privacy, pedigree, and a truly elevated lifestyle.
+        <div class="nav-modal" id="navModal">
+        <div class="nav-content">
+            <div class="nav-links">
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#architect">Architect</a></li>
+                    <li><a href="#highlight" >Project Highlights</a></li>
+                    <li><a href="#floor">Floor Plan</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#location">Location Highlights</a></li>
+                </ul>
+            </div>
+            <a href="#" class="request-callback-btn firstpopuptrigger">
+                <img src="/assets/images/icons/ButtonVersion3.png" alt="" width="100%" height="auto" >
+            </a>
+        </div>
+    </div>
+      </header>
+
+      <div class="banner">
+        <div class="banner-container">
+          <div class="banner-version">
+            <img src="assets/images/banner/subtract.svg" class="banner-svg-overlay" alt="Design Shape"
+              style="object-fit: cover;">
+            <p class="text-wrapper-20">
+              Rustomjee Cliff Tower at Mount Mary provides luxurious sea-view residences along with premium amenities and a perfect blend of comfort and luxury living.
             </p>
           </div>
-          <div class="overlap-group">
-            <div class="location-2">LOCATION</div>
-            <img class="rectangle" src="https://c.animaapp.com/cxEW9Bi2/img/rectangle-10.png" />
-            <img class="close-up-angel" src="https://c.animaapp.com/cxEW9Bi2/img/close-up-angel-statue@2x.png" />
-            <img class="cupid-angel-isolated"
-              src="https://c.animaapp.com/cxEW9Bi2/img/cupid-angel-isolated-white-background@2x.png" />
-            <img class="little-fairy-statue" src="https://c.animaapp.com/cxEW9Bi2/img/little-fairy-statue@2x.png" />
+          <div class="banner-version-2">
+            <video class="bg-video" autoplay muted loop playsinline>
+              <source src="/assets/images/banner/banner2_desk.mp4" type="video/mp4">
+            </video>
+            <img src="assets/images/banner/subtract.svg" class="banner-svg-overlay" alt="Design Shape"
+              style="object-fit: cover;">
+            <img class="frame-41 bannerscroll" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36115-2.svg" alt="Scroll down arrow">
+            <div class="text-wrapper-21">LIVE HERE</div>
           </div>
         </div>
-        <div class="gallery">
-          <div class="overlap-2">
-            <img class="rectangle-2" src="https://c.animaapp.com/cxEW9Bi2/img/rectangle-14.png" />
-            <div class="projects-highlights">
-              <p class="p">Architectural Grandeur Balanced With Everyday Comfort</p>
-              <img class="frame-3" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36124-1.svg" />
-              <p class="text-wrapper-2">
-                Rustomjee creates a bold dialogue between architecture and nature, where modern design rises against a
-                backdrop of timeless beauty. With Mount Mary Church as a cultural landmark and the Arabian Sea ever in
-                sight, the residences embody exclusivity, sophistication, and an elevated lifestyle.
+        <div class="mount-mary">CLIFF TOWER</div>
+      </div>
+    </section>
+
+    <section class="belowBannerImageContainer" id="belowbannerContainer">
+      <div id="architect-section">
+        <img class="architech-banner" src="/assets/images/banner/banner2.webp"
+          alt="Architect Banner">
+      </div>
+    </section>
+
+    <section class="architech-main-section" id="architect">
+      <div class="architech-details">
+        <div class="overlap-14">
+          <div class="overlap-15">
+            <div class="overlap-16">
+              <img class="rectangle-11" src="https://c.animaapp.com/cxEW9Bi2/img/rectangle-3.png">
+              <div class="frame-39 scrolluptrigger" data-target="architech-slider-section">
+                <img class="union-2" src="https://c.animaapp.com/cxEW9Bi2/img/union-25.svg">
+              </div>
+              <div class="architect">ARCHITECT</div>
+              <img class="yellow-sephere-2" src="https://c.animaapp.com/cxEW9Bi2/img/yellow-sephere-1@2x.png">
+              <img class="yellow-sephere-3" src="https://c.animaapp.com/cxEW9Bi2/img/yellow-sephere-2@2x.png">
+            </div>
+            <div class="simple-shapes-future-2">Where design meets nature in perfect harmony, crafted with intention and thoughtful simplicity.</div>
+            <img class="ellipse" src="https://c.animaapp.com/cxEW9Bi2/img/ellipse-1@2x.png">
+            <p class="text-wrapper-19">
+              Rustomjee Cliff Tower features refined craftsmanship, French balconies, and spacious open terraces, all combining to create a bold expression of modern sophistication.
+            </p>
+          </div>
+          <div class="frame-40 firstpopuptrigger"><img class="union-3" src="https://c.animaapp.com/cxEW9Bi2/img/union-21.svg"></div>
+        </div>
+      </div>
+
+
+    </section>
+
+    <section class="architech-slider-section" id="architech-slider-section">
+      <div class="architech-slider">
+        <div class="overlap-13">
+          <div class="rectangle-9"></div>
+          <img class="rectangle-10" src="https://c.animaapp.com/cxEW9Bi2/img/rectangle-5.png">
+          <div class="frame-35">
+            <img id="prev-slide-btn" class="carousel-arrow" src="assets/images/icons/frame-35-left-arrow.png">
+
+
+
+            <img id="next-slide-btn" class="carousel-arrow" src="assets/images/icons/frame-35-right-arrow.png">
+            <div class="text-wrapper-4">1</div>
+          </div>
+          <div class="group-3">
+            <div class="overlap-group-5">
+              <img class="quotation-mark" src="https://c.animaapp.com/cxEW9Bi2/img/quotation-mark-1.svg">
+              <p class="sanjay-puri-is-one">
+                SANJAY PURI IS ONE OF INDIA’S MOST INTERNATIONALLY AWARDED ARCHITECTS, WITH OVER 360 ACCOLADES
+                ACROSS GLOBAL PLATFORMS INCLUDING THE WORLD ARCHITECTURE FESTIVAL, LEAF (UK), AND ARCHITIZER A+
+                AWARDS. RENOWNED FOR BOLD GEOMETRIES AND CLIMATIC RESPONSIVENESS, HIS WORK SEAMLESSLY BLENDS
+                SCULPTURAL FORM WITH GROUNDED FUNCTIONALITY.
               </p>
-              <div class="overlap-group-2">
-                <div class="gallery-2">GALLERY</div>
-                <div class="text-wrapper-3">Project</div>
+            </div>
+          </div>
+          <img class="frame-36" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36122.svg">
+          <img class="frame-37" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36123.svg">
+          <img class="world-architecture"
+            src="https://c.animaapp.com/cxEW9Bi2/img/world-architecture-festival-idrfoc2hie-1-1@2x.png">
+        </div>
+        <div class="simple-shapes-future">Where design meets nature in perfect harmony, crafted with intention and thoughtful simplicity.</div>
+        <div class="frame-38 firstpopuptrigger"><img class="union-3" src="https://c.animaapp.com/cxEW9Bi2/img/union-21.svg"></div>
+        <p class="text-wrapper-18">
+          Rustomjee Cliff Tower features refined craftsmanship, French balconies, and spacious open terraces, all combining to create a bold expression of modern sophistication.
+        </p>
+        <img class="yellow-sephere" src="https://c.animaapp.com/cxEW9Bi2/img/yellow-sephere-1@2x.png">
+      </div>
+    </section>
+
+    <style>
+      /* --- CSS for Carousel Fade Effect --- */
+      @media (min-width: 768px) {
+        .overlap-13 {
+          /* Enables smooth transition for the opacity property */
+          transition: opacity 0.5s ease-in-out;
+        }
+
+        .overlap-13.fade-out {
+          /* State for when the slide is fading out */
+          opacity: 0;
+        }
+      }
+
+      /* --- CSS for Carousel Arrow Buttons --- */
+      .carousel-arrow {
+        width: 48px;
+        /* Adjust size as needed */
+        height: 48px;
+        cursor: pointer;
+        /* Changes the mouse to a pointer on hover */
+        opacity: 0.8;
+        transition: opacity 0.2s ease;
+      }
+
+      .carousel-arrow:hover {
+        opacity: 1;
+        /* Makes the arrow fully visible on hover */
+      }
+
+      /* Optional: Adjust the parent container for better alignment */
+      .frame-35 {
+        padding: 0px 16px;
+        /* Adjust padding for spacing */
+      }
+    </style>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Only run the carousel on screens wider than 768px (desktop)
+        if (window.innerWidth < 768) {
+          return;
+        }
+
+        // --- 1. DEFINE YOUR SLIDE CONTENT HERE ---
+        // Using reliable placeholder images.
+        const slideData = [{
+          image: "https://c.animaapp.com/cxEW9Bi2/img/rectangle-5.png",
+          description: "SANJAY PURI IS ONE OF INDIA'S MOST CELEBRATED ARCHITECTS ON THE INTERNATIONAL STAGE, WITH AN ENGAGEMENT OF MORE THAN 360 AWARDS FROM GLOBAL PLATFORMS SUCH AS THE WORLD ARCHITECTURE FESTIVAL, LEAF (UK), AND ARCHITIZER A+ AWARDS. SANJAY PURI ARCHITECTS EXPERIMENT WITH BOLD GEOMETRIES AND CLIMATE SENSITIVITY, JUXTAPOSING SCULPTURAL FORM WITH PRACTICAL SOLUTIONS.",
+          slideNumber: "1"
+        }, {
+          image: "https://picsum.photos/id/1048/357/532", // Stable placeholder image
+          description: "PATTY MAK, A SINGAPORE-BASED ARCHITECT AND INTERIOR DESIGNER, IS KNOWN FOR HER EMOTIONALLY EVOCATIVE AND TIMELESSLY SOPHISTICATED DESIGNS. CELEBRATED IN OVER 20 CITIES WORLDWIDE, HER PORTFOLIO REFLECTS MODERN ELEGANCE AND INTENTIONALITY. GUIDED BY A PHILOSOPHY OF QUIET LUXURY, HER WORK LEAVES A LASTING IMPRESSION WITHOUT BEING OSTENTATIOUS. HIGHLY RESPECTED, PATTY CONTINUES TO REDEFINE HOW WE CAN LIVE WELL—ONE MEANINGFUL SPACE AT A TIME.",
+          slideNumber: "2"
+        }, {
+          image: "https://picsum.photos/id/249/357/532", // Stable placeholder image
+          description: "KUNAL MANIAR IS A LEADING LANDSCAPE ARCHITECT IN INDIA, CELEBRATED FOR HIS WORK ON HIGH-END RESIDENTIAL DEVELOPMENTS. HE ENHANCES LUXURY VILLAS, GATED COMMUNITIES, AND URBAN SANCTUARIES, SKILLFULLY BLENDING DESIGN AND NATURE. HIS ESTEEMED CLIENTELE INCLUDES MUKESH AND NITA AMBANI, SHAH RUKH AND GAURI KHAN, RANBIR KAPOOR AND ALIA BHATT, AND MS AND SAKSHI DHONI.",
+          slideNumber: "3"
+        }];
+
+        // --- 2. GET REFERENCES TO THE HTML ELEMENTS ---
+        const carouselContainer = document.querySelector(".overlap-13");
+        const mainImage = carouselContainer.querySelector(".rectangle-10");
+        const descriptionText = carouselContainer.querySelector(".sanjay-puri-is-one");
+        const slideNumberText = carouselContainer.querySelector(".text-wrapper-4");
+
+        // Get references to the new arrow buttons
+        const prevBtn = document.getElementById("prev-slide-btn");
+        const nextBtn = document.getElementById("next-slide-btn");
+
+        let currentSlideIndex = 0;
+        let slideInterval; // Variable to hold our timer
+
+        // --- 3. FUNCTION TO UPDATE THE SLIDE'S VISUALS ---
+        function updateSlideContent() {
+          const slide = slideData[currentSlideIndex];
+          // Fade out
+          carouselContainer.classList.add("fade-out");
+
+          // Wait for fade-out, then update content and fade back in
+          setTimeout(() => {
+            mainImage.src = slide.image;
+            descriptionText.textContent = slide.description;
+            slideNumberText.textContent = slide.slideNumber;
+            carouselContainer.classList.remove("fade-out");
+          }, 500); // Must match CSS transition duration
+        }
+
+        // --- 4. NAVIGATION LOGIC ---
+        function showNextSlide() {
+          currentSlideIndex = (currentSlideIndex + 1) % slideData.length;
+          updateSlideContent();
+        }
+
+        function showPrevSlide() {
+          currentSlideIndex = (currentSlideIndex - 1 + slideData.length) % slideData.length;
+          updateSlideContent();
+        }
+
+        // --- 5. TIMER MANAGEMENT ---
+        const startCarouselTimer = () => {
+          // Clear any existing timer before starting a new one
+          clearInterval(slideInterval);
+          slideInterval = setInterval(showNextSlide, 5000); // Change slide every 5 seconds
+        };
+
+        // --- 6. EVENT LISTENERS FOR ARROWS ---
+        nextBtn.addEventListener("click", () => {
+          showNextSlide();
+          startCarouselTimer(); // Reset the timer on manual click
+        });
+
+        prevBtn.addEventListener("click", () => {
+          showPrevSlide();
+          startCarouselTimer(); // Reset the timer on manual click
+        });
+
+        // --- 7. INITIALIZE ---
+        updateSlideContent(); // Show the first slide immediately
+        startCarouselTimer(); // Start the automatic carousel
+      });
+    </script>
+
+    <section class="projects-highlights-5-image">
+      <img class="projects-highlights-5" src="https://c.animaapp.com/cxEW9Bi2/img/projects-highlights-banner.png">
+    </section>
+
+    <section class="projects-highlights-4-section" id="highlight">
+      <div class="projects-highlights-4">
+        <div class="overlap-group-wrapper">
+          <div class="overlap-11">
+            <p class="text-wrapper-12">
+              Redefined luxury through well-crafted design and world-class, timeless architectural grace.
+            </p>
+            <img class="frame-31 firstpopuptrigger" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36124-3.svg">
+            <div class="overlap-12">
+              <p class="text-wrapper-13">
+                Rustomjee Cliff Tower features grand entrance spaces across two levels, with cathedral-style ceilings, elegant staircases, and luxurious lounges. These design elements create an atmosphere of exclusivity, sophistication, and comfort, setting a new standard for modern city living.
+              </p>
+              <img class="rectangle-6" src="/assets/images/amenities/a1.webp">
+              <img class="rectangle-7" src="/assets/images/amenities/a2.webp">
+              <img class="rectangle-8" src="/assets/images/amenities/a3.webp">
+              <div class="highlights">HIGHLIGHTS</div>
+              <div class="text-wrapper-14">Projects</div>
+              <img class="view-futuristic"
+                src="https://c.animaapp.com/cxEW9Bi2/img/view-futuristic-lighting-lamp-design--2--2-1.png">
+              <!-- <div class="frame-33">
+                <img class="union-2" src="https://c.animaapp.com/cxEW9Bi2/img/union-25.svg">
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="overlap-9-section" id="highlight-section2">
+      <div class="overlap-9">
+        <div class="projects-sliders">
+          <div class="overlap-10">
+            <p class="text-wrapper-12">
+              Redefined luxury through well-crafted design and world-class, timeless architectural grace
+            </p>
+            <img class="frame-31 firstpopuptrigger" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36124-2.svg">
+            <div class="overlap-group-4">
+              <p class="text-wrapper-13">
+                  Rustomjee Cliff Tower features grand entrance spaces across two levels, with cathedral-style ceilings, elegant staircases, and luxurious lounges. These design elements create an atmosphere of exclusivity, sophistication, and comfort, setting a new standard for modern city living.
+              </p>
+              <div class="highlights">HIGHLIGHTS</div>
+              <div class="text-wrapper-14">Projects</div>
+              <img class="view-futuristic"
+                src="https://c.animaapp.com/cxEW9Bi2/img/view-futuristic-lighting-lamp-design--2--2-1.png">
+            </div>
+
+            <div class="highlights-carousel-container">
+              <div class="highlights-carousel-viewport">
+                <div class="highlights-carousel-track">
+                </div>
+              </div>
+
+              <div class="highlights-carousel-nav">
+                <img id="highlights-prev-btn" class="carousel-arrow highlights-arrow"
+                  src="assets/images/icons/frame-35-left-arrow.png">
+
+                <img id="highlights-next-btn" class="carousel-arrow highlights-arrow"
+                  src="assets/images/icons/frame-35-right-arrow.png">
+                <div class="text-wrapper-4 highlights-slide-number">1</div>
               </div>
             </div>
-            <img class="deco-xxxl" src="https://c.animaapp.com/cxEW9Bi2/img/deco-1-xxxl--2-@2x.png" />
-            <img class="deco-xxxl-2" src="https://c.animaapp.com/cxEW9Bi2/img/deco-2-xxxl--1-@2x.png" />
-            <div class="frame-4">
-              <img class="frame-5" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36120-4.svg" />
-              <div class="text-wrapper-4">1</div>
-            </div>
+
           </div>
-          <img class="projects-highlights-2" src="https://c.animaapp.com/cxEW9Bi2/img/projects-highlights.png" />
         </div>
-        <img class="projects-highlights-3" src="https://c.animaapp.com/cxEW9Bi2/img/projects-highlights-1.png" />
-        <div class="floor-plan">
-          <div class="overlap-3">
-            <div class="union-wrapper">
-              <img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" />
-            </div>
-            <div class="img-wrapper">
-              <img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" />
-            </div>
-            <div class="frame-6"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" /></div>
-            <div class="frame-7"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" /></div>
-            <div class="frame-8"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" /></div>
-            <div class="frame-9"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" /></div>
-            <div class="frame-10"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" /></div>
-            <div class="frame-11"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" /></div>
-            <div class="frame-12"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" /></div>
-            <div class="frame-13"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" /></div>
-            <div class="frame-14"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" /></div>
-            <div class="frame-15"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" /></div>
-            <div class="frame-16"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" /></div>
-            <div class="frame-17"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" /></div>
-            <div class="frame-18"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" /></div>
-            <div class="frame-19"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" /></div>
-            <div class="frame-20"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" /></div>
-            <div class="frame-21"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" /></div>
-            <div class="frame-22"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg" /></div>
-            <div class="overlap-4">
-              <div class="text-wrapper-5">Floor</div>
-              <div class="plan">PLAN</div>
-            </div>
+      </div>
+    </section>
+    <style>
+      /* --- Add this one line to your existing CSS --- */
+
+      .highlights-carousel-viewport {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        /* ADD THIS LINE to mask the left half of the animation */
+        clip-path: inset(0 0 0 40%);
+      }
+
+      /* --- FINAL CSS for a Smoother SLIDING Carousel --- */
+
+      /* This is the main container that holds the viewport and arrows */
+      .highlights-carousel-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      /* 1. The Viewport: A window that shows only one slide */
+      .highlights-carousel-viewport {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      /* 2. The Track: Holds all slides and slides smoothly */
+      /* --- Smoother Sliding Animation --- */
+
+      .highlights-carousel-track {
+        display: flex;
+        height: 100%;
+        position: relative;
+        /* This hint can improve animation performance on some browsers */
+        will-change: transform;
+        /* UPDATED: Slower duration and a more graceful easing curve */
+        transition: transform 1.4s cubic-bezier(0.86, 0, 0.07, 1);
+      }
+
+      /* 3. Each Slide: Takes up the full width of the viewport */
+      .highlights-slide-item {
+        width: 100%;
+        flex-shrink: 0;
+        height: 100%;
+        position: relative;
+      }
+
+      /* 4. Navigation container: Restores the original layout */
+      .highlights-carousel-nav {
+        /* ADDED: These styles restore the original position and layout */
+        position: absolute;
+        bottom: 5%;
+        left: 46%;
+        width: 23%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 10;
+      }
+
+      .highlights-arrow {
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+      }
+
+      /* Styling for the slide number inside the navigation */
+      .highlights-carousel-nav .highlights-slide-number {
+        font-family: "ITC Avant Garde Gothic-CEDemi", Helvetica;
+        font-weight: 400;
+        color: var(--variable-collection-rustomjee-bodycolor);
+        font-size: 160px;
+        /* Adjusted for better fit */
+        line-height: 1;
+      }
+
+
+      /* We must re-declare the original element styles for the new dynamic slides */
+      .highlights-slide-item .rectangle-4 {
+        position: absolute;
+        width: 25%;
+        height: 85%;
+        top: 10%;
+        left: 45%;
+      }
+
+      .highlights-slide-item .RARE-BY-DESIGN-ONLY {
+        position: absolute;
+        width: 22%;
+        height: auto;
+        top: 30%;
+        left: 47%;
+        font-family: "Inter", Helvetica;
+        font-weight: 600;
+        color: #ffffff;
+        font-size: clamp(20px, 3vh, 27px);
+        letter-spacing: 1.62px;
+        line-height: 1.4;
+      }
+
+      .highlights-slide-item .rectangle-5 {
+        position: absolute;
+        width: 25%;
+        height: 85%;
+        top: 10%;
+        right: 5%;
+        object-fit: cover;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Only run on desktop
+        if (window.innerWidth < 768) return;
+
+        const section = document.querySelector(".overlap-9-section");
+        if (!section) return;
+
+        const track = section.querySelector(".highlights-carousel-track");
+        const prevBtn = section.querySelector("#highlights-prev-btn");
+        const nextBtn = section.querySelector("#highlights-next-btn");
+        // ADDED: A direct reference to the slide number display
+        const slideNumberDisplay = section.querySelector(".highlights-slide-number");
+
+        const highlightsSlideData = [{
+          mainImage: "/assets/images/amenities/laounge.webp",
+          bgColor: "#a2735b",
+          description: "27 floors featuring a unique and rare setting with two well-crafted homes on each level.",
+          slideNumber: "1"
+        }, {
+          mainImage: "/assets/images/amenities/sealine.webp",
+          bgColor: "#5B8EA2",
+          description: "Each home offers stunning views from Bandra's highest point, showcasing a panoramic 270° vista of the sea and the skyline.",
+          slideNumber: "2"
+        }, {
+          mainImage: "/assets/images/amenities/welcome.webp",
+          bgColor: "#A25B76",
+          description: "A welcome at Rustomjee Cliff Tower that feels like a serene revelation.",
+          slideNumber: "3"
+        }];
+
+        let currentSlideIndex = 0;
+        let slideInterval;
+
+        function createSlides() {
+          track.innerHTML = '';
+          highlightsSlideData.forEach(slide => {
+            const slideElement = document.createElement('div');
+            slideElement.className = 'highlights-slide-item';
+
+            // REMOVED: The slide number is no longer created here
+            slideElement.innerHTML = `
+        <div class="rectangle-4" style="background-color: ${slide.bgColor};"></div>
+        <p class="RARE-BY-DESIGN-ONLY">${slide.description}</p>
+        <img class="rectangle-5" src="${slide.mainImage}">
+      `;
+            track.appendChild(slideElement);
+          });
+        }
+
+        function goToSlide(slideIndex) {
+          if (!track) return;
+          track.style.transform = 'translateX(' + (-slideIndex * 100) + '%)';
+          currentSlideIndex = slideIndex;
+
+          // ADDED: Update the central slide number display
+          if (slideNumberDisplay) {
+            slideNumberDisplay.textContent = highlightsSlideData[slideIndex].slideNumber;
+          }
+        }
+
+        function showNextSlide() {
+          const nextIndex = (currentSlideIndex + 1) % highlightsSlideData.length;
+          goToSlide(nextIndex);
+        }
+
+        function showPrevSlide() {
+          const prevIndex = (currentSlideIndex - 1 + highlightsSlideData.length) % highlightsSlideData.length;
+          goToSlide(prevIndex);
+        }
+
+        function startTimer() {
+          clearInterval(slideInterval);
+          slideInterval = setInterval(showNextSlide, 5000);
+        }
+
+        if (track && prevBtn && nextBtn) {
+          createSlides();
+          goToSlide(0);
+          startTimer();
+
+          nextBtn.addEventListener("click", () => {
+            showNextSlide();
+            startTimer();
+          });
+
+          prevBtn.addEventListener("click", () => {
+            showPrevSlide();
+            startTimer();
+          });
+        }
+      });
+    </script>
+
+    <section class="floor-plan-section" id="floor">
+      <div class="floor-plan">
+        <div class="overlap-3">
+          <video autoplay muted loop class="video-floor secondFloorTrigger">
+            <source src="/assets/images/floorplan/floor_plan-video.webm" type="video/webm">
+           </video>
+          <!-- <div class="union-wrapper"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg"></div>
+          <div class="img-wrapper"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg"></div>
+          <div class="frame-6"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg"></div>
+          <div class="frame-7"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg"></div>
+          <div class="frame-8"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg"></div>
+          <div class="frame-9"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg"></div>
+          <div class="frame-10"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg"></div>
+          <div class="frame-11"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg"></div>
+          <div class="frame-12"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg"></div>
+          <div class="frame-13"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg"></div>
+          <div class="frame-14"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg"></div>
+          <div class="frame-15"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg"></div>
+          <div class="frame-16"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg"></div>
+          <div class="frame-17"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg"></div>
+          <div class="frame-18"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg"></div>
+          <div class="frame-19"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg"></div>
+          <div class="frame-20"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg"></div>
+          <div class="frame-21"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg"></div>
+          <div class="frame-22"><img class="union" src="https://c.animaapp.com/cxEW9Bi2/img/union-18.svg"></div> -->
+          <div class="overlap-4">
+            <div class="text-wrapper-5">Floor</div>
+            <div class="plan">PLAN</div>
           </div>
+        </div>
+        <div class="floorplan-wrapper">
           <div class="group">
             <div class="overlap-group-3">
-              <img class="frame-23" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36115.svg" />
+              <img class="frame-23 secondFloorTrigger" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36115.svg">
               <p class="text-wrapper-6">
-                Discover bespoke Rustomjee floor plans and avail exclusive project offers, delivered directly from the
-                developer for a seamless, premium home-buying experience.
+                Explore the floor plans for Rustomjee Cliff Tower and enjoy exclusive project offers delivered directly from the developer, ensuring a seamless and premium home-buying experience.
               </p>
             </div>
           </div>
           <div class="overlap-5">
             <div class="rectangle-3"></div>
-            <div class="frame-24">
-              <img class="frame-5" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36120-4.svg" />
-              <div class="text-wrapper-4">1</div>
-            </div>
-            <div class="frame-25">
-              <img class="image" src="https://c.animaapp.com/cxEW9Bi2/img/image-1@2x.png" />
-              <div class="button-version">
-                <div class="div-wrapper">
-                  <div class="text-wrapper-7">Ask For Price Details</div>
-                </div>
-                <img class="frame-26" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36115-1.svg" />
-              </div>
-            </div>
-            <img class="unit-plan" src="https://c.animaapp.com/cxEW9Bi2/img/unit-plan-1@2x.png" />
-            <img class="compass" src="https://c.animaapp.com/cxEW9Bi2/img/compass-1.svg" />
-            <div class="group-2">
-              <div class="frame-wrapper">
-                <div class="frame-27">
-                  <img class="img-2" src="https://c.animaapp.com/cxEW9Bi2/img/project-details-overview.svg" />
-                  <div class="frame-28">
-                    <div class="text-wrapper-8">4BHK</div>
-                    <div class="div-2">Configurations</div>
-                  </div>
+            <div class="floorplan-carousel-container">
+              <div class="floorplan-carousel-viewport">
+                <div class="floorplan-carousel-track">
                 </div>
               </div>
-              <div class="overlap-6">
-                <div class="frame-27">
-                  <img class="img-2" src="https://c.animaapp.com/cxEW9Bi2/img/house-1.svg" />
-                  <div class="frame-28">
-                    <div class="text-wrapper-8">258.34</div>
-                    <p class="div-2"><span class="span">Deck </span> <span class="text-wrapper-9">(SQ.FT)</span></p>
-                  </div>
-                </div>
-              </div>
-              <div class="overlap-7">
-                <div class="frame-29">
-                  <img class="img-2" src="https://c.animaapp.com/cxEW9Bi2/img/project-details-overview-1.svg" />
-                  <div class="frame-28">
-                    <div class="text-wrapper-8">2464.96</div>
-                    <p class="div-2">
-                      <span class="span">Carpet Area </span> <span class="text-wrapper-9">(SQ.FT)</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="overlap-8">
-                <div class="frame-30">
-                  <img class="img-2" src="https://c.animaapp.com/cxEW9Bi2/img/note-1.svg" />
-                  <div class="frame-28">
-                    <div class="text-wrapper-10">Ask Details</div>
-                    <div class="text-wrapper-11">Price</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="projects-highlights-4">
-          <div class="overlap-9">
-            <div class="projects-sliders">
-              <div class="overlap-10">
-                <p class="text-wrapper-12">
-                  Luxury redefined through comfort, crafted design, and timeless architectural grace.
-                </p>
-                <img class="frame-31" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36124-2.svg" />
-                <div class="overlap-group-4">
-                  <p class="text-wrapper-13">
-                    Rustomjee introduces majestic entrance areas across two levels, with lofty ceilings, elegant
-                    stairwells, and luxury lounges. Together, they shape an environment of exclusivity, refinement,
-                    and comfort, setting a new standard for contemporary urban living
-                  </p>
-                  <div class="highlights">HIGHLIGHTS</div>
-                  <div class="text-wrapper-14">Projects</div>
-                  <img class="view-futuristic"
-                    src="https://c.animaapp.com/cxEW9Bi2/img/view-futuristic-lighting-lamp-design--2--2-1.png" />
-                  <div class="rectangle-4"></div>
-                  <p class="RARE-BY-DESIGN-ONLY">RARE BY DESIGN:<br />ONLY TWO PRIVILEGED HOMES ON EVERY LEVEL</p>
-                  <div class="frame-32">
-                    <img class="frame-5" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36120-4.svg" />
-                    <div class="text-wrapper-4">1</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <img class="rectangle-5" src="https://c.animaapp.com/cxEW9Bi2/img/rectangle-10-1.png" />
-          </div>
-          <div class="overlap-group-wrapper">
-            <div class="overlap-11">
-              <p class="text-wrapper-12">
-                Luxury redefined through comfort, crafted design, and timeless architectural grace.
-              </p>
-              <img class="frame-31" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36124-3.svg" />
-              <div class="overlap-12">
-                <p class="text-wrapper-13">
-                  Rustomjee introduces majestic entrance areas across two levels, with lofty ceilings, elegant
-                  stairwells, and luxury lounges. Together, they shape an environment of exclusivity, refinement, and
-                  comfort, setting a new standard for contemporary urban living
-                </p>
-                <img class="rectangle-6" src="https://c.animaapp.com/cxEW9Bi2/img/rectangle-6@2x.png" />
-                <img class="rectangle-7" src="https://c.animaapp.com/cxEW9Bi2/img/rectangle-7@2x.png" />
-                <img class="rectangle-8" src="https://c.animaapp.com/cxEW9Bi2/img/rectangle-8@2x.png" />
-                <div class="highlights">HIGHLIGHTS</div>
-                <div class="text-wrapper-14">Projects</div>
-                <img class="view-futuristic"
-                  src="https://c.animaapp.com/cxEW9Bi2/img/view-futuristic-lighting-lamp-design--2--2-1.png" />
-                <div class="frame-33">
-                  <img class="union-2" src="https://c.animaapp.com/cxEW9Bi2/img/union-25.svg" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <p class="text-wrapper-15">What Makes Rustomjee Cliff Tower One of a Kind</p>
-        <img class="frame-34" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36124-4.svg" />
-        <p class="text-wrapper-16">
-          Rustomjee Cliff Tower is one-of-a-kind, blending bold architecture, refined finishes, panoramic sea views,
-          and world-class amenities. Every detail is designed to offer residents an exclusive lifestyle defined by
-          sophistication, comfort, and modern elegance.
-        </p>
-        <div class="one-address">ONE ADDRESS</div>
-        <div class="text-wrapper-17">Legacy. Location. Stature</div>
-        <img class="projects-highlights-5" src="https://c.animaapp.com/cxEW9Bi2/img/projects-highlights-banner.png" />
-        <div class="architech-slider">
-          <div class="overlap-13">
-            <div class="rectangle-9"></div>
-            <img class="rectangle-10" src="https://c.animaapp.com/cxEW9Bi2/img/rectangle-5.png" />
-            <div class="frame-35">
-              <img class="frame-5" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36120-4.svg" />
-              <div class="text-wrapper-4">1</div>
-            </div>
-            <div class="group-3">
-              <div class="overlap-group-5">
-                <img class="quotation-mark" src="https://c.animaapp.com/cxEW9Bi2/img/quotation-mark-1.svg" />
-                <p class="sanjay-puri-is-one">
-                  SANJAY PURI IS ONE OF INDIA’S MOST INTERNATIONALLY AWARDED ARCHITECTS, WITH OVER 360 ACCOLADES
-                  ACROSS GLOBAL PLATFORMS INCLUDING THE WORLD ARCHITECTURE FESTIVAL, LEAF (UK), AND ARCHITIZER A+
-                  AWARDS. RENOWNED FOR BOLD GEOMETRIES AND CLIMATIC RESPONSIVENESS, HIS WORK SEAMLESSLY BLENDS
-                  SCULPTURAL FORM WITH GROUNDED FUNCTIONALITY.
-                </p>
-              </div>
-            </div>
-            <img class="frame-36" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36122.svg" />
-            <img class="frame-37" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36123.svg" />
-            <img class="world-architecture"
-              src="https://c.animaapp.com/cxEW9Bi2/img/world-architecture-festival-idrfoc2hie-1-1@2x.png" />
-          </div>
-          <div class="simple-shapes-future">SIMPLE SHAPES, FUTURE-READY FINISHES</div>
-          <div class="frame-38"><img class="union-3" src="https://c.animaapp.com/cxEW9Bi2/img/union-21.svg" /></div>
-          <p class="text-wrapper-18">
-            Rustomjee towers feature sleek façades, refined masonry, French balconies, and open terraces—each distinct
-            yet unified under a bold design language redefining modern living.
-          </p>
-          <img class="yellow-sephere" src="https://c.animaapp.com/cxEW9Bi2/img/yellow-sephere-1@2x.png" />
-        </div>
-        <div class="architech-details">
-          <div class="overlap-14">
-            <div class="overlap-15">
-              <div class="overlap-16">
-                <img class="rectangle-11" src="https://c.animaapp.com/cxEW9Bi2/img/rectangle-3.png" />
-                <div class="frame-39">
-                  <img class="union-2" src="https://c.animaapp.com/cxEW9Bi2/img/union-25.svg" />
-                </div>
-                <div class="architect">ARCHITECT</div>
-                <img class="yellow-sephere-2" src="https://c.animaapp.com/cxEW9Bi2/img/yellow-sephere-1@2x.png" />
-                <img class="yellow-sephere-3" src="https://c.animaapp.com/cxEW9Bi2/img/yellow-sephere-2@2x.png" />
-              </div>
-              <div class="simple-shapes-future-2">SIMPLE SHAPES, FUTURE-READY FINISHES</div>
-              <img class="ellipse" src="https://c.animaapp.com/cxEW9Bi2/img/ellipse-1@2x.png" />
-              <p class="text-wrapper-19">
-                Rustomjee towers feature sleek façades, refined masonry, French balconies, and open terraces—each
-                distinct yet unified under a bold design language redefining modern living.
-              </p>
-            </div>
-            <div class="frame-40"><img class="union-3" src="https://c.animaapp.com/cxEW9Bi2/img/union-21.svg" /></div>
-          </div>
-        </div>
-        <img class="architech-banner" src="https://c.animaapp.com/cxEW9Bi2/img/architech-banner.png" />
-        <div class="banner">
-          <div class="overlap-17">
-            <div class="banner-container">
-              <div class="banner-version">
-                <p class="text-wrapper-20">
-                  Rustomjee Cliff Tower at Pali Hill, Bandra, offers serene luxury living with lush greenery, sea views,
-                  world-class amenities, and a perfect blend of elegance and comfort.
-                </p>
-                <img class="left-image" src="https://c.animaapp.com/cxEW9Bi2/img/left.png" alt="Left image" />
-              </div>
+              <div class="floorplan-carousel-nav">
+                <img id="floorplan-prev-btn" class="carousel-arrow floorplan-arrow"
+                  src="assets/images/icons/frame-35-left-arrow.png">
 
-              <div class="banner-version-2">
-                <img class="subtract-img" src="assets/images/banner/subtract.svg" alt="">
-                <img class="frame-41" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36115-2.svg" />
-                <div class="text-wrapper-21">LIVE HERE</div>
-              </div>
-            </div>
-            <div class="mount-mary">MOUNT MARY</div>
-          </div>
-          <img class="line" src="https://c.animaapp.com/cxEW9Bi2/img/line-1.svg" />
-        </div>
-      
-        <header class="header">
-          <img class="line-2" src="https://c.animaapp.com/cxEW9Bi2/img/line-1.svg" />
-          <div class="content">
-            <img class="cab-button" src="https://c.animaapp.com/cxEW9Bi2/img/cab-button.svg" />
-            <img class="rustomjeeclifftower" src="https://c.animaapp.com/cxEW9Bi2/img/rustomjeeclifftower-1.svg" />
-            <div class="frame-42">
-              <div class="button-version">
-                <div class="div-wrapper">
-                  <div class="text-wrapper-7">Request a call-back</div>
-                </div>
-                <img class="frame-26" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36115-3.svg" />
-              </div>
-              <div class="cab-button-2">
-                <img class="union-4" src="https://c.animaapp.com/cxEW9Bi2/img/union-23.svg" />
+                <img id="floorplan-next-btn" class="carousel-arrow floorplan-arrow"
+                  src="assets/images/icons/frame-35-right-arrow.png">
+                <div class="text-wrapper-4 floorplan-slide-number">1</div>
               </div>
             </div>
           </div>
-        </header>
-        <div class="location-highlishgt">
-          <div class="overlap-18">
-            <div class="rectangle-12"></div>
-            <div class="location-3">LOCATION</div>
-            <div class="text-wrapper-22">Highlights</div>
-            <img class="rectangle-13" src="https://c.animaapp.com/cxEW9Bi2/img/rectangle-11.png" />
-            <div class="rectangle-14"></div>
-            <img class="union-5" src="https://c.animaapp.com/cxEW9Bi2/img/union-24.svg" />
-            <div class="text-wrapper-22">Highlights</div>
-            <img class="frame-43" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36120-4.svg" />
-            <div class="text-wrapper-23">8.7</div>
-            <div class="km">KM</div>
-            <div class="domestic-airport">DOMESTIC AIRPORT</div>
+        </div>
+      </div>
+    </section>
+    <style>
+      /* --- CSS for Floor Plan SLIDING Carousel --- */
+
+      /* This ensures the animation is clipped correctly */
+      .floor-plan-section {
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* The main container for the carousel, sits inside .overlap-5 */
+      .floorplan-carousel-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .floorplan-carousel-viewport {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .floorplan-carousel-track {
+        display: flex;
+        height: 100%;
+        position: relative;
+        will-change: transform;
+        transition: transform 1.4s cubic-bezier(0.86, 0, 0.07, 1);
+      }
+
+      .floorplan-slide-item {
+        width: 100%;
+        flex-shrink: 0;
+        height: 100%;
+        position: relative;
+      }
+
+      /* Navigation controls layout */
+      .floorplan-carousel-nav {
+        position: absolute;
+        width: 357px;
+        /* top: 577px; */
+        bottom: 0;
+        left: 0;
+        padding: 0px 0px 0px 32px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 10;
+      }
+
+      .floorplan-arrow {
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+      }
+
+      .floorplan-carousel-nav .floorplan-slide-number {
+        font-family: "ITC Avant Garde Gothic-CEDemi", Helvetica;
+        font-weight: 400;
+        color: var(--variable-collection-rustomjee-bodycolor);
+        font-size: 160px;
+        line-height: 1;
+      }
+
+      /* --- Recreating the original layout inside each dynamic slide --- */
+      .floorplan-slide-item .frame-25 {
+        display: flex;
+        flex-direction: column;
+        /* width: 374px; */
+        align-items: center;
+        gap: 32px;
+        position: absolute;
+        top: 174px;
+        /* left: 428px; */
+        width: 50%;
+        left: 50%;
+      }
+
+      .floorplan-slide-item .image {
+        position: relative;
+        align-self: stretch;
+        width: 100%;
+        height: 275px;
+        object-fit: cover;
+      }
+
+      .floorplan-slide-item .button-version {
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+      }
+
+      .floorplan-slide-item .unit-plan {
+        position: absolute;
+        width: 129px;
+        height: 120px;
+        top: 35px;
+        left: 32px;
+        object-fit: cover;
+      }
+
+      .floorplan-slide-item .compass {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        top: 35px;
+        left: 177px;
+      }
+
+      .floorplan-slide-item .group-2 {
+        position: absolute;
+        /* width: 374px; */
+        /* height: 144px; */
+        top: 238px;
+        left: 32px;
+        /* display: grid;
+        grid-template-columns: 1fr 1fr; */
+        /* border-top: 1px solid var(--variable-collection-rustomjee-bodycolor); */
+        border-left: 1px solid var(--variable-collection-rustomjee-bodycolor);
+        width: 40%;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .floorplan-slide-item .info-box {
+        border-right: 1px solid var(--variable-collection-rustomjee-bodycolor);
+        border-bottom: 1px solid var(--variable-collection-rustomjee-bodycolor);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px;
+        flex: 0 0 49%;
+        width: 100%;
+      }
+      .floorplan-slide-item .info-box:nth-child(1), .floorplan-slide-item .info-box:nth-child(2) {
+        border-top: 1px solid var(--variable-collection-rustomjee-bodycolor);
+      }
+
+      .floorplan-slide-item .img-2 {
+        /* width: 48px; */
+        height: 48px;
+        width: 2.5vw;
+      }
+
+      .floorplan-slide-item .text-wrapper-8,
+      .floorplan-slide-item .text-wrapper-10 {
+        font-weight: 600;
+        /* font-size: 20px; */
+        font-size: 14px;
+        text-wrap: wrap;
+      }
+
+      .floorplan-slide-item .div-2,
+      .floorplan-slide-item .text-wrapper-11 {
+        font-weight: 300;
+        /* font-size: 14px; */
+        opacity: 0.56;
+        font-size: 11px;
+        text-wrap-mode: wrap;
+        text-wrap: wrap;
+      }
+
+      .floorplan-slide-item .text-wrapper-10 {
+        color: var(--variable-collection-rustomjee-rose-gold);
+        text-decoration: underline;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Only run on desktop
+        if (window.innerWidth < 768) return;
+
+        const section = document.querySelector(".floor-plan-section");
+        if (!section) return;
+
+        const track = section.querySelector(".floorplan-carousel-track");
+        const prevBtn = section.querySelector("#floorplan-prev-btn");
+        const nextBtn = section.querySelector("#floorplan-next-btn");
+        const slideNumberDisplay = section.querySelector(".floorplan-slide-number");
+
+        // --- Data for each floor plan slide ---
+        const floorplanSlideData = [{
+          mainImage: "https://c.animaapp.com/cxEW9Bi2/img/image-1@2x.png",
+          unitPlanImage: "https://c.animaapp.com/cxEW9Bi2/img/unit-plan-1@2x.png",
+          configBHK: "4 BHK",
+          deckArea: "258.34",
+          carpetArea: "2464.96",
+          price: "Ask For Details",
+          slideNumber: "1"
+        }, {
+          mainImage: "https://c.animaapp.com/cxEW9Bi2/img/image-1@2x.png", // Example image
+          unitPlanImage: "https://c.animaapp.com/cxEW9Bi2/img/unit-plan-1@2x.png", // Use a different plan image if available
+          configBHK: "5 BHK",
+          deckArea: "484.38",
+          carpetArea: "3870.84 -  3966.53",
+          price: "Ask For Details",
+          slideNumber: "2"
+        }, 
+        {
+          mainImage: "/assets/images/floorplan/16-unit-plan.webp", 
+          unitPlanImage: "https://c.animaapp.com/cxEW9Bi2/img/unit-plan-1@2x.png", 
+          configBHK: "Unit Plan",
+          deckArea: "484.38",
+          carpetArea: "3966.53",
+          price: "Ask For Details",
+          slideNumber: "3"
+        }
+      ];
+
+        let currentSlideIndex = 0;
+        let slideInterval;
+
+        function createSlides() {
+          if (!track) return;
+          track.innerHTML = '';
+          floorplanSlideData.forEach(slide => {
+            const slideElement = document.createElement('div');
+            slideElement.className = 'floorplan-slide-item';
+
+            slideElement.innerHTML = `
+        <div class="frame-25">
+          <img class="image" src="${slide.mainImage}">
+          <div class="secondFloorTrigger button-version">
+            <div class="div-wrapper"><div class="text-wrapper-7">Ask For Price Details</div></div>
+            <img class="frame-26" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36115-1.svg">
           </div>
         </div>
-        <img class="ellipse-2" src="https://c.animaapp.com/cxEW9Bi2/img/ellipse-2.png" />
-        <div class="frame-44"><img class="union-2" src="https://c.animaapp.com/cxEW9Bi2/img/union-25.svg" /></div>
+        <img class="unit-plan" src="${slide.unitPlanImage}">
+        <img class="compass" src="https://c.animaapp.com/cxEW9Bi2/img/compass-1.svg">
+        <div class="group-2">
+          <div class="info-box">
+            <img class="img-2" src="https://c.animaapp.com/cxEW9Bi2/img/project-details-overview.svg">
+            <div><div class="text-wrapper-8">${slide.configBHK}</div><div class="div-2">Configurations</div></div>
+          </div>
+          <div class="info-box">
+            <img class="img-2" src="https://c.animaapp.com/cxEW9Bi2/img/project-details-overview-1.svg">
+            <div><div class="text-wrapper-8">${slide.carpetArea}</div><div class="div-2">Carpet Area (SQ.FT)</div></div>
+          </div>
+          <div class="info-box">
+            <img class="img-2" src="https://c.animaapp.com/cxEW9Bi2/img/house-1.svg">
+            <div><div class="text-wrapper-8">${slide.deckArea}</div><div class="div-2">Deck (SQ.FT)</div></div>
+          </div>
+          <div class="info-box">
+            <img class="img-2" src="https://c.animaapp.com/cxEW9Bi2/img/note-1.svg">
+            <div><div class="text-wrapper-10 secondFloorTrigger">${slide.price}</div><div class="text-wrapper-11">Price</div></div>
+          </div>
+        </div>
+      `;
+            track.appendChild(slideElement);
+          });
+        }
+
+        function goToSlide(slideIndex) {
+          if (!track) return;
+          track.style.transform = 'translateX(' + (-slideIndex * 100) + '%)';
+          currentSlideIndex = slideIndex;
+
+          if (slideNumberDisplay) {
+            slideNumberDisplay.textContent = floorplanSlideData[slideIndex].slideNumber;
+          }
+        }
+
+        function showNextSlide() {
+          const nextIndex = (currentSlideIndex + 1) % floorplanSlideData.length;
+          goToSlide(nextIndex);
+        }
+
+        function showPrevSlide() {
+          const prevIndex = (currentSlideIndex - 1 + floorplanSlideData.length) % floorplanSlideData.length;
+          goToSlide(prevIndex);
+        }
+
+        function startTimer() {
+          clearInterval(slideInterval);
+          slideInterval = setInterval(showNextSlide, 5000);
+        }
+
+        if (track && prevBtn && nextBtn) {
+          createSlides();
+          goToSlide(0);
+          startTimer();
+
+          nextBtn.addEventListener("click", () => {
+            showNextSlide();
+            startTimer();
+          });
+          prevBtn.addEventListener("click", () => {
+            showPrevSlide();
+            startTimer();
+          });
+        }
+      });
+    </script>
+
+    <section class="projects-highlights-2-image">
+      <img class="projects-highlights-2" src="https://c.animaapp.com/cxEW9Bi2/img/projects-highlights.png">
+    </section>
+
+    <!-- REPLACE your entire gallery-sections with this new structure -->
+    <section class="gallery-sections" id="gallery">
+      <div class="gallery">
+        <div class="overlap-2">
+          <!-- This is the new container for the image carousel -->
+          <div class="gallery-carousel-container">
+            <div class="gallery-carousel-viewport">
+              <div class="gallery-carousel-track">
+                <!-- Image slides will be built here by JavaScript -->
+              </div>
+            </div>
+          </div>
+
+          <!-- All other elements remain on top of the carousel -->
+          <div class="projects-highlights">
+            <p class="p">An architectural masterpiece that balances elegance with everyday comfort.</p>
+            <img class="frame-3 firstpopuptrigger" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36124-1.svg">
+            <p class="text-wrapper-2">Rustomjee Cliff Tower establishes a striking conversation between architecture and nature, with modern design set against a backdrop of enduring beauty. Overlooking the Arabian Sea and in proximity to the cultural landmark of Mount Mary Church, the residences represent exclusivity, sophistication, and an elevated lifestyle.
+
+            </p>
+          </div>
+          <img class="deco-xxxl" src="https://c.animaapp.com/cxEW9Bi2/img/deco-1-xxxl--2-@2x.png">
+          <img class="deco-xxxl-2" src="https://c.animaapp.com/cxEW9Bi2/img/deco-2-xxxl--1-@2x.png">
+
+          <!-- This is the navigation for the new carousel -->
+          <div class="gallery-carousel-nav">
+            <img id="gallery-prev-btn" class="carousel-arrow gallery-arrow"
+              src="assets/images/icons/frame-35-left-arrow.png">
+
+            <img id="gallery-next-btn" class="carousel-arrow gallery-arrow"
+              src="assets/images/icons/frame-35-right-arrow.png">
+            <div class="text-wrapper-4 gallery-slide-number">1</div>
+          </div>
+
+          <div class="overlap-group-2">
+            <div class="gallery-2">
+              <div class="text-wrapper-3">Project</div>
+              GALLERY</div>
+            <!-- <div class="text-wrapper-3">Project</div> -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <style>
+      /* --- Complete CSS Fix for Gallery Carousel Layout --- */
+
+      /* Ensures the animation is clipped within the section boundaries */
+      .gallery-sections {
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Carousel Container: Now positioned exactly like the original image */
+      .gallery-carousel-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 60%;
+        /* Matches original rectangle-2 width */
+        height: 100%;
+        z-index: 1;
+        /* Places it at the back */
+      }
+
+      .gallery-carousel-viewport {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .gallery-carousel-track {
+        display: flex;
+        height: 100%;
+        will-change: transform;
+        transition: transform 1.4s cubic-bezier(0.86, 0, 0.07, 1);
+      }
+
+      .gallery-slide-item {
+        width: 100%;
+        height: 100%;
+        flex-shrink: 0;
+      }
+
+      .gallery-slide-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* --- Restoring Original Positions for All Static Content --- */
+      /* All static elements now have 'position: absolute' and a higher z-index */
+
+      .overlap-2 .projects-highlights {
+        position: absolute;
+        /* width: 30%; */
+        top: 0;
+        /* left: 65%; */
+        z-index: 5;
+        width: 35%;
+        right: 0;
+      }
+
+      .overlap-2 .deco-xxxl {
+        position: absolute;
+        width: 181px;
+        height: 200px;
+        top: 15%;
+        left: -6%;
+        z-index: 5;
+      }
+
+      .overlap-2 .deco-xxxl-2 {
+        position: absolute;
+        width: 154px;
+        height: 167px;
+        top: 50%;
+        left: 55%;
+        z-index: 5;
+      }
+
+      .overlap-2 .overlap-group-2 {
+        position: absolute;
+        width: 557px;
+        /* height: 195px; */
+        bottom: 0px;
+        right: 0;
+        z-index: 5;
+      }
+
+      /* Navigation: Restored to its original position and style */
+      .gallery-carousel-nav {
+        position: absolute;
+        display: inline-flex;
+        align-items: center;
+        gap: 88px;
+        bottom: 0;
+        left: 40px;
+        /* Original left position */
+        z-index: 10;
+        /* Highest z-index to be on top of everything */
+      }
+
+      .gallery-arrow {
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+      }
+
+      .gallery-carousel-nav .gallery-slide-number {
+        font-family: "ITC Avant Garde Gothic-CEDemi", Helvetica;
+        font-weight: 400;
+        color: var(--variable-collection-rustomjee-bodycolor);
+        font-size: 160px;
+        line-height: 1;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Only run on desktop
+        if (window.innerWidth < 768) return;
+
+        const section = document.querySelector(".gallery-sections");
+        if (!section) return;
+
+        const track = section.querySelector(".gallery-carousel-track");
+        const prevBtn = section.querySelector("#gallery-prev-btn");
+        const nextBtn = section.querySelector("#gallery-next-btn");
+        const slideNumberDisplay = section.querySelector(".gallery-slide-number");
+
+        // --- Data for the gallery image slides ---
+        const gallerySlideData = [{
+          image: "/assets/images/gallery/g1.webp",
+          slideNumber: "1"
+        }, {
+          image: "/assets/images/gallery/g2.webp", // Example image
+          slideNumber: "2"
+        }, {
+          image: "/assets/images/gallery/g3.webp", // Example image
+          slideNumber: "3"
+        }, {
+          image: "/assets/images/gallery/g4.webp", // Example image
+          slideNumber: "4"
+        }, {
+          image: "/assets/images/gallery/g5.webp",
+          slideNumber: "5"
+        }, {
+          image: "/assets/images/gallery/g6.webp", // Example image
+          slideNumber: "6"
+        }, {
+          image: "/assets/images/gallery/g7.webp", // Example image
+          slideNumber: "7"
+        }, {
+          image: "/assets/images/gallery/g8.webp", // Example image
+          slideNumber: "8"
+        }, {
+          image: "/assets/images/gallery/g9.webp",
+          slideNumber: "9"
+        }, {
+          image: "/assets/images/gallery/g10.webp", // Example image
+          slideNumber: "10"
+        }, {
+          image: "/assets/images/gallery/g11.webp", // Example image
+          slideNumber: "11"
+        }, {
+          image: "/assets/images/gallery/g12.webp", // Example image
+          slideNumber: "12"
+        }, {
+          image: "/assets/images/gallery/g13.webp",
+          slideNumber: "13"
+        }, {
+          image: "/assets/images/gallery/g14.webp", // Example image
+          slideNumber: "14"
+        }
+      ];
+
+        let currentSlideIndex = 0;
+        let slideInterval;
+
+        function createSlides() {
+          if (!track) return;
+          track.innerHTML = '';
+          gallerySlideData.forEach(slide => {
+            const slideElement = document.createElement('div');
+            slideElement.className = 'gallery-slide-item';
+            slideElement.innerHTML = `<img src="${slide.image}" alt="Gallery Image">`;
+            track.appendChild(slideElement);
+          });
+        }
+
+        function goToSlide(slideIndex) {
+          if (!track) return;
+          track.style.transform = 'translateX(' + (-slideIndex * 100) + '%)';
+          currentSlideIndex = slideIndex;
+
+          if (slideNumberDisplay) {
+            slideNumberDisplay.textContent = gallerySlideData[slideIndex].slideNumber;
+          }
+        }
+
+        function showNextSlide() {
+          const nextIndex = (currentSlideIndex + 1) % gallerySlideData.length;
+          goToSlide(nextIndex);
+        }
+
+        function showPrevSlide() {
+          const prevIndex = (currentSlideIndex - 1 + gallerySlideData.length) % gallerySlideData.length;
+          goToSlide(prevIndex);
+        }
+
+        function startTimer() {
+          clearInterval(slideInterval);
+          slideInterval = setInterval(showNextSlide, 5000);
+        }
+
+        if (track && prevBtn && nextBtn) {
+          createSlides();
+          goToSlide(0);
+          startTimer();
+
+          nextBtn.addEventListener("click", () => {
+            showNextSlide();
+            startTimer();
+          });
+          prevBtn.addEventListener("click", () => {
+            showPrevSlide();
+            startTimer();
+          });
+        }
+      });
+    </script>
+
+    <section class="projects-highlights-1-image">
+      <img class="projects-highlights-3" src="/assets/images/highlight/h5.webp">
+    </section>
+
+    <section class="location-section" id="location">
+      <div class="location">
+        <div class="location-2">LOCATION</div>
+        <div class="frame">
+          <p class="text-wrapper">Residences defined by modernity, stunning sea views, and timeless natural beauty.</p>
+          <img class="frame-2 firstpopuptrigger" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36124.svg">
+          <p class="div">
+            Rustomjee Cliff Tower creates a remarkable link between modern architecture and nature. Overlooking the Arabian Sea and with Mount Mary Church as a cultural landmark, the residences offer exclusivity, sophistication, and an elevated lifestyle.
+          </p>
+        </div>
+        <div class="overlap-group">
+          <!-- <div class="location-2">LOCATION</div> -->
+          <img class="rectangle" src="https://c.animaapp.com/cxEW9Bi2/img/rectangle-10.png">
+          <img class="close-up-angel" src="https://c.animaapp.com/cxEW9Bi2/img/close-up-angel-statue@2x.png">
+          <img class="cupid-angel-isolated"
+            src="https://c.animaapp.com/cxEW9Bi2/img/cupid-angel-isolated-white-background@2x.png">
+          <img class="little-fairy-statue" src="https://c.animaapp.com/cxEW9Bi2/img/little-fairy-statue@2x.png">
+        </div>
+      </div>
+    </section>
+
+    <section class="location-highlight-section" id="location-highlight-section">
+      <div class="location-highlishgt">
+        <div class="overlap-18">
+          <div class="rectangle-12"></div>
+          <div class="location-3">LOCATION</div>
+          <div class="text-wrapper-22">Highlights</div>
+          <img class="rectangle-13" src="/assets/images/map/map.webp">
+
+          <div class="location-carousel-container">
+            <div class="location-carousel-viewport">
+              <div class="location-carousel-track">
+              </div>
+            </div>
+            <div class="location-carousel-nav">
+              <img id="location-prev-btn" class="carousel-arrow location-arrow"
+                src="assets/images/icons/frame-35-left-arrow.png">
+
+              <img id="location-next-btn" class="carousel-arrow location-arrow"
+                src="assets/images/icons/frame-35-right-arrow.png">
+              <div class="location-slide-number">1</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <style>
+      /* --- CSS for Location Highlights SLIDING Carousel --- */
+
+      /* Ensures the animation is clipped within the section boundaries */
+      .location-highlight-section {
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* This container holds the carousel and is positioned where the old highlight box was */
+      .location-carousel-container {
+        position: absolute;
+        width: 605px;
+        height: 421px;
+        /* top: 258px; */
+        left: 100px;
+        bottom: 5%;
+      }
+
+      .location-carousel-viewport {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .location-carousel-track {
+        display: flex;
+        height: 100%;
+        position: relative;
+        will-change: transform;
+        transition: transform 1.4s cubic-bezier(0.86, 0, 0.07, 1);
+      }
+
+      .location-slide-item {
+        width: 100%;
+        height: 100%;
+        flex-shrink: 0;
+        position: relative;
+        color: var(--variable-collection-rustomjee-bodycolor);
+        /* Set default text color */
+      }
+
+      /* --- Recreating the original layout inside each dynamic slide --- */
+      .location-slide-item .rectangle-14 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
+
+      .location-slide-item .union-5 {
+        position: absolute;
+        width: 250px;
+        height: 247px;
+        /* top: -51px; */
+        /* Adjusting from original to fit inside the new parent */
+        /* left: 178px; */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%) !important;
+      }
+
+      .location-slide-item .domestic-airport {
+        position: absolute;
+        height: 41px;
+        top: 31px;
+        left: 32px;
+        font-family: "ITC Avant Garde Gothic-CEDemi", Helvetica;
+        font-size: 32px;
+        font-weight: 400;
+      }
+
+      .location-slide-item .text-wrapper-23 {
+        position: absolute;
+        bottom: 10px;
+        left: 32px;
+        font-family: "ITC Avant Garde Gothic-CEDemi", Helvetica;
+        font-size: 160px;
+        font-weight: 400;
+        line-height: 1;
+      }
+
+      .location-slide-item .km {
+        /* position: absolute; */
+        /* bottom: 20px;
+        left: 300px; */
+        font-family: "ITC Avant Garde Gothic-CEDemi", Helvetica;
+        font-size: 32px;
+        font-weight: 400;
+        position: relative;
+        display: inline-block;
+      }
+
+      /* Navigation layout and styling */
+      .location-carousel-nav {
+        position: absolute;
+        width: 96px;
+        height: 40px;
+        bottom: 32px;
+        right: 28px;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .location-arrow {
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+      }
+
+      .location-slide-number {
+        /* Hiding the number as it's not in the original design for this component */
+        display: none;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Only run on desktop
+        if (window.innerWidth < 768) return;
+
+        const section = document.querySelector(".location-highlight-section");
+        if (!section) return;
+
+        const track = section.querySelector(".location-carousel-track");
+        const prevBtn = section.querySelector("#location-prev-btn");
+        const nextBtn = section.querySelector("#location-next-btn");
+
+        // --- Data for each location slide ---
+        const locationSlideData = [{
+          locationName: "DOMESTIC AIRPORT",
+          distance: "8.7",
+          bgColor: "linear-gradient(90deg, rgba(153, 107, 85, 1) 3%, rgba(229, 171, 142, 1) 48%, rgba(153, 107, 85, 1) 93%)"
+        }, {
+          locationName: "INTERNATIONAL AIRPORT",
+          distance: "10.5",
+          bgColor: "linear-gradient(90deg, rgba(85, 153, 133, 1) 3%, rgba(142, 229, 199, 1) 48%, rgba(85, 153, 133, 1) 93%)" // Example color
+        }, {
+          locationName: "DHIRUBHAI AMBANI INTERNATIONAL SCHOOL",
+          distance: "8.2",
+          bgColor: "linear-gradient(90deg, rgba(153, 85, 99, 1) 3%, rgba(229, 142, 163, 1) 48%, rgba(153, 85, 99, 1) 93%)" // Example color
+        }, {
+          locationName: "BANDRA-WORLI SEA LINK",
+          distance: "2.9",
+          bgColor: "linear-gradient(90deg, rgba(153, 107, 85, 1) 3%, rgba(229, 171, 142, 1) 48%, rgba(153, 107, 85, 1) 93%)"
+        }, {
+          locationName: "MOUNT MARY CHURCH",
+          distance: "0.15",
+          bgColor: "linear-gradient(90deg, rgba(85, 153, 133, 1) 3%, rgba(142, 229, 199, 1) 48%, rgba(85, 153, 133, 1) 93%)" // Example color
+        }, {
+          locationName: "LILAVATI HOSPITAL",
+          distance: "3.5",
+          bgColor: "linear-gradient(90deg, rgba(153, 85, 99, 1) 3%, rgba(229, 142, 163, 1) 48%, rgba(153, 85, 99, 1) 93%)" // Example color
+        }, {
+          locationName: "BANDRA RAILWAY STATION",
+          distance: "3.1",
+          bgColor: "linear-gradient(90deg, rgba(153, 107, 85, 1) 3%, rgba(229, 171, 142, 1) 48%, rgba(153, 107, 85, 1) 93%)"
+        }];
+
+        let currentSlideIndex = 0;
+        let slideInterval;
+
+        function createSlides() {
+          if (!track) return;
+          track.innerHTML = '';
+          locationSlideData.forEach(slide => {
+            const slideElement = document.createElement('div');
+            slideElement.className = 'location-slide-item';
+
+            slideElement.innerHTML = `
+        <div class="rectangle-14" style="background: ${slide.bgColor};"></div>
+        <img class="union-5" src="https://c.animaapp.com/cxEW9Bi2/img/union-24.svg">
+        <div class="domestic-airport">${slide.locationName}</div>
+        <div class="text-wrapper-23">${slide.distance}<div class="km">KM</div></div>
+        
+      `;
+            track.appendChild(slideElement);
+          });
+        }
+
+        function goToSlide(slideIndex) {
+          if (!track) return;
+          track.style.transform = 'translateX(' + (-slideIndex * 100) + '%)';
+          currentSlideIndex = slideIndex;
+        }
+
+        function showNextSlide() {
+          const nextIndex = (currentSlideIndex + 1) % locationSlideData.length;
+          goToSlide(nextIndex);
+        }
+
+        function showPrevSlide() {
+          const prevIndex = (currentSlideIndex - 1 + locationSlideData.length) % locationSlideData.length;
+          goToSlide(prevIndex);
+        }
+
+        function startTimer() {
+          clearInterval(slideInterval);
+          slideInterval = setInterval(showNextSlide, 5000);
+        }
+
+        if (track && prevBtn && nextBtn) {
+          createSlides();
+          goToSlide(0);
+          startTimer();
+
+          nextBtn.addEventListener("click", () => {
+            showNextSlide();
+            startTimer();
+          });
+          prevBtn.addEventListener("click", () => {
+            showPrevSlide();
+            startTimer();
+          });
+        }
+      });
+    </script>
+
+
+    <section class="one-address-section">
+      <div class="one-address-container">
+        <p class="text-wrapper-15">What makes Rustomjee Cliff Tower unique?</p>
+        <img class="frame-34 firstpopuptrigger" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36124-4.svg">
+        <div class="text-wrapper-16">
+          Rustomjee Cliff Tower establishes a remarkable connection between modern architecture and nature. With views of the Arabian Sea and Mount Mary Church as a cultural landmark, the residences provide exclusivity, sophistication, and an elevated lifestyle.
+          <ul>
+            <li>A unique community featuring 37 exclusive residences.</li>
+            <li>The height from one floor to the next is 10’3 inches.</li>
+            <li>The entrance lobby features an impressive double height of 18'</li>
+            <li>Each residence features a nearly private floor lobby, ensuring complete privacy for residents.</li>
+            <li>4 lifts and a dedicated fire elevator serve only 2 apartments per floor to ensure maximum accessibility.</li>
+            <li>An expansive sundeck that is 8.5 feet deep, offering some of the city's most sought-after views.</li>
+          </ul>
+        </div>
+        <div class="one-address">
+          <div class="text-wrapper-17">Legacy. Location. Stature</div>
+          ONE ADDRESS</div>
+        <!-- <div class="text-wrapper-17">Legacy. Location. Stature</div> -->
+        <div class="ellipse-2-container floorpopupTrigger">
+          <div style="position: relative;width: 100%;height: 100%;">
+        <img class="ellipse-2" src="/assets/images/gallery/g9.webp">
+        <div class="frame-44"><img class="union-2" src="https://c.animaapp.com/cxEW9Bi2/img/union-25.svg"></div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer-sections">
+      <div class="footer-container">
         <div class="group-4">
           <div class="frame-45">
             <div class="frame-46">
-              <div class="text-wrapper-24">Privacy Policy</div>
-              <img class="line-3" src="https://c.animaapp.com/cxEW9Bi2/img/line-7.svg" />
-              <div class="text-wrapper-24">Terms &amp; Conditions</div>
+              <a class="text-wrapper-24" href="/privacypolicy.html" target="_blank" rel="noopener noreferer">Privacy Policy</a>
+              <img class="line-3" src="https://c.animaapp.com/cxEW9Bi2/img/line-7.svg">
+              <a class="text-wrapper-24" href="/terms.html" target="_blank" rel="noopener noreferer">Terms &amp; Conditions</a>
             </div>
             <p class="text-wrapper-25">
               Disclaimer :The content is for information purposes only and does not constitute an offer to avail of
@@ -653,16 +2728,383 @@
               Reserved.
             </p>
           </div>
-          <img class="mob-logo" src="https://c.animaapp.com/cxEW9Bi2/img/mob-logo-3.svg" />
+          <img class="mob-logo" src="https://c.animaapp.com/cxEW9Bi2/img/mob-logo-3.svg">
         </div>
       </div>
-    </div>
+    </section>
+
+
+
+    <svg width="0" height="0" style="position:absolute;">
+      <defs>
+        <clipPath id="mount-mary-mask" clipPathUnits="objectBoundingBox">
+          <path
+            d="M0.08,0.91 V0.1 H0.26 L0.5,0.58 L0.74,0.1 H0.92 V0.91 H0.76 V0.33 L0.55,0.76 H0.45 L0.24,0.33 V0.91 H0.08 Z" />
+        </clipPath>
+      </defs>
+    </svg>
   </div>
 
+ <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-mainContainer" id="modalContainer">
+            <button class="close-btn" id="closeBtn">×</button>
+            
+            <div class="left-panel">
+                <!-- <div class="brand-name">Rustomjee</div>
+                <div class="project-title">CLIFF TOWER</div>
+                <div class="location">MOUNT MARY, BANDRA</div> -->
+                <img src="/assets/images/modal-logo.png" alt="" class="left-panellogo">
+                <img src="/assets/images/highlight/mobile-popup.jpg" alt="" class="left-panelImg">
+                <br>
+                <div class="main-heading">Unlock Privileges with Rustomjee Developer</div>
+                <div class="sub-heading">Register now to access developer-direct offers</div>
+                
+                <form class="registrationForm" id="ModalFormSlug1" data-tracking-id="form_1_desktopForm" onsubmit="if (!window.__cfRLUnblockHandlers) return false; event.preventDefault(),validateAndSubmit(this)" data-cf-modified-b7288a6e24786b0f0ebfe679-="">
+                <input type="hidden" id="gclid_field" name="gclid_field">
+
+                    <div class="form-group">
+                        <input type="text" class="input-field form-name" placeholder="First Name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="phone-container">
+                            <div class="phone-input-wrapper">
+                                <div class="phone-icon"></div>
+                                <select class="country-code form-country" required>
+                                    <option value="+91">+91</option>
+                                    <option value="+1">+1</option>
+                                    <option value="+44">+44</option>
+                                    <option value="+61">+61</option>
+                                    <option value="+971">+971</option>
+                                </select>
+                                <input type="text" class="phone-number form-number" placeholder="Your Number" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="cta-button">
+                      <img src="/assets/images/icons/getanoffer.png" alt="" width="100%" height="auto">
+                    </button>
+                    
+                    <div class="checkbox-container">
+                        <input type="checkbox" class="checkbox" id="updates" checked required>
+                        <label for="updates" class="checkbox-text">I consent to the use of provided data in accordance with the
+                                        <a href="/privacypolicy.html"
+                                            class="siteVisit-privacyLink firstFormPrivacyLink">privacy policy</a>.</label>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="right-panel">
+                <img src="/assets/images/Modal 1.png" alt="Rustomjee Cliff Tower architectural view">
+            </div>
+        </div>
+    </div>
+
+    <div class="modalFloor-Container">
+        
+        <img src="/assets/images/icons/deco-2-xxl1.png" alt="Pendant light" class="modal-decoration pendant">
+        
+        <button class="closeFloorpopup" onclick="closeFloorModal()">×</button>
+
+        <div class="header-popup">
+            <h1>What Makes Rustomjee Cliff Tower One of a Kind</h1>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-item">
+                <img src="assets/images/icons/Rectangle.png" alt="Building icon" class="feature-icon">
+                <div class="feature-title">A niche community of only</div>
+                <!-- <div class="feature-subtitle">37<br>exclusive residences</div> -->
+            </div>
+            <div class="feature-item">
+                <img src="/assets/images/icons/Rectangle-1.png" alt="Chandelier icon" class="feature-icon">
+                <div class="feature-title">Generous floor-to-floor height of</div>
+                <!-- <div class="feature-subtitle">10'3"</div> -->
+            </div>
+            <div class="feature-item">
+                <img src="/assets/images/icons/Rectangle-5.png" alt="Entrance icon" class="feature-icon">
+                <div class="feature-title">Grand double-height entrance</div>
+                <!-- <div class="feature-subtitle">lobby of 18'</div> -->
+            </div>
+            <div class="feature-item">
+                <img src="/assets/images/icons/Rectangle-2.png" alt="Door icon" class="feature-icon">
+                <div class="feature-title">An almost-private floor lobby for<br>each residence, ensuring absolute</div>
+                <!-- <div class="feature-subtitle">privacy</div> -->
+            </div>
+            <div class="feature-item">
+                <img src="/assets/images/icons/Rectangle-3.png" alt="Elevator icon" class="feature-icon">
+                <div class="feature-title">Four lifts, including a dedicated fire<br>elevator, serve only two apartments<br>per floor to ensure utmost</div>
+                <!-- <div class="feature-subtitle">accessibility</div> -->
+            </div>
+            <div class="feature-item">
+                <img src="/assets/images/icons/Rectangle-4.png" alt="Balcony icon" class="feature-icon">
+                <div class="feature-title">An expansive 8.5-foot-deep<br>sundeck with the city's most</div>
+                <!-- <div class="feature-subtitle">coveted views</div> -->
+            </div>
+        </div>
+        <img src="assets/images/icons/Blue-sephere.png" alt="" class="bluesphere-popup" />
+        <img src="assets/images/icons/rose-gold.png" alt="" class="rosesphere-popup" />
+
+        <div style="text-align: center;">
+        <a href="#" class="cta-button firstpopuptrigger" >
+            <img src="assets/images/icons/ButtonVersion3.png" alt="" width="200" height="auto">
+        </a>
+        </div>
+    </div>
+
+
+    <div class="modalFloor-secondpopupContainer" id="modalFloorSecondpopupOverlay">
+        <div class="modalfloorSecond-container" id="modalfloorsecond">
+            <button class="close-btn3" id="closebtn2">×</button>
+            
+            <div class="left-panel">
+                <!-- <div class="brand-name">Rustomjee</div>
+                <div class="project-title">CLIFF TOWER</div>
+                <div class="location">MOUNT MARY, BANDRA</div> -->
+                <img src="/assets/images/modal-logo.png" alt="" >
+                <br>
+                <div class="main-heading">Unlock Privileges with Rustomjee Developer</div>
+                <div class="sub-heading">Register now to access developer-direct offers</div>
+                
+                <form class="registrationForm" id="ModalFormSlug4"
+                                data-tracking-id="form_2_popupForm">
+                                <input type="hidden" id="gclid_field" name="gclid_field">
+
+                    <div class="form-group">
+                        <input type="text" class="input-field form-name" placeholder="First Name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="phone-container">
+                            <div class="phone-input-wrapper">
+                                <div class="phone-icon"></div>
+                                <select class="country-code form-country" required>
+                                    <option value="+91">+91</option>
+                                    <option value="+1">+1</option>
+                                    <option value="+44">+44</option>
+                                    <option value="+61">+61</option>
+                                    <option value="+971">+971</option>
+                                </select>
+                                <input type="tel" class="phone-number form-number" placeholder="Your Number" required pattern="[0-9]{10}" maxlength="10">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="cta-button2"><img src="assets/images/icons/getanoffer.png" alt="" width="100%" height="auto"></button>
+                    
+                    <div class="checkbox-container">
+                        <input type="checkbox" class="checkbox" id="updates" required checked>
+                        <label for="updates" class="checkbox-text">I consent to the use of provided data in accordance with the
+                                        <a href="/privacypolicy.html"
+                                            class="siteVisit-privacyLink firstFormPrivacyLink">privacy policy</a>.</label>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="right-panel">
+                <h3 class="right-Heading">GROUND LEVEL ARRIVAL AND LANDSCAPE DESIGN</h3>
+                <ul class="floor-popuppointsContainer">
+                    <li>Entrance driveway</li>
+                    <li>Exit driveway</li>
+                    <li>Porte-cochère</li>
+                    <li>Security pavilion</li>
+                    <li>Botanical perimeter planting</li>
+                    <li>Drop-off court with lush, creeper-clad pergola</li>
+                    <li>Signature reflecting water feature</li>
+                    <li>Artisan cobble-paving in a radial pattern</li>
+                    <li>Pedestrian ramp</li>
+                    <li>Boundary wall</li>
+                    <li>Fire tender access gate (sliding)</li>
+                    <li>Pedestrian promenade with sculpted seating and median greenery</li>
+                    <li>Entry to the assessment parking</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
   <script>
-    
+    // Register GSAP plugins
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // --- CORE HELPERS for Responsive Animations ---
+
+      // 1. Check if we are in mobile view
+      function isMobileView() {
+        return window.innerWidth <= 1099;
+      }
+
+      // 2. Get the current view's main container selector
+      function getViewContainer() {
+        return isMobileView() ? '[data-mobile-view]' : '[data-desktop-view]';
+      }
+
+      // 3. Create a "scoped" selector that only finds elements in the active view
+      function scopedSelector(selector) {
+        const container = getViewContainer();
+        return `${container} ${selector}`;
+      }
+
+
+      // --- MAIN ANIMATION LOGIC ---
+
+      function initializeAnimations() {
+        // Kill all previous ScrollTriggers to prevent conflicts on resize
+        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+
+        // --- 1. PAGE LOAD ANIMATION (for "Above the Fold" content) ---
+        const pageLoadTimeline = gsap.timeline({
+          defaults: {
+            duration: 1.4,
+            ease: "power3.out"
+          }
+        });
+
+        pageLoadTimeline
+          .from(scopedSelector(".bg-video"), { scale: 1.1, autoAlpha: 0, duration: 2 }, 0)
+          .from(scopedSelector(".header, .banner .rustomjeeclifftower"), { autoAlpha: 0, y: -40, stagger: 0.1 }, 0.3)
+          .from(scopedSelector(".banner .mount-mary"), { autoAlpha: 0, scale: 0.9, y: 30 }, 0.5)
+          .from(scopedSelector(".banner .frame-2 .text-wrapper, .banner .frame-2 .text-wrapper-2, .text-wrapper-21"), { autoAlpha: 0, y: 20, stagger: 0.15 }, 0.8)
+          .from(scopedSelector(".banner .line"), { scaleX: 0, transformOrigin: 'left', duration: 1 }, 1)
+          .from(scopedSelector(".banner .p, .text-wrapper-20"), { autoAlpha: 0, y: 20 }, 1.2);
+
+
+        // --- 2. ENHANCED SCROLL-TRIGGERED ANIMATIONS ---
+        const sections = document.querySelectorAll(scopedSelector('section'));
+
+        sections.forEach((section) => {
+          const headline = section.querySelector('h1, h2, .architect, .highlights, .location, .gallery-2, .text-wrapper-14, .one-address-2');
+          const content = section.querySelectorAll('p, .text-wrapper-3, .text-wrapper-11, .text-wrapper-12, .text-wrapper-15, .text-wrapper-18, .text-wrapper-19');
+
+          // --- Universal Cinematic Reveal for these images ---
+          const cinematicImages = section.querySelectorAll(
+            'img.architech-banner, img.project-highlight, img.gallery-banner, img.maunt-mary-banner, img.unit-plan, ' +
+            '.projects-highlights-5, .projects-highlights-2, .projects-highlights-3, .location-s-map, ' +
+            '.rectangle-3, .rectangle-5, .rectangle-7, .rectangle-8, .rectangle-11, .rectangle-10, .rectangle-6, .rectangle-7, .rectangle-8, .rectangle-2, .rectangle, .rectangle-12, .rectangle-13'
+          );
+
+          // --- Specific sequential reveal for these 3 angels ---
+          const angelImages = section.querySelectorAll(
+            '.cupid-angel-isolated, .close-up-angel, .little-fairy-statue'
+          );
+
+          // --- Dynamic Float for Decorative Elements ---
+          const decorativeElements = section.querySelectorAll(
+            'img.yellow-sephere, img.yellow-sephere-2, img.yellow-sephere-3, img.deco-xxxl, img.deco-xxxl-2, img.ellipse, img.ellipse-2, ' +
+            '.overlap-2, .overlap-3, .overlap-14, .overlap-15, .overlap-16' // Include relevant overlaps as decorative elements if they contain masks/shapes
+          );
+
+          // --- Playful Pop-in for Icons ---
+          const icons = section.querySelectorAll(
+            '.union, .union-2, .union-3, .union-4, .union-5, .compass, .frame-32, .frame-34, .frame-37, .frame-43, .frame-44, .frame-40, .frame-38, .frame-39, .frame-6, .frame-7, .frame-8, .frame-9, .frame-10, .frame-11, .frame-12, .frame-13, .frame-14, .frame-15, .frame-16, .frame-17, .frame-18, .frame-19, .frame-20, .frame-21, .frame-22, .frame-23'
+          );
+
+          const revealTimeline = gsap.timeline({
+            scrollTrigger: {
+              trigger: section,
+              start: "top 80%",
+              toggleActions: "play none none none"
+            },
+            defaults: {
+              duration: 1.2,
+              ease: 'power3.out'
+            }
+          });
+
+          // Animate the elements if they exist
+          if (headline) {
+            revealTimeline.from(headline, { autoAlpha: 0, y: 50, scale: 0.95 }, 0);
+          }
+
+          // Apply Cinematic Reveal to all designated images
+          if (cinematicImages.length > 0) {
+            revealTimeline.from(cinematicImages, {
+              autoAlpha: 0,
+              y: 80,
+              clipPath: 'inset(0% 0% 100% 0%)',
+              stagger: 0.1, // Slight stagger for multiple images
+              duration: 1.5
+            }, 0.1);
+          }
+
+          // Apply Dynamic Float to decorative elements
+          if (decorativeElements.length > 0) {
+            revealTimeline.from(decorativeElements, {
+              autoAlpha: 0,
+              y: 60,
+              rotation: -10,
+              scale: 0.8,
+              stagger: 0.08
+            }, 0.2);
+          }
+
+          if (content.length > 0) {
+            revealTimeline.from(content, { autoAlpha: 0, y: 30, stagger: 0.08 }, 0.3);
+          }
+
+          // --- Special: Sequential Angel Reveal ---
+          if (angelImages.length > 0) {
+            revealTimeline.from(angelImages, {
+              autoAlpha: 0,
+              scale: 0.8,
+              y: 30,
+              stagger: 0.2, // Stagger them one by one
+              duration: 1,
+              ease: 'back.out(1.4)'
+            }, 0.5); // Ensure they appear after other elements in the section
+          }
+
+          // Apply Playful Pop-in for Icons
+          if (icons.length > 0) {
+            revealTimeline.from(icons, {
+              autoAlpha: 0,
+              scale: 0.5,
+              stagger: 0.03,
+              duration: 0.8,
+              ease: 'back.out(1.7)'
+            }, 0.6); // Appear slightly later in the sequence
+          }
+        });
+
+        // --- 3. PARALLAX EFFECT (for background masks) ---
+        gsap.to(scopedSelector(".body .mask, .body .mask-2, .body .img"), {
+          yPercent: -15,
+          ease: "none",
+          scrollTrigger: {
+            trigger: "body",
+            start: "top top",
+            end: "bottom top",
+            scrub: 2
+          }
+        });
+
+      } // End of initializeAnimations()
+
+
+      // --- EVENT LISTENERS ---
+
+      // Run animations on initial page load
+      initializeAnimations();
+
+      // Re-run animations on window resize to adapt to mobile/desktop changes
+      let resizeTimer;
+      window.addEventListener("resize", () => {
+        clearTimeout(resizeTimer);
+        // Debounce the resize event to improve performance
+        resizeTimer = setTimeout(() => {
+          initializeAnimations();
+        }, 250);
+      });
+
+    });
   </script>
+
+
+
+  <script src="/assets/js/api.js"></script>
+  <script src="/assets/js/custom.js"></script>
+  <script src="/script.js"></script>
 </body>
 
 </html>

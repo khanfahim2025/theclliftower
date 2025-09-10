@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architect Profile Carousel</title>
+    <style>
+        /* --- Basic Setup & Trigger Button --- */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .trigger-button {
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: #333;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .trigger-button:hover {
+            background-color: #555;
+        }
+
+        /* --- Modal Overlay & Container --- */
+        .architect-popupoverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .architect-popupoverlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-container {
+            width: 90%;
+            max-width: 400px;
+            background-color: #fff;
+            border-radius: 12px;
+            overflow: hidden; /* Crucial for carousel */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transform: scale(0.95);
+            transition: transform 0.3s ease-in-out;
+            position: relative; /* Needed for the static close button */
+        }
+        
+        .architect-popupoverlay.active .modal-container {
+            transform: scale(1);
+        }
+
+        /* --- Image & Close Button --- */
+        .image-section {
+            position: relative;
+        }
+
+        .profile-image {
+            width: 100%;
+            display: block;
+        }
+        
+        /* MODIFIED: Close button is now positioned relative to the modal-container */
+        .close-button {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255, 255, 255, 0.85);
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            font-weight: 300;
+            color: #333;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            line-height: 1;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            z-index: 10; /* Ensures it's above the sliding content */
+        }
+        
+        .close-button:hover {
+            transform: rotate(90deg);
+            background-color: #fff;
+        }
+
+        /* --- Details & Carousel Section --- */
+        .details-section {
+            background-color: #d3a995; /* Color picked from the image */
+            padding: 40px 30px 30px 30px;
+            position: relative;
+            color: #2b2b2b;
+        }
+        
+        /* MODIFIED: Main carousel logic now applies to the outer container */
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide {
+            flex: 0 0 100%;
+            box-sizing: border-box;
+        }
+
+        .quote-mark {
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 150px;
+            font-family: serif;
+            color: rgba(0, 0, 0, 0.08);
+            line-height: 1;
+            user-select: none;
+        }
+        
+        .profile-text {
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 0 0 30px 0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .profile-text strong {
+            font-weight: 800; /* Bolder name */
+        }
+        
+        .logos-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logos-container img {
+            max-height: 25px;
+            width: auto;
+            object-fit: contain;
+        }
+        .logos-container .logo-abb {
+             max-height: 20px;
+        }
+
+        .navigation-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end; /* Aligns arrows and number */
+            position: relative;
+            z-index: 2;
+        }
+
+        .arrow-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .arrow {
+            width: 40px;
+            height: 40px;
+            background-color: #3a3a3a;
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .arrow:hover {
+            background-color: #000;
+        }
+
+        .slide-number {
+            font-size: 120px;
+            font-weight: 800;
+            color: #3a3a3a;
+            line-height: 0.8;
+            user-select: none;
+        }
+
+        @media (max-width:1099px) {
+            .modal-container {
+            width: 100%;
+            max-width: 100%;
+            border-radius: 0;
+            height: 100vh;
+        }
+        .details-section {
+            height: 100%;
+        }
+        }
+
+    </style>
+</head>
+<body>
+
+    <button class="trigger-button">Show Profile</button>
+
+    <div class="architect-popupoverlay">
+        <div class="modal-container">
+            <button class="close-button">&times;</button>
+            
+            <div class="carousel-inner">
+                <div class="carousel-slide">
+                    <div class="image-section">
+                        <img src="https://www.theclifftower.com/assets/images/address/a4.webp" alt="Sanjay Puri" class="profile-image">
+                    </div>
+                    <div class="details-section">
+                        <div class="quote-mark">“</div>
+                        <p class="profile-text">
+                            <strong>SANJAY PURI</strong> IS ONE OF INDIA'S MOST INTERNATIONALLY AWARDED ARCHITECTS, WITH OVER 360 ACCOLADES ACROSS GLOBAL PLATFORMS INCLUDING THE WORLD ARCHITECTURE FESTIVAL, LEAF (UK), AND ARCHITIZER A+ AWARDS. RENOWNED FOR BOLD GEOMETRIES AND CLIMATIC RESPONSIVENESS, HIS WORK SEAMLESSLY BLENDS SCULPTURAL FORM WITH GROUNDED FUNCTIONALITY.
+                        </p>
+                        <div class="logos-container">
+                            <img src="/assets/images/highlight/architectlogo2.jpeg" alt="Architizer Logo">
+                            <img src="/assets/images/highlight/architectlogo1.jpeg" alt="ABB Logo" class="logo-abb">
+                            <img src="/assets/images/highlight/architectlogo3.jpeg" alt="World Architecture Festival Logo">
+                        </div>
+                        <div class="navigation-footer">
+                            <div class="arrow-buttons">
+                                <button class="arrow prev-arrow">&larr;</button>
+                                <button class="arrow next-arrow">&rarr;</button>
+                            </div>
+                            <div class="slide-number">1</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-slide">
+                    <div class="image-section">
+                        <img src="https://www.theclifftower.com/assets/images/address/a4.webp" alt="Innovation" class="profile-image">
+                    </div>
+                    <div class="details-section">
+                        <div class="quote-mark">“</div>
+                        <p class="profile-text">
+                            <strong>INNOVATION IN DESIGN</strong> IS AT THE CORE OF HIS PHILOSOPHY. EACH PROJECT IS A TESTAMENT TO PUSHING BOUNDARIES WHILE RESPECTING THE LOCAL CONTEXT AND ENVIRONMENT. THIS APPROACH HAS GARNERED CRITICAL ACCLAIM AND SET NEW BENCHMARKS IN CONTEMPORARY ARCHITECTURE, MAKING HIS FIRM A LEADER IN THE FIELD.
+                        </p>
+                        <div class="logos-container">
+                            <img src="/assets/images/highlight/architectlogo2.jpeg" alt="Architizer Logo">
+                            <img src="/assets/images/highlight/architectlogo1.jpeg" alt="ABB Logo" class="logo-abb">
+                            <img src="/assets/images/highlight/architectlogo3.jpeg" alt="World Architecture Festival Logo">
+                        </div>
+                        <div class="navigation-footer">
+                            <div class="arrow-buttons">
+                                <button class="arrow prev-arrow">&larr;</button>
+                                <button class="arrow next-arrow">&rarr;</button>
+                            </div>
+                            <div class="slide-number">2</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-slide">
+                    <div class="image-section">
+                         <img src="https://www.theclifftower.com/assets/images/address/a4.webp" alt="Global Presence" class="profile-image">
+                    </div>
+                    <div class="details-section">
+                        <div class="quote-mark">“</div>
+                        <p class="profile-text">
+                           <strong>A GLOBAL PRESENCE</strong> WITH PROJECTS SPANNING ACROSS CONTINENTS, SANJAY PURI ARCHITECTS HAVE ESTABLISHED A REPUTATION FOR EXCELLENCE AND CREATIVITY. THEIR PORTFOLIO SHOWCASES A DIVERSE RANGE OF WORK, FROM RESIDENTIAL AND COMMERCIAL BUILDINGS TO LARGE-SCALE URBAN PLANNING PROJECTS.
+                        </p>
+                        <div class="logos-container">
+                             <img src="/assets/images/highlight/architectlogo2.jpeg" alt="Architizer Logo">
+                            <img src="/assets/images/highlight/architectlogo1.jpeg" alt="ABB Logo" class="logo-abb">
+                            <img src="/assets/images/highlight/architectlogo3.jpeg" alt="World Architecture Festival Logo">
+                        </div>
+                        <div class="navigation-footer">
+                            <div class="arrow-buttons">
+                                <button class="arrow prev-arrow">&larr;</button>
+                                <button class="arrow next-arrow">&rarr;</button>
+                            </div>
+                            <div class="slide-number">3</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Modal elements
+            const triggerButton = document.querySelector('.trigger-button');
+            const architectPopupOverlay = document.querySelector('.architect-popupoverlay');
+            const closeButton = document.querySelector('.close-button');
+
+            // Carousel elements
+            const carouselInner = document.querySelector('.carousel-inner');
+            const slides = document.querySelectorAll('.carousel-slide');
+            // Select ALL arrow and number elements since they are now duplicated
+            const prevArrows = document.querySelectorAll('.prev-arrow');
+            const nextArrows = document.querySelectorAll('.next-arrow');
+            const slideNumberEls = document.querySelectorAll('.slide-number');
+
+            // Carousel state
+            let currentIndex = 0;
+            const totalSlides = slides.length;
+            let autoPlayInterval;
+
+            // --- Modal Logic ---
+            const openArchitectModal = () => architectPopupOverlay.classList.add('active');
+            const closeArchitectModal = () => architectPopupOverlay.classList.remove('active');
+
+            triggerButton.addEventListener('click', openArchitectModal);
+            closeButton.addEventListener('click', closeArchitectModal);
+            architectPopupOverlay.addEventListener('click', (event) => {
+                if (event.target === architectPopupOverlay) {
+                    closeArchitectModal();
+                }
+            });
+
+            // --- Carousel Logic ---
+            const updateCarousel = () => {
+                carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+                
+                // Update the slide number on all slides
+                slideNumberEls.forEach(el => {
+                    el.textContent = currentIndex + 1;
+                });
+            };
+
+            const goToNextSlide = () => {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateCarousel();
+            };
+
+            const goToPrevSlide = () => {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                updateCarousel();
+            };
+            
+            const startAutoPlay = () => {
+                clearInterval(autoPlayInterval);
+                autoPlayInterval = setInterval(goToNextSlide, 5000);
+            };
+
+            // MODIFIED: Attach event listeners to ALL arrow buttons
+            nextArrows.forEach(arrow => {
+                arrow.addEventListener('click', () => {
+                    goToNextSlide();
+                    startAutoPlay(); // Reset timer on manual navigation
+                });
+            });
+
+            prevArrows.forEach(arrow => {
+                arrow.addEventListener('click', () => {
+                    goToPrevSlide();
+                    startAutoPlay(); // Reset timer on manual navigation
+                });
+            });
+
+            // --- Initialization ---
+            updateCarousel(); // Set initial state
+            startAutoPlay(); // Start the automatic sliding
+        });
+    </script>
+</body>
+</html>

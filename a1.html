@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/desk-css/globals.css" media="screen and (min-width: 768px)" />
+  <link rel="stylesheet" href="/assets/desk-css/styleguide.css" media="screen and (min-width: 768px)" />
+  <link rel="stylesheet" href="/assets/desk-css/style.css" media="screen and (min-width: 768px)" />
+
+  <link rel="stylesheet" href="assets/mob-css/globals.css" media="screen and (max-width: 767px)" />
+  <link rel="stylesheet" href="assets/mob-css/styleguide.css" media="screen and (max-width: 767px)" />
+  <link rel="stylesheet" href="assets/mob-css/style.css" media="screen and (max-width: 767px)" />
+  <style>
+    /* View-switching logic */
+    [data-desktop-view] {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      [data-desktop-view] {
+        display: block;
+      }
+
+      [data-mobile-view] {
+        display: none;
+      }
+    }
+
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* This creates the "viewport" for your slides */
+    [data-desktop-view] .overlap-wrapper {
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    /* Lifts the header above all slides */
+    [data-desktop-view] .header {
+      position: relative;
+      z-index: 3;
+    }
+
+    /* The first slide (visible by default) */
+    [data-desktop-view] .banner {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      /* Sits below the header */
+    }
+
+    /* The second slide (positioned below the first) */
+    [data-desktop-view] #architect-section {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      top: 100vh;
+      /* Positioned one full screen down */
+      left: 0;
+      z-index: 1;
+      /* Sits below the main banner */
+    }
+
+    /* Makes the image fill its container */
+    [data-desktop-view] .architech-banner {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+    <section class="architech-main-section">
+          <div class="architech-details">
+            <div class="overlap-14">
+              <div class="overlap-15">
+                <div class="overlap-16">
+                  <img class="rectangle-11" src="https://c.animaapp.com/cxEW9Bi2/img/rectangle-3.png">
+                  <div class="frame-39">
+                    <img class="union-2" src="https://c.animaapp.com/cxEW9Bi2/img/union-25.svg">
+                  </div>
+                  <div class="architect">ARCHITECT</div>
+                  <img class="yellow-sephere-2" src="https://c.animaapp.com/cxEW9Bi2/img/yellow-sephere-1@2x.png">
+                  <img class="yellow-sephere-3" src="https://c.animaapp.com/cxEW9Bi2/img/yellow-sephere-2@2x.png">
+                </div>
+                <div class="simple-shapes-future-2">SIMPLE SHAPES, FUTURE-READY FINISHES</div>
+                <img class="ellipse" src="https://c.animaapp.com/cxEW9Bi2/img/ellipse-1@2x.png">
+                <p class="text-wrapper-19">
+                  Rustomjee towers feature sleek façades, refined masonry, French balconies, and open terraces—each
+                  distinct yet unified under a bold design language redefining modern living.
+                </p>
+              </div>
+              <div class="frame-40"><img class="union-3" src="https://c.animaapp.com/cxEW9Bi2/img/union-21.svg"></div>
+            </div>
+          </div>
+
+
+        </section>
+
+
+        <style>
+          @media screen and (min-width: 768px) {
+            
+            /*
+              This section corrects the layout for the two architect sections,
+              making each one a full-screen panel that the page can snap to.
+            */
+
+            /* FIX 1: The 'Architect Details' main container */
+            .version .architech-main-section {
+              position: absolute;
+              width: 100%;
+              height: 100vh; /* Make it full viewport height */
+              left: 0;
+              top: 215vh; /* Position it as the 3rd full screen section (after banner and banner-image) */
+              
+              /* Use flexbox to center the content vertically and horizontally */
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              overflow: hidden;
+            }
+
+            /* Reset the inner '.architech-details' div to be positioned by its new flex parent */
+            .version .architech-details {
+              position: relative; /* Was 'absolute', this is crucial for flex centering */
+              top: auto; /* Remove fixed positioning */
+              left: auto; /* Remove fixed positioning */
+              height: auto; /* Allow content to define its height */
+              width: 90%; /* Maintain a consistent width with other sections */
+              max-width: 1440px; /* Set a max-width for large screens */
+            }
+
+            /* FIX 2: The 'Architect Slider' main container */
+            .version .architech-slider-section {
+              position: absolute;
+              width: 100%;
+              height: 100vh; /* Make it full viewport height */
+              left: 0;
+              top: 300vh; /* Position it as the 4th full screen section */
+              
+              /* Use flexbox to center the content */
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              overflow: hidden;
+            }
+
+            /* Reset the inner '.architech-slider' div to be positioned by its new flex parent */
+            .version .architech-slider {
+              position: relative; /* Was 'absolute' */
+              top: auto;
+              left: auto;
+              height: auto;
+              width: 90%;
+              max-width: 1440px;
+            }
+
+          }
+          /* ===================================================================== */
+/* FIX: Corrected Styles for Full-Screen Architect Sections              */
+/* ===================================================================== */
+/*
+  This CSS block fixes the layout for the architect sections.
+  It ensures they each occupy the full screen without overlapping
+  and that their content is properly centered.
+*/
+
+/* --- Step 1: Style the main section container for 'Architect Details' --- */
+.version .architech-main-section {
+  position: absolute;
+  width: 100%;
+  height: 100vh; /* <-- FIX: Ensures full viewport height */
+  top: 200vh;    /* <-- FIX: Places it as the 3rd screen in sequence */
+  left: 0;
+  overflow: hidden;
+
+  /* Use flexbox to center the content inside */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- Step 2: Reset the inner content of the 'Architect Details' section --- */
+.version .architech-details {
+  position: relative; /* <-- FIX: Changed from 'absolute' to be centered by flexbox */
+  top: auto;          /* <-- FIX: Remove fixed pixel positioning */
+  left: auto;         /* <-- FIX: Remove fixed pixel positioning */
+  height: auto;       /* Let content size itself */
+  width: 90%;
+  max-width: 1366px;  /* Good practice for large screens */
+}
+
+/* --- Step 3: Style the main section container for the 'Architect Slider' --- */
+.version .architech-slider-section {
+  position: absolute;
+  width: 100%;
+  height: 100vh; /* <-- FIX: Ensures full viewport height */
+  top: 300vh;    /* <-- FIX: Places it as the 4th screen, PREVENTING OVERLAP */
+  left: 0;
+  overflow: hidden;
+
+  /* Use flexbox to center the content inside */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- Step 4: Reset the inner content of the 'Architect Slider' section --- */
+.version .architech-slider {
+  position: relative; /* <-- FIX: Changed from 'absolute' */
+  top: auto;          /* <-- FIX: Remove fixed pixel positioning */
+  left: auto;         /* <-- FIX: Remove fixed pixel positioning */
+  height: auto;       /* Let content size itself */
+  width: 90%;
+  max-width: 1366px;
+}
+        </style>
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Register GSAP plugins
+      gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+      const desktopView = document.querySelector('[data-desktop-view]');
+      if (!desktopView) return;
+
+      // --- Entrance animations (unchanged) ---
+      const headerLine = desktopView.querySelector(".line-2");
+      const logo = desktopView.querySelector(".rustomjeeclifftower");
+      const headerIcons = [
+        desktopView.querySelector(".cab-button"),
+        desktopView.querySelector(".button-version"),
+        desktopView.querySelector(".cab-button-2")
+      ];
+      const entranceTimeline = gsap.timeline({ defaults: { duration: 1, ease: "power3.out" } });
+      entranceTimeline
+        .set(headerLine, { scaleX: 0, transformOrigin: "left" })
+        .set(logo, { opacity: 0, y: -20 })
+        .set(headerIcons, { opacity: 0, y: 20 });
+      entranceTimeline
+        .to(headerLine, { scaleX: 1 })
+        .to(logo, { opacity: 1, y: 0 }, "-=0.5")
+        .to(headerIcons, { opacity: 1, y: 0, stagger: 0.2 }, "-=0.5");
+      gsap.to(logo, { y: -5, duration: 3, repeat: -1, yoyo: true, ease: "sine.inOut", delay: 2 });
+      gsap.to(desktopView.querySelector(".button-version"), { y: 5, duration: 4, repeat: -1, yoyo: true, ease: "sine.inOut", delay: 2.5 });
+
+      gsap.set(desktopView.querySelector(".banner-version"), { opacity: 0, y: 150, rotationZ: -3, transformOrigin: "bottom center", perspective: 600 });
+      gsap.set(desktopView.querySelector(".banner-version-2"), { opacity: 0, x: 150, rotationZ: 3, transformOrigin: "center right", perspective: 600 });
+
+      const bannerTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: desktopView.querySelector(".banner-container"),
+          start: "top 70%",
+          toggleActions: "play none none none",
+        }
+      });
+      bannerTimeline.to(desktopView.querySelector(".banner-version"), { opacity: 1, y: 0, rotationZ: 0, duration: 2, ease: "expo.out" }, 0.5);
+      bannerTimeline.to(desktopView.querySelector(".banner-version-2"), { opacity: 1, x: 0, rotationZ: 0, duration: 2, ease: "expo.out" }, "<0.7");
+      // --- End of entrance animations ---
+
+      // =================================================================
+      // SCROLL LOGIC WITH SNAPPING
+      // =================================================================
+      const mainWrapper = desktopView.querySelector('.overlap-wrapper');
+      const overlapContainer = desktopView.querySelector('.overlap');
+      const scrollArrow = desktopView.querySelector('.frame-41');
+
+      if (mainWrapper && overlapContainer && scrollArrow) {
+
+        document.body.style.overflow = 'hidden';
+        document.documentElement.style.overflow = 'hidden';
+
+        const totalScrollDistance = () => overlapContainer.scrollHeight - mainWrapper.clientHeight;
+
+        const scrollAnim = gsap.to(overlapContainer, {
+          y: () => -totalScrollDistance(),
+          ease: "none",
+        });
+
+        const numScreens = totalScrollDistance() / window.innerHeight;
+
+        const st = ScrollTrigger.create({
+          trigger: mainWrapper,
+          start: "top top",
+          end: () => `+=${totalScrollDistance()}`,
+          pin: true,
+          animation: scrollAnim,
+          scrub: 1.5,
+          invalidateOnRefresh: true,
+          snap: {
+            snapTo: 1 / numScreens,
+            duration: 0.5,
+            ease: "power2.inOut",
+            directional: true
+          },
+          enabled: false
+        });
+
+        let isScrollUnlocked = false;
+
+        // =================== MODIFIED CODE ===================
+        scrollArrow.addEventListener('click', () => {
+          // This part runs ONLY ONCE to unlock the scroll
+          if (!isScrollUnlocked) {
+            isScrollUnlocked = true;
+            document.body.style.overflow = '';
+            document.documentElement.style.overflow = '';
+            st.enable();
+          }
+
+          // This part runs EVERY TIME to scroll to the section
+          gsap.to(window, {
+            duration: 1.5,
+            ease: 'power2.inOut',
+            // The target is always the start of the 2nd section
+            scrollTo: {
+              y: st.start + window.innerHeight,
+              autoKill: false
+            },
+            onComplete: () => {
+              ScrollTrigger.refresh();
+            }
+          });
+        });
+        // ===============================================
+      }
+    });
+  </script>
+  <script src="/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+
+  <link rel="stylesheet" href="assets/desk-css/globals.css" media="screen and (min-width: 768px)" />
+  <link rel="stylesheet" href="assets/desk-css/styleguide.css" media="screen and (min-width: 768px)" />
+  <link rel="stylesheet" href="assets/desk-css/style.css" media="screen and (min-width: 768px)" />
+
+  <link rel="stylesheet" href="assets/mob-css/globals.css" media="screen and (max-width: 767px)" />
+  <link rel="stylesheet" href="assets/mob-css/styleguide.css" media="screen and (max-width: 767px)" />
+  <link rel="stylesheet" href="assets/mob-css/style.css" media="screen and (max-width: 767px)" />
+
+  <style>
+    /* View-switching logic */
+    [data-desktop-view] {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      [data-desktop-view] {
+        display: block;
+      }
+
+      [data-mobile-view] {
+        display: none;
+      }
+    }
+
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* This creates the "viewport" for your slides */
+    [data-desktop-view] .overlap-wrapper {
+      /* --- CSS CHANGE 1: Removed 'overflow: hidden' and 'height: 100vh' to enable scrolling --- */
+    }
+
+    /* Lifts the header above all slides */
+    [data-desktop-view] .header {
+      position: relative;
+      z-index: 3;
+    }
+
+    /* The first slide (visible by default) */
+    [data-desktop-view] .banner {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      /* Sits below the header */
+    }
+
+    /* The second slide (positioned below the first) */
+    [data-desktop-view] #architect-section {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      top: 100vh;
+      /* Positioned one full screen down */
+      left: 0;
+      z-index: 1;
+      /* Sits below the main banner */
+    }
+
+    /* Makes the image fill its container */
+    [data-desktop-view] .architech-banner {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+
+  <div class="version" data-desktop-view="">
+    <div class="overlap-wrapper">
+      <div class="overlap">
+
+        <section class="architech-main-section">
+          <div class="architech-details">
+            <div class="overlap-14">
+              <div class="overlap-15">
+                <div class="overlap-16">
+                  <img class="rectangle-11" src="https://c.animaapp.com/cxEW9Bi2/img/rectangle-3.png">
+                  <div class="frame-39">
+                    <img class="union-2" src="https://c.animaapp.com/cxEW9Bi2/img/union-25.svg">
+                  </div>
+                  <div class="architect">ARCHITECT</div>
+                  <img class="yellow-sephere-2" src="https://c.animaapp.com/cxEW9Bi2/img/yellow-sephere-1@2x.png">
+                  <img class="yellow-sephere-3" src="https://c.animaapp.com/cxEW9Bi2/img/yellow-sephere-2@2x.png">
+                </div>
+                <div class="simple-shapes-future-2">SIMPLE SHAPES, FUTURE-READY FINISHES</div>
+                <img class="ellipse" src="https://c.animaapp.com/cxEW9Bi2/img/ellipse-1@2x.png">
+                <p class="text-wrapper-19">
+                  Rustomjee towers feature sleek façades, refined masonry, French balconies, and open terraces—each
+                  distinct yet unified under a bold design language redefining modern living.
+                </p>
+              </div>
+              <div class="frame-40"><img class="union-3" src="https://c.animaapp.com/cxEW9Bi2/img/union-21.svg"></div>
+            </div>
+          </div>
+
+
+        </section>
+        
+        <section class="architech-slider-section">
+          <div class="architech-slider">
+            <div class="overlap-13">
+              <div class="rectangle-9"></div>
+              <img class="rectangle-10" src="https://c.animaapp.com/cxEW9Bi2/img/rectangle-5.png">
+              <div class="frame-35">
+                <img class="frame-5" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36120-4.svg">
+                <div class="text-wrapper-4">1</div>
+              </div>
+              <div class="group-3">
+                <div class="overlap-group-5">
+                  <img class="quotation-mark" src="https://c.animaapp.com/cxEW9Bi2/img/quotation-mark-1.svg">
+                  <p class="sanjay-puri-is-one">
+                    SANJAY PURI IS ONE OF INDIA’S MOST INTERNATIONALLY AWARDED ARCHITECTS, WITH OVER 360 ACCOLADES
+                    ACROSS GLOBAL PLATFORMS INCLUDING THE WORLD ARCHITECTURE FESTIVAL, LEAF (UK), AND ARCHITIZER A+
+                    AWARDS. RENOWNED FOR BOLD GEOMETRIES AND CLIMATIC RESPONSIVENESS, HIS WORK SEAMLESSLY BLENDS
+                    SCULPTURAL FORM WITH GROUNDED FUNCTIONALITY.
+                  </p>
+                </div>
+              </div>
+              <img class="frame-36" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36122.svg">
+              <img class="frame-37" src="https://c.animaapp.com/cxEW9Bi2/img/frame-36123.svg">
+              <img class="world-architecture"
+                src="https://c.animaapp.com/cxEW9Bi2/img/world-architecture-festival-idrfoc2hie-1-1@2x.png">
+            </div>
+            <div class="simple-shapes-future">SIMPLE SHAPES, FUTURE-READY FINISHES</div>
+            <div class="frame-38"><img class="union-3" src="https://c.animaapp.com/cxEW9Bi2/img/union-21.svg"></div>
+            <p class="text-wrapper-18">
+              Rustomjee towers feature sleek façades, refined masonry, French balconies, and open terraces—each distinct
+              yet unified under a bold design language redefining modern living.
+            </p>
+            <img class="yellow-sephere" src="https://c.animaapp.com/cxEW9Bi2/img/yellow-sephere-1@2x.png">
+          </div>
+        </section>
+
+        <style>
+          @media screen and (min-width: 768px) {
+            
+            /*
+              This section corrects the layout for the two architect sections,
+              making each one a full-screen panel that the page can snap to.
+            */
+
+            /* FIX 1: The 'Architect Details' main container */
+            .version .architech-main-section {
+              position: absolute;
+              width: 100%;
+              height: 100vh; /* Make it full viewport height */
+              left: 0;
+              top: 215vh; /* Position it as the 3rd full screen section (after banner and banner-image) */
+              
+              /* Use flexbox to center the content vertically and horizontally */
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              overflow: hidden;
+            }
+
+            /* Reset the inner '.architech-details' div to be positioned by its new flex parent */
+            .version .architech-details {
+              position: relative; /* Was 'absolute', this is crucial for flex centering */
+              top: auto; /* Remove fixed positioning */
+              left: auto; /* Remove fixed positioning */
+              height: auto; /* Allow content to define its height */
+              width: 90%; /* Maintain a consistent width with other sections */
+              max-width: 1440px; /* Set a max-width for large screens */
+            }
+
+            /* FIX 2: The 'Architect Slider' main container */
+            .version .architech-slider-section {
+              position: absolute;
+              width: 100%;
+              height: 100vh; /* Make it full viewport height */
+              left: 0;
+              top: 300vh; /* Position it as the 4th full screen section */
+              
+              /* Use flexbox to center the content */
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              overflow: hidden;
+            }
+
+            /* Reset the inner '.architech-slider' div to be positioned by its new flex parent */
+            .version .architech-slider {
+              position: relative; /* Was 'absolute' */
+              top: auto;
+              left: auto;
+              height: 100%;
+              width: 90%;
+              max-width: 1440px;
+            }
+
+          }
+          /* ===================================================================== */
+/* FIX: Corrected Styles for Full-Screen Architect Sections              */
+/* ===================================================================== */
+/*
+  This CSS block fixes the layout for the architect sections.
+  It ensures they each occupy the full screen without overlapping
+  and that their content is properly centered.
+*/
+
+/* --- Step 1: Style the main section container for 'Architect Details' --- */
+.version .architech-main-section {
+  position: absolute;
+  width: 100%;
+  height: 100vh; /* <-- FIX: Ensures full viewport height */
+  /* --- CSS CHANGE 2: Changed 'top' from 200vh to 0 to make it visible at the top --- */
+  top: 0;    
+  left: 0;
+  overflow: hidden;
+
+  /* Use flexbox to center the content inside */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- Step 2: Reset the inner content of the 'Architect Details' section --- */
+.version .architech-details {
+  position: relative; /* <-- FIX: Changed from 'absolute' to be centered by flexbox */
+  top: auto;          /* <-- FIX: Remove fixed pixel positioning */
+  left: auto;         /* <-- FIX: Remove fixed pixel positioning */
+  height: auto;       /* Let content size itself */
+  width: 90%;
+  max-width: 1366px;  /* Good practice for large screens */
+}
+
+/* --- Step 3: Style the main section container for the 'Architect Slider' --- */
+.version .architech-slider-section {
+  position: absolute;
+  width: 100%;
+  height: 100vh; /* <-- FIX: Ensures full viewport height */
+  /* --- CSS CHANGE 3: Changed 'top' from 300vh to 100vh to place it after the first section --- */
+  top: 100vh;    
+  left: 0;
+  overflow: hidden;
+
+  /* Use flexbox to center the content inside */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- Step 4: Reset the inner content of the 'Architect Slider' section --- */
+.version .architech-slider {
+  position: relative; /* <-- FIX: Changed from 'absolute' */
+  top: auto;          /* <-- FIX: Remove fixed pixel positioning */
+  left: auto;         /* <-- FIX: Remove fixed pixel positioning */
+  height: 100%;       /* Let content size itself */
+  width: 90%;
+  max-width: 1366px;
+}
+        </style>
+
+        <svg width="0" height="0" style="position:absolute;">
+          <defs>
+            <clipPath id="mount-mary-mask" clipPathUnits="objectBoundingBox">
+              <path
+                d="M0.08,0.91 V0.1 H0.26 L0.5,0.58 L0.74,0.1 H0.92 V0.91 H0.76 V0.33 L0.55,0.76 H0.45 L0.24,0.33 V0.91 H0.08 Z" />
+            </clipPath>
+          </defs>
+        </svg>
+
+    
+
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>

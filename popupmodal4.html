@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rustomjee Cliff Tower - Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(135deg, #4a6fa5 0%, #3a5998 50%, #2d4c89 100%);
+        /* min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center; */
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* body::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.08)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.06)"/></svg>') repeat;
+        animation: float 20s infinite linear;
+    } */
+
+
+
+    .background-text {
+        position: absolute;
+        font-size: 120px;
+        font-weight: 900;
+        color: rgba(255, 255, 255, 0.05);
+        z-index: 1;
+        top: 20%;
+        left: 10%;
+        transform: rotate(-10deg);
+        user-select: none;
+    }
+
+    .modalFloor-secondpopupContainer {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(5px);
+        /* display: flex; */
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        padding: 15px;
+    }
+
+    .modal-container {
+        background: white;
+        overflow: hidden;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        max-width: 900px;
+        width: 100%;
+        max-height: 90vh;
+        display: flex;
+        position: relative;
+        animation: modalSlideIn 0.5s ease-out;
+    }
+
+    @keyframes modalSlideIn {
+        from {
+            opacity: 0;
+            transform: translateY(50px) scale(0.95);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 35px;
+        height: 35px;
+        background: rgba(255, 255, 255, 0.95);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+        font-size: 18px;
+        color: #666;
+        transition: all 0.2s ease;
+        font-weight: 300;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .close-btn:hover {
+        background: white;
+        color: #333;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .left-panel {
+        background: white;
+        padding: 50px 40px;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .brand-name {
+        font-family: 'Times New Roman', serif;
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 5px;
+        letter-spacing: 1px;
+    }
+
+    .project-title {
+        font-size: 32px;
+        font-weight: 300;
+        color: #333;
+        margin-bottom: 5px;
+        letter-spacing: 2px;
+    }
+
+    .location {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 40px;
+        letter-spacing: 1px;
+    }
+
+    .main-heading {
+        font-size: 22px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 15px;
+        line-height: 1.3;
+        text-align: center;
+    }
+
+    .sub-heading {
+        font-size: 14px;
+        color: #888;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .input-field {
+        width: 100%;
+        padding: 15px 15px 15px 45px;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%23999" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>');
+        background-repeat: no-repeat;
+        background-position: 15px center;
+        background-size: 18px;
+    }
+    
+    .input-field:focus {
+        outline: none;
+        border-color: #c8956d;
+        box-shadow: 0 0 0 3px rgba(200, 149, 109, 0.1);
+    }
+
+    .phone-container {
+        position: relative;
+    }
+
+    .phone-input-wrapper {
+        position: relative;
+        display: flex;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        overflow: hidden;
+        background: white;
+        transition: all 0.3s ease;
+    }
+
+    .phone-input-wrapper:focus-within {
+        border-color: #c8956d;
+        box-shadow: 0 0 0 3px rgba(200, 149, 109, 0.1);
+    }
+
+    .phone-icon {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 18px;
+        height: 18px;
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%23999" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        z-index: 1;
+    }
+
+    .country-code {
+        /* UPDATED LINE: Added left padding to make space for the icon */
+        padding: 15px 12px 15px 45px; 
+        border: none;
+        background: #f8f8f8;
+        font-size: 16px;
+        color: #333;
+        min-width: 115px; /* Increased width to accommodate padding */
+        text-align: left;
+        outline: none;
+        border-right: 1px solid #e0e0e0;
+        appearance: none; /* Optional: for a cleaner look */
+    }
+
+    .phone-number {
+        flex: 1;
+        padding: 15px;
+        border: none;
+        background: transparent;
+        font-size: 16px;
+        outline: none;
+    }
+
+    .phone-number::placeholder {
+        color: #999;
+    }
+
+    .cta-button2 {
+        width: 100%;
+        /* background: linear-gradient(135deg, #d4a574 0%, #c8956d 100%); */
+        color: white;
+        border: none;
+        /* padding: 16px;
+        border-radius: 8px;
+        font-size: 16px; */
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 15px;
+        background-color: transparent;
+        /* border-radius: 10%; */
+    }
+
+    .cta-button2:hover {
+        transform: translateY(-2px);
+        /* box-shadow: 0 8px 25px rgba(200, 149, 109, 0.3); */
+    }
+
+    .checkbox-container {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .checkbox {
+        width: 18px;
+        height: 18px;
+        margin-top: 2px;
+        flex-shrink: 0;
+    }
+
+    .checkbox-text {
+        font-size: 12px;
+        color: #666;
+        line-height: 1.4;
+    }
+
+    .right-panel {
+        width: 50%;
+        position: relative;
+        background: #ac7b63;
+        color: #fff;
+    }
+
+    .right-Heading {
+        color: #fff;
+        font-size: 25px;
+        text-align: center;
+        text-transform: uppercase;
+        margin: 40px 0;
+    }
+    .floor-popuppointsContainer {
+        width: 75%;
+        margin: 0 auto;
+    }
+    .floor-popuppointsContainer li {
+        padding: 5px 0;
+        letter-spacing: 0.5px;
+    }
+
+    /* --- Responsive Styles --- */
+    @media (max-width: 820px) {
+        /* Hides the animated background and large text on mobile */
+        /* body::before,
+        .background-text {
+            display: none;
+        } */
+
+        .modal-container {
+            flex-direction: column;
+            max-height: 90vh;
+            overflow-y: auto;
+            max-width: 400px; 
+            /* height: 100vh; */
+            width: 100%;
+            /* max-height: 100vh; */
+        }
+
+        .left-panel {
+            width: 100%;
+            /* padding: 40px 25px 30px; */
+            padding: 0 0 30px;
+        }
+        .left-panellogo {
+            display: none;
+        }
+        .left-panelImg {
+            display: block;
+        }
+
+        .right-panel {
+            display: none; 
+        }
+        
+        .project-title {
+            font-size: 28px;
+        }
+        
+        .main-heading {
+            font-size: 20px;
+        }
+
+        .close-btn {
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.8);
+        }
+        #registrationForm {
+            padding: 0 25px;
+        }
+        .modalFloor-secondpopupContainer {
+            padding: 0px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="background-text secondFloorTrigger">FLOOR PLAN</div>
+    
+    <div class="modalFloor-secondpopupContainer" id="modalFloorSecondpopupOverlay">
+        <div class="modal-container" id="modalfloorsecond">
+            <button class="close-btn" id="closebtn2">×</button>
+            
+            <div class="left-panel">
+                <!-- <div class="brand-name">Rustomjee</div>
+                <div class="project-title">CLIFF TOWER</div>
+                <div class="location">MOUNT MARY, BANDRA</div> -->
+                <img src="/assets/images/modal-logo.png" alt="" >
+                <br>
+                <div class="main-heading">Unlock Privileges with Rustomjee Developer</div>
+                <div class="sub-heading">Register now to access developer-direct offers</div>
+                
+                <form id="registrationForm">
+                    <div class="form-group">
+                        <input type="text" class="input-field" placeholder="First Name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="phone-container">
+                            <div class="phone-input-wrapper">
+                                <div class="phone-icon"></div>
+                                <select class="country-code">
+                                    <option value="+91">+91</option>
+                                    <option value="+1">+1</option>
+                                    <option value="+44">+44</option>
+                                    <option value="+61">+61</option>
+                                    <option value="+971">+971</option>
+                                </select>
+                                <input type="tel" class="phone-number" placeholder="Your Number" required pattern="[0-9]{10}" maxlength="10">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="cta-button2"><img src="assets/images/icons/getanoffer.png" alt="" width="100%" height="auto"></button>
+                    
+                    <div class="checkbox-container">
+                        <input type="checkbox" class="checkbox" id="updates">
+                        <label for="updates" class="checkbox-text">Enable updates through SMS, WhatsApp.</label>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="right-panel">
+                <h3 class="right-Heading">GROUND LEVEL ARRIVAL AND LANDSCAPE DESIGN</h3>
+                <ul class="floor-popuppointsContainer">
+                    <li>Entrance driveway</li>
+                    <li>Exit driveway</li>
+                    <li>Porte-cochère</li>
+                    <li>Security pavilion</li>
+                    <li>Botanical perimeter planting</li>
+                    <li>Drop-off court with lush, creeper-clad pergola</li>
+                    <li>Signature reflecting water feature</li>
+                    <li>Artisan cobble-paving in a radial pattern</li>
+                    <li>Pedestrian ramp</li>
+                    <li>Boundary wall</li>
+                    <li>Fire tender access gate (sliding)</li>
+                    <li>Pedestrian promenade with sculpted seating and median greenery</li>
+                    <li>Entry to the assessment parking</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal functionality
+        const modalFloorSecondpopupOverlay = document.getElementById('modalFloorSecondpopupOverlay');
+        const modalfloorsecond = document.getElementById('modalfloorsecond');
+        const closebtn2 = document.getElementById('closebtn2');
+        
+        document.querySelectorAll(".secondFloorTrigger").forEach(element=>{
+            element.addEventListener("click",(e)=>{
+                e.preventDefault();
+                modalFloorSecondpopupOverlay.style.display = "flex";
+            })
+        })
+
+        // Close modal function
+        function closeSecondFloorPopup() {
+            modalfloorsecond.style.animation = 'modalSlideOut 0.3s ease-in forwards';
+            setTimeout(() => {
+                modalFloorSecondpopupOverlay.style.display = 'none';
+                modalfloorsecond.style.animation = 'modalSlideIn 0.5s ease-out'; // Reset for next open
+            }, 300);
+        }
+        
+        // Add slide-out animation style
+        const styleSheet = document.createElement("style");
+        styleSheet.type = "text/css";
+        styleSheet.innerText = `
+            @keyframes modalSlideOut {
+                from { opacity: 1; transform: translateY(0) scale(1); }
+                to { opacity: 0; transform: translateY(50px) scale(0.95); }
+            }
+        `;
+        document.head.appendChild(styleSheet);
+
+
+        // Close button event
+        closebtn2.addEventListener('click', closeSecondFloorPopup);
+
+        // Close on overlay click
+        modalFloorSecondpopupOverlay.addEventListener('click', (e) => {
+            if (e.target === modalFloorSecondpopupOverlay) {
+                closeSecondFloorPopup();
+            }
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeSecondFloorPopup();
+            }
+        });
+
+        // Form submission
+        
+        // Phone number validation to allow only numbers
+        document.querySelector('.phone-number').addEventListener('input', (e) => {
+            e.target.value = e.target.value.replace(/\D/g, '');
+        });
+
+    </script>
+</body>
+</html>

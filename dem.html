@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One by One Scroll</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden; /* disable normal scroll */
+    }
+    section {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: white;
+      font-family: sans-serif;
+    }
+    section:nth-child(1) { background: #e74c3c; } /* Red */
+    section:nth-child(2) { background: #27ae60; } /* Green */
+    section:nth-child(3) { background: #2980b9; } /* Blue */
+    section:nth-child(4) { background: #8e44ad; } /* Purple */
+    section:nth-child(5) { background: #f1c40f; } /* Yellow */
+    section:nth-child(6) { background: #e67e22; } /* Orange */
+    section:nth-child(7) { background: #1abc9c; } /* Turquoise */
+    section:nth-child(8) { background: #34495e; } /* Dark Blue */
+    section:nth-child(9) { background: #d35400; } /* Pumpkin */
+    section:nth-child(10) { background: #c0392b; } /* Pomegranate */
+  </style>
+</head>
+<body>
+
+  <section>Section 1</section>
+  <section>Section 2</section>
+  <section>Section 3</section>
+  <section>Section 4</section>
+  <section>Section 5</section>
+  <section>Section 6</section>
+  <section>Section 7</section>
+  <section>Section 8</section>
+  <section>Section 9</section>
+  <section>Section 10</section>
+
+  <script>
+    const sections = document.querySelectorAll("section");
+    let currentIndex = 0;
+    let isScrolling = false;
+
+    function scrollToSection(index) {
+      isScrolling = true;
+      // Use the element's offsetTop to scroll to its position
+      window.scrollTo({
+        top: sections[index].offsetTop,
+        behavior: "smooth"
+      });
+      // A timeout to prevent rapid scrolling before the animation finishes
+      setTimeout(() => { isScrolling = false; }, 1000);
+    }
+
+    // Listen for the mouse wheel event
+    window.addEventListener("wheel", (e) => {
+      // Prevent scrolling if an animation is already in progress
+      if (isScrolling) return;
+
+      // Check scroll direction
+      if (e.deltaY > 0 && currentIndex < sections.length - 1) {
+        // Scrolling down
+        currentIndex++;
+        scrollToSection(currentIndex);
+      } else if (e.deltaY < 0 && currentIndex > 0) {
+        // Scrolling up
+        currentIndex--;
+        scrollToSection(currentIndex);
+      }
+    }, { passive: false }); // { passive: false } is needed to allow preventDefault if we were using it
+  </script>
+
+</body>
+</html>
